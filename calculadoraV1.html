@@ -5,50 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Financeira</title>
-
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <h1 class="fonte"> Calculadora Financeira </h1>
-
-
     <div class="card fonte">
         <h4>Possui a funcionalidade de quantificar, em reais, o potencial de perda da plantação <br> caso o nivel de
             umidade
             relativa do solo de uma plantação não seja monitorado.</h4><br> <br>
-
         <div class="texto fonte">
-            Insira a quantidade de hectares que a sua plantação possui: <input style="margin-left: 10%;" type="number"
-                id="input_hectar"><br> <br>
+            <p>Insira a quantidade de hectares que a sua plantação possui:</p> <input class ="campo" type="number" id="input_hectar"><br> <br>
 
-            Insira o valor de um hectare do seu milho: <input style="margin-left: 24%;" type="number"
-                id="input_milho"><br> <br>
+            <p>Insira o valor de um hectare do seu milho:</p> <input class ="campo" type="number" id="input_milho"><br> <br>
 
-            Insira o gasto total para a produção de um hectar de milho <br> (Custos com agua, empregados, manutenção,
-            energia
-            <br> e
-            todos os gastos necessarios para a produção do milho): <input style="margin-left: 11%;" type="number"
-                id="input_custo"><br><br><br>
-
+            <p>Insira o gasto total para a produção de um hectar de milho <br> 
+                (Custos com agua, empregados, manutenção, energia <br> 
+                e todos os gastos necessarios para a produção do milho):</p> <input class ="campo" type="number" id="input_custo"><br><br><br>
         </div>
-
-        <button class="button fonte" onclick="calcular()"> Calcular potencial de perda do milho </button> <br> <br>
-
-
-
         <div class="divs">
             <div id="div_perda"></div>
             <div id="div_porcentagem"></div>
             <div id="div_lucro"></div>
+            <br>
         </div>
-
+        <button class="button fonte" onclick="calcular()"> Calcular potencial de perda do milho </button> <br> <br>
     </div>
-
     <br>
-
 </body>
 
 </html>

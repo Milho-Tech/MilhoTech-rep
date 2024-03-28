@@ -4,10 +4,13 @@ body{
 }
 
 h1{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 2px;
     text-align: center;
     background-color: rgba(241, 227, 143, 0.863);
-    width: 500px;
-    margin-left: 32%;
+    width: 400px;
     border-radius: 15px;
 }
 
@@ -20,25 +23,19 @@ h4{
 }
 
 .texto {
-    text-align: justify;
-   margin-left: 10%;
-}
-
-.button{
-    border-radius: 10px;
-    margin-left: 35%;
-    margin-top: 5%;
-    font-size: medium;
-    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-end;
 }
 
 .card{
-
-    position: absolute;
-    top: 15%;
-    left: 20%;
-    width: 800px;
-    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
     background-color: rgba(241, 227, 143, 0.863);
     border: 5px solid black; 
 }
@@ -46,6 +43,14 @@ h4{
 .divs{
     margin-left: 5%;
     align-items: center;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
 }
 
 img{
