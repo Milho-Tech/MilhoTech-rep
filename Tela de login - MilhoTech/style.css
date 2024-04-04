@@ -50,7 +50,7 @@ white-space: nowrap; /* "White-space" muda coisas na implementação visual do t
 
 
 #inpemail {
-box-sizing: border-box;
+box-sizing: border-box; /* O "box-sizing" altera as propriedades padráo da box model, usada para calcular larguras e alturas dos elementos */
 
 position: absolute;
 width: 276px;
@@ -253,4 +253,13 @@ height: 30px;
 
 left: 3px;
 top: -2px;
+}
+
+.milhologo {
+  position: absolute;
+  width: 365px;
+  height: 315;
+
+  top: -40px;
+  left: 170px;
 }
