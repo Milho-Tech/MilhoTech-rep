@@ -6,24 +6,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-    <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div>
-        <h1>Sensor DHT 11 - Umidade</h1>
-        <section style="width:30%">
+    <div class="box">
+        <section  class="graph">
+            <h1 class="text">Umidade</h1>
             <canvas id="dht11Umidade"></canvas>
         </section>
-        <h1>Sensor DHT 11 - Temperatura</h1>
-        <section style="width: 30%;">
+        <section class="graph">
+            <h1 class="text">Temperatura</h1>
             <canvas id="dht11Temperatura"></canvas>
         </section>
     </div>
@@ -32,7 +25,7 @@
         /* -- dht11Umidade -- */
         var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
         contextoDht11Umidade.canvas.width = 1000;
-        contextoDht11Umidade.canvas.height = 300;
+        contextoDht11Umidade.canvas.height = 500;
         var dht11Umidade = new Chart(
             contextoDht11Umidade,
             {
@@ -41,8 +34,8 @@
                     datasets: [{
                         label: 'Umidade',
                         type: 'line',
-                        borderColor: ['#45b3e7'],
-                        backgroundColor: ['#89cff0']
+                        borderColor: ['#c7a302'],
+                        backgroundColor: ['#f7cb02']
                     }]
                 },
                 options: {
@@ -72,7 +65,7 @@
         /* -- dht11Temperatura -- */
         var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
         contextoDht11Temperatura.canvas.width = 1000;
-        contextoDht11Temperatura.canvas.height = 300;
+        contextoDht11Temperatura.canvas.height = 500;
         var dht11Temperatura = new Chart(
             contextoDht11Temperatura,
             {
@@ -81,8 +74,8 @@
                     datasets: [{
                         label: "Temperatura",
                         type: 'line',
-                        borderColor: ['#ff3232'],
-                        backgroundColor: ['#ff7f7f']
+                        borderColor: ['#5c8404'],
+                        backgroundColor: ['#7ead05']
                     }]
                 },
                 options: {
