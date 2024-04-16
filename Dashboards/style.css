@@ -1,0 +1,66 @@
+body {
+  background-image: url(https://img.freepik.com/fotos-gratis/campos-de-trigo-dourados-brilham-ao-por-do-sol-gerados-por-ia_188544-44464.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1713139200&semt=sph);
+  background-size: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.box {
+  flex-direction: column;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.graph {
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 30px;
+  margin: auto;
+  margin-top: 20px;
+  width: 40%;
+}
+
+.text {
+  text-align: center;
+}
+
+.header{
+  background-color: rgb(255, 255, 255, 0.8);
+  border-bottom: 3px solid #14a540;
+}
+
+.conteiner{
+  display: flex;
+  width: 80%;
+  margin:  auto;    
+}
+
+.header .conteiner{
+  justify-content: space-between;
+}
+
+.titulo{
+  color: #14a540;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 60%;
+  justify-content: space-between;
+  color: #e3b062;
+  align-items: center;
+}
