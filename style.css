@@ -1,0 +1,116 @@
+body {
+  background-image: url(https://img.freepik.com/fotos-gratis/campos-de-trigo-dourados-brilham-ao-por-do-sol-gerados-por-ia_188544-44464.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1713139200&semt=sph);
+  background-size: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.box {
+  flex-direction: column;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 300vh;
+}
+
+.graph {
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 30px;
+  margin: auto;
+  width: 40%;
+  margin-top: 30px;
+}
+
+.text {
+  text-align: center;
+}
+
+.header{
+  background-color: rgb(255, 255, 255, 0.8);
+  border-bottom: 3px solid #14a540;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteiner{
+  display: flex;
+  width: 80%;
+  margin:  auto;    
+}
+
+.header .conteiner{
+  justify-content: space-between;
+}
+
+.titulo{
+  color: #14a540;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 60%;
+  justify-content: space-between;
+  color: #e3b062;
+  align-items: center;
+  font-size: 18px;
+}
+
+.graph_titulo{
+  background-color: rgb(255, 255, 255, 0.8);
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pai_titulo{
+  justify-content: center;
+  align-items: center;
+}
+
+.div_conteudo{
+  display: flex;
+  flex-direction: row;
+}
+
+img{
+  width: 80px;
+  height: 80px;
+}
+
+.div_lateral{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255,236,209, 0.7);
+  border-radius: 8px;
+  align-items: center;
+  max-width: 50vh;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  flex-direction: column;
+  justify-self: flex-end;
+  align-self: center;
+  position: absolute;
+  bottom:0%;
+  position: fixed;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
