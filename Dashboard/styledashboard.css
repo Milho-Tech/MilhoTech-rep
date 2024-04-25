@@ -2,9 +2,9 @@ body {
   /* background-color: #daf4f8; */
   background-size: cover;
   display: flex;
-  background-image: url(fundo_milhinhos.png);
+  background-image: url(milhos_pretos.jpg);
   background-size: cover;
-  backdrop-filter: brightness(60%);
+  background-repeat: no-repeat;
 }
 
 * {
@@ -22,12 +22,14 @@ canvas {
 .box {
   flex-direction: column;
   margin-top: 50px;
+  margin-left: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  width: 200vh;
+  width: 100%;
   height: 100%;
+  
 }
 
 .graph {
@@ -37,7 +39,7 @@ canvas {
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 40%;
+  width: 70%;
   margin-top: 45px;
   box-shadow: 5px 5px 25px black;
 }
@@ -133,10 +135,11 @@ canvas {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .div_conteudo{
   display: flex;
   flex-direction: row;
-  
+  width: 100%;
 }
 
 .div_lateral img{
@@ -147,7 +150,7 @@ canvas {
 .div_lateral{
   display: flex;
   flex-direction: column;
-  background-color: #15616D;
+  background-color: #193607;
   align-items: center;
   max-width: 50vh;
   font-family: Arial, Helvetica, sans-serif;
@@ -161,14 +164,14 @@ canvas {
 .logo{
   width: 150px;
   height: 150px;
-  position: absolute;
-  margin-left: 1180px;
-  margin-bottom: 640px;
+  justify-self: flex-end;
+  align-self: flex-start;
 }
 
 .div_lateral .img_sair{
   height: 40px;
   width: 40px;
+
 }
 
 .botao_tirar{
