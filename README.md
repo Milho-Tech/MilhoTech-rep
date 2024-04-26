@@ -1,2 +1,2 @@
 # Main
-Main é o repositório principal onde tudo que estiver pronto será upado.
+🌽 Esta é a compilação do prejo da MilhoTech; Contento código para site institucional, calculadora financeira, tabelas do banco de dados e integração da nossa API. 🌽
