@@ -269,38 +269,6 @@ font-size: 23px;
   align-items: center;
 }
 
-input[type="checkbox"] { /* Este é o css para remover o estilo padrão da checkbox e colocar um novo */
-  appearance: none;
-  -webkit-appearance: none;
-  display: inline-flex;
-  align-content: center;
-  justify-content: center;
-  font-size: 2rem;
-  padding: 0.1rem;
-  background: #F3F3F3;
-  border: 1px solid #D0CFCF;
-  border-radius: 3px;
-  position: absolute;
-  left: 419px;
-  top: 560px;
-}
-
-input[type="checkbox"]::before { /* Este é o css para personalizar a sinalização de marcado dentro da checkbox */
-  content: "";
-  width: 1.4rem;
-  height: 1.4rem;
-  clip-path: polygon(17% 54%, 28% 43%, 38% 54%, 70% 22%, 81% 33%, 38% 75%, 17% 54%); /* este "clip-path" conta um quadrado para mostrar um "check" em seu lugar, dentro da checkbox */
-  transform: scale(0);
-  background-color: #000000;
-}
-
-input[type="checkbox"]:checked::before { /* Esta é a transformação do "check" */
-transform: scale(1);
-}
-
-input[type="checkbox"]:hover { /* Esta é a mudança quando o mouse passa por cima da checkbox */
-  color: black;
-}
 
 @font-face { /* "@font-face" é a maneira no css para obter uma fonte personalizada no website */
   font-family: 'Inter'; 
