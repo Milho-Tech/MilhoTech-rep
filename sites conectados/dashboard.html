@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Line Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
+    <link rel="stylesheet" href="styledashboard.css">
+</head>
+
+<body>
+    
+
+<div class="div_conteudo" id="div_conteudo">
+
+    <div class="div_lateral" id="div_lateral">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="Foto indisponivel">
+        <br>
+        <br>
+        <h2>Empresa:</h2>
+        <span>MilhoFarm</span> <br> <br>
+        <h2>Usuario:</h2>
+        <span>Fernando Brandão</span> <br> <br>
+        <h2>Informações adcionais:</h2>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis alias veniam fugiat nulla, deserunt cupiditate ab, amet nobis delectus dicta consequatur reprehenderit minus illum at excepturi perferendis dignissimos esse magni.</span>
+        <br>
+        <br>
+
+        <a href="index.html"><img src="sair.png" alt="" class="img_sair"></a>
+        
+
+    </div>
+
+    <div id="btn_mostra" class="botao_mostra">
+       <button id="btn_mostrar" class="botao_mostrar" onclick="mostrar()"></button>
+    </div>
+    <div id="btn_tira" class="botao_tira">
+        <button id="btn_tirar" class="botao_tirar" onclick="apagar()"></button>
+    </div>
+
+
+
+
+    <div class="box">
+        <div class="pai_titulo">
+            <div class="graph_titulo"><h2>DASHBOARDS:</h2></div>
+        </div>
+        <section  class="graph">
+            <h1 class="text">Temperatura</h1>
+            <canvas id="myChart"></canvas>
+        </section>
+        <section class="graph">
+            <h1 class="text">Umidade</h1>
+            <canvas id="myChart2"></canvas>
+        </section>
+    </div>
+
+</div>
+<img class="logo" src="logo.png" alt="">
+
+    <script>
+
+    function mostrar(){
+        document.getElementById("div_lateral").style.display = "block";
+        document.getElementById("btn_tirar").style.display = "block";
+        document.getElementById("btn_mostrar").style.display = "none";
+    }
+
+    function apagar(){
+        document.getElementById("div_lateral").style.display = "none";
+        document.getElementById("btn_tirar").style.display = "none";
+        document.getElementById("btn_mostrar").style.display = "block";
+    }
+
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00'
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [30, 29, 28, 25, 22, 23]
+        }]
+    };
+
+    const labels2 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00'
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 89, 93, 87, 88, 82]
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    }
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'), 
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    )
+
+        // /* -- dht11Umidade -- */
+        // var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+        // contextoDht11Umidade.canvas.width = 1000;
+        // contextoDht11Umidade.canvas.height = 500;
+        // var dht11Umidade = new Chart(
+        //     contextoDht11Umidade,
+        //     {
+        //         type: 'line',
+        //         data: {
+        //             datasets: [{
+        //                 label: 'Umidade',
+        //                 type: 'line',
+        //                 borderColor: ['#c7a302'],
+        //                 backgroundColor: ['#f7cb02']
+        //             }]
+        //         },
+        //         options: {
+        //             scales: {
+        //                 xAxes: [{
+        //                     distribution: 'series',
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }],
+        //                 yAxes: [{
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         labelString: 'Umidade'
+        //                     },
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }]
+        //             },
+        //             animation: {
+        //                 duration: 0
+        //             }
+        //         }
+        //     }
+        // );
+        // /* -- dht11Temperatura -- */
+        // var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
+        // contextoDht11Temperatura.canvas.width = 1000;
+        // contextoDht11Temperatura.canvas.height = 500;
+        // var dht11Temperatura = new Chart(
+        //     contextoDht11Temperatura,
+        //     {
+        //         type: 'line',
+        //         data: {
+        //             datasets: [{
+        //                 label: "Temperatura",
+        //                 type: 'line',
+        //                 borderColor: ['#5c8404'],
+        //                 backgroundColor: ['#7ead05']
+        //             }]
+        //         },
+        //         options: {
+        //             scales: {
+        //                 xAxes: [{
+        //                     distribution: 'series',
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }],
+        //                 yAxes: [{
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         labelString: 'Luminosidade'
+        //                     },
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }]
+        //             },
+        //             animation: {
+        //                 duration: 0
+        //             }
+        //         }
+        //     }
+        // );
+
+        // var paginacao = {};
+        // var tempo = {};
+        // function obterDados(grafico, endpoint) {
+        //     var http = new XMLHttpRequest();
+        //     http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+        //     http.send(null);
+        //     var valores = JSON.parse(http.responseText);
+        //     if (paginacao[endpoint] == null) {
+        //         paginacao[endpoint] = 0;
+        //     }
+        //     if (tempo[endpoint] == null) {
+        //         tempo[endpoint] = 0;
+        //     }
+        //     // Exibir à partir do último elemento exibido anteriormente
+        //     var ultimaPaginacao = paginacao[endpoint];
+        //     paginacao[endpoint] = valores.length;
+        //     var valores = valores.slice(ultimaPaginacao);
+        //     valores.forEach((valor) => {
+        //         //Máximo de 60 itens exibidos no gráfico
+        //         if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+        //             grafico.data.labels.shift();
+        //             grafico.data.datasets[0].data.shift();
+        //         }
+
+        //         grafico.data.labels.push(tempo[endpoint]++);
+        //         grafico.data.datasets[0].data.push(parseFloat(valor));
+        //         grafico.update();
+        //     })
+        // }
+
+        // setInterval(() => {
+        //     obterDados(dht11Umidade, 'dht11/umidade');
+        //     obterDados(dht11Temperatura, 'dht11/temperatura');
+        // }, 1000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de cadastro - MilhoTech</title>
+    <link rel="stylesheet" href="cadastro_style.css">
+  </head>
+  <body style="font-family: Inter;">
+    <div class="CadastroPage"> <!-- Div que representa a página inteira -->
+      <img src="campo.jpg" class="imgFundo"> <!-- Imagem de fundo -->
+    <div class="container"> <!-- Retângulo que contém tudo dentro dele -->
+        <img src="logo.png" class="milhologo">
+        <div class="section" style="visibility: hidden;" id="section"> <!-- Seção escondida que apresenta erro caso login ou senha estiver(em) errado(s) -->
+          <span id="erro">O e-mail ou senha inserido(s) está(ão) incorreto(s)</span>
+          <img src="alerta.png" class="warning">
+        </div>
+
+        <div class="Divisao"></div> <!-- Divisão no meio da container -->
+
+        <span id="seuemail">Cadastre seu e-mail:</span>
+        <span id="suacnpj">Cadastre sua CNPJ</span>
+        <span id="suasenha">Cadastre sua senha:</span>
+        <span id="suasenha2">Confirme sua senha:</span>
+        
+        <div><button id="acessarbut" onclick="cadastrar()">Cadastre-se</button></div> <!--Botão "Acessar" presente na página -->
+
+        <div>
+        <div><input type="text" id="inpemail" placeholder="exemplo@gmail.com"></div> <!-- Campo para E-mail -->
+        <div><input type="number" id="inpcnpj" placeholder="Seu CNPJ aqui"></div> <!-- Campo para CNPJ -->
+        <div><input type="password" id="inpsenha" placeholder="Sua senha aqui"></div> <!-- Campo para senha com input censurado -->
+        <div><input type="password" id="inpsenha2" placeholder="Confirme seu senha"></div> <!-- Campo para confirmação de senha com input censurado -->
+      </div>
+
+    </div>
+  </body>
+</html>
+<script src="cadastro_script.js"></script>
