@@ -32,7 +32,7 @@ p {
 
 .header {
     background-position: center;
-    background-image: url(bg\ milho.png);
+    background-image: url(img/bg\ milho.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -210,4 +210,11 @@ p {
     color: white;
     text-decoration: none;
     font-size: 18px;
+}
+
+.footer-bottom {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: white;
 }

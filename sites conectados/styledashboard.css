@@ -2,7 +2,7 @@ body {
   /* background-color: #daf4f8; */
   background-size: cover;
   display: flex;
-  background-image: url(milhos_pretos.jpg);
+  background-image: url(img/milhos_pretos.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -182,7 +182,7 @@ canvas {
   width: 60px;
   height: 60px;
   display: block;
-  background-image: url(fechar.webp);
+  background-image: url(img/fechar.webp);
   background-size: cover;
 }
 
@@ -194,7 +194,7 @@ canvas {
   width: 60px;
   height: 60px;
   display: none;
-  background-image: url(barralateral.png);
+  background-image: url(img/barralateral.png);
   background-size: cover;
 }
 

@@ -73,7 +73,8 @@
         var perdaplantmin = (menor_perda * 100) / prodhec;
 
 
-        div_mensagem.innerHTML = `Potencial de perda da plantação de <b style="color: red;"> R$ ${menor_perda} </b> até <b style="color: red;"> R$ ${maior_perda} </b> <br> 
+        for (var cont = 1; cont <= 1; cont++) {
+        div_mensagem.innerHTML += `<b>Simulação</b> - Potencial de perda da plantação de <b style="color: red;"> R$ ${menor_perda} </b> até <b style="color: red;"> R$ ${maior_perda} </b> <br> 
         Média: <b style="color: red;"> R$ ${media} </b> <br><br>
 
         Em dólares: <b style="color: red;"> $ ${menor_perda_dolar} </b> até  <b style="color: red;"> $ ${maior_perda_dolar} </b> <br> 
@@ -84,6 +85,7 @@
        Média: <b style="color: red;">  ${perdaplantm} % </b> <br> <br>
 
         Caso ocorra a adoção do projeto, a perda causada pela umidade relativa incorreta será neutralizada,<br> fazendo com que a receita total da plantação se  torne: <b style="color: green;"> R$ ${receitatot} </b> <br>
-        Lucro bruto: <b style="color: green;"> R$ ${luc_brut} </b>`;
+        Lucro bruto: <b style="color: green;"> R$ ${luc_brut} </b></br></br>`;
+    }
     }
 </script>
