@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -5,6 +15,7 @@ body {
     background-image: url(https://nutricaodesafras.com.br/wp-content/uploads/2020/01/188-scaled.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    backdrop-filter: brightness(50%);
 }
 
 .card {
@@ -19,6 +30,61 @@ body {
 .header {
     text-align: center;
     margin-bottom: 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul a {
+    color: white;
+    margin: 0 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: block;
+}
+
+.navbar ul a::after {
+    content: "";
+    background-color: #15616D;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+.navbar ul a:hover::after{
+    width: 100%;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.btn {
+    background-color: #15616D; 
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #4f8c95;
 }
 
 .card {
@@ -48,7 +114,7 @@ body {
 }
 
 .button {
-    background-color: #145c1c;
+    background-color: #15616D;
     color: #fff;
     padding: 12px 0;
     border: none;
@@ -60,7 +126,7 @@ body {
 }
 
 .button:hover {
-    background-color: #0f811c;
+    background-color: #104851;
 }
 
 .result {

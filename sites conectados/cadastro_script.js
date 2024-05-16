@@ -10,6 +10,8 @@
         } else if(senha1 != senha2){
             alert("As senhas não correspondem!");
         } else {
-            alert("Perfeito, Cadastro realizado!")
+            alert("Perfeito, Cadastro realizado!");
+            window.location.href = "indexlogin.html"
+
         }
     }
