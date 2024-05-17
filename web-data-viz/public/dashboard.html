@@ -1,0 +1,500 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
+    <link rel="stylesheet" href="css/styledashboard.css">
+</head>
+
+<body>
+
+
+    <div class="div_conteudo" id="div_conteudo">
+
+        <div class="div_lateral" id="div_lateral">
+
+            <img src="assets/imgs/user.png" alt="Foto indisponivel">
+            <br>
+            <br>
+            <h2>Empresa:</h2>
+            <span>MilhoFarm</span> <br> <br>
+            <h2>Usuario:</h2>
+            <span>Fernando Brandão</span> <br> <br>
+            <h2>Informações adicionais:</h2>
+            <span>Os seus silos estão com a temperatura e umidade com valores inconstantes, isso pode ser prejudicial
+                para seus produtos.</span>
+            <br>
+            <br>
+
+            <a href="index.html"><img src="assets/imgs/sair.png" class="img_sair" style="filter: invert(100%);"></a>
+
+
+        </div>
+
+        <div id="btn_mostra" class="botao_mostra">
+            <button id="btn_mostrar" class="botao_mostrar" onclick="mostrar()"></button>
+        </div>
+        <div id="btn_tira" class="botao_tira">
+            <button id="btn_tirar" class="botao_tirar" onclick="apagar()"></button>
+        </div>
+
+
+        <div class="geral" id="div_geral">
+            <div class="infos" id="div_informacoes">
+
+
+                <div class="numeros" id="div_numeros">
+                    <a onclick="silo1()">
+                        <h3>Silo 1:</h3>
+                        <img src="assets/imgs/temp.png" alt="">
+                        <span>20°</span>
+                        <img src="assets/imgs/umid.png" alt="">
+                        11%
+                    </a>
+                </div>
+
+                <div class="numeros" id="div_numeros">
+                    <a onclick="silo2()">
+                        <h3>Silo 2:</h3>
+                        <h4>Temperatura:</h4>
+                        20°
+                        <h4>Umidade:</h4>
+                        11%
+                    </a>
+                </div>
+            </div>
+
+            <div class="infos" id="div_informacoes">
+                <div class="numeros" id="div_numeros">
+                    <a onclick="silo3()">
+                        <h3>Silo 3:</h3>
+                        <h4>Temperatura:</h4>
+                        20°
+                        <h4>Umidade:</h4>
+                        11%
+                    </a>
+                </div>
+
+                <div class="numeros" id="div_numeros">
+                    <a onclick="silo4()">
+                        <h3>Silo 4:</h3>
+                        <h4>Temperatura:</h4>
+                        20°
+                        <h4>Umidade:</h4>
+                        11%
+                </div>
+                </a>
+            </div>
+
+
+
+            <div class="pai_titulo" id="div_silo">
+            </div>
+
+            <div class="box" id="box">
+                <section id="sessao_inicio_temp" class="graph">
+                    <h1 class="text">Temperatura</h1>
+                    <canvas id="myChart"></canvas>
+                </section>
+                <section id="sessao_inicio_umi" class="graph2">
+                    <h1 class="text">Umidade</h1>
+                    <canvas id="myChart2"></canvas>
+                </section>
+            </div>
+
+            <div class="box" id="box">
+                <section id="sessao_tempsilo1" class="graph">
+                    <h1 class="text">Temperatura</h1>
+                    <canvas id="myChart"></canvas>
+                </section>
+                <section id="sessao_umisilo1" class="graph2">
+                    <h1 class="text">Umidade</h1>
+                    <canvas id="myChart2"></canvas>
+                </section>
+            </div>
+
+            <div class="box" id="box">
+                <section id="sessao_tempsilo2" class="graph">
+                    <h1 class="text">Temperatura</h1>
+                    <canvas id="myChart3"></canvas>
+                </section>
+                <section id="sessao_umisilo2" class="graph2">
+                    <h1 class="text">Umidade</h1>
+                    <canvas id="myChart4"></canvas>
+                </section>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <!-- <img class="logo" src="img/logo.png" alt=""> -->
+
+    <script>
+        div_silo.innerHTML = `Visão Geral`
+        document.getElementById("sessao_tempsilo1").style.display = "none";
+        document.getElementById("sessao_umisilo1").style.display = "none";
+        document.getElementById("sessao_tempsilo2").style.display = "none";
+        document.getElementById("sessao_umisilo2").style.display = "none";
+
+        function mostrar() {
+            document.getElementById("div_lateral").style.display = "block";
+            document.getElementById("btn_tirar").style.display = "block";
+            document.getElementById("btn_mostrar").style.display = "none";
+        }
+
+        function apagar() {
+            document.getElementById("div_lateral").style.display = "none";
+            document.getElementById("btn_tirar").style.display = "none";
+            document.getElementById("btn_mostrar").style.display = "block";
+        }
+
+
+
+        const labels = [
+            '12:00',
+            '12:30',
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30'
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Silo 1',
+                backgroundColor: 'rgb(255, 125, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 17, 17, 16, 18, 20]
+            },
+            {
+                label: 'Silo 2',
+                backgroundColor: 'rgb(255, 147, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 17, 17, 16, 18, 20]
+            }
+            ]
+        };
+
+        const labels2 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Silo 1',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [12, 12, 14, 13, 14, 11]
+            },
+            {
+                label: 'Silo 2',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [8, 10, 18, 22, 14, 12]
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        }
+
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        )
+
+
+
+
+        function silo1() {
+            document.getElementById("sessao_tempsilo2").style.display = "block";
+            document.getElementById("sessao_umisilo2").style.display = "block";
+
+
+            div_silo.innerHTML = `Silo 1`
+
+            const labels = [
+                '12:00',
+                '12:30',
+                '13:00',
+                '13:30',
+                '14:00',
+                '14:30'
+            ];
+
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Temperatura',
+                    backgroundColor: 'rgb(255, 125, 0)',
+                    borderColor: 'rgb(255, 125, 0)',
+                    data: [18, 17, 17, 16, 18, 20]
+                }]
+            };
+
+            const labels2 = [
+                '12:00',
+                '13:00',
+                '14:00',
+                '15:00',
+                '16:00',
+                '17:00'
+            ];
+
+            const data2 = {
+                labels: labels2,
+                datasets: [{
+                    label: 'Umidade',
+                    backgroundColor: 'rgb(21, 97, 109)',
+                    borderColor: 'rgb(21, 97, 109)',
+                    data: [12, 12, 14, 13, 14, 11]
+                }]
+            };
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {}
+            }
+
+            const config2 = {
+                type: 'line',
+                data: data2,
+                options: {}
+            };
+
+            const myChart = Chart(
+                document.getElementById('myChart'),
+                config
+            );
+            const myChart2 = Chart(
+                document.getElementById('myChart2'),
+                config2
+            )
+
+        }
+
+
+        function silo2() {
+            document.getElementById("sessao_tempsilo2").style.display = "block";
+            document.getElementById("sessao_umisilo2").style.display = "block";
+            document.getElementById("sessao_inicio_temp").style.display = "none";
+            document.getElementById("sessao_inicio_umi").style.display = "none";
+            document.getElementById("sessao_tempsilo1").style.display = "none";
+            document.getElementById("sessao_umisilo1").style.display = "none";
+            document.getElementById("box").style.display = "none";
+
+            div_silo.innerHTML = `Silo 2`
+
+
+            const labels3 = [
+                '12:30',
+                '13:00',
+                '13:30',
+                '14:00',
+                '14:30',
+                '15:00'
+            ];
+
+            const data3 = {
+                labels: labels3,
+                datasets: [{
+                    label: 'Temperatura',
+                    backgroundColor: 'rgb(255, 125, 0)',
+                    borderColor: 'rgb(255, 125, 0)',
+                    data: [10, 12, 16, 20, 14, 15]
+                }]
+            };
+
+            const labels4 = [
+                '12:00',
+                '13:00',
+                '14:00',
+                '15:00',
+                '16:00',
+                '17:00'
+            ];
+
+            const data4 = {
+                labels: labels4,
+                datasets: [{
+                    label: 'Umidade',
+                    backgroundColor: 'rgb(21, 97, 109)',
+                    borderColor: 'rgb(21, 97, 109)',
+                    data: [14, 13, 14, 11, 13, 11]
+                }]
+            };
+
+            const config3 = {
+                type: 'line',
+                data: data3,
+                options: {}
+            }
+
+            const config4 = {
+                type: 'line',
+                data: data4,
+                options: {}
+            };
+
+            const myChart3 = new Chart(
+                document.getElementById('myChart3'),
+                config3
+            );
+            const myChart4 = new Chart(
+                document.getElementById('myChart4'),
+                config4
+            )
+
+        }
+
+
+
+
+
+        // /* -- dht11Umidade -- */
+        // var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+        // contextoDht11Umidade.canvas.width = 1000;
+        // contextoDht11Umidade.canvas.height = 500;
+        // var dht11Umidade = new Chart(
+        //     contextoDht11Umidade,
+        //     {
+        //         type: 'line',
+        //         data: {
+        //             datasets: [{
+        //                 label: 'Umidade',
+        //                 type: 'line',
+        //                 borderColor: ['#c7a302'],
+        //                 backgroundColor: ['#f7cb02']
+        //             }]
+        //         },
+        //         options: {
+        //             scales: {
+        //                 xAxes: [{
+        //                     distribution: 'series',
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }],
+        //                 yAxes: [{
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         labelString: 'Umidade'
+        //                     },
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }]
+        //             },
+        //             animation: {
+        //                 duration: 0
+        //             }
+        //         }
+        //     }
+        // );
+        // /* -- dht11Temperatura -- */
+        // var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
+        // contextoDht11Temperatura.canvas.width = 1000;
+        // contextoDht11Temperatura.canvas.height = 500;
+        // var dht11Temperatura = new Chart(
+        //     contextoDht11Temperatura,
+        //     {
+        //         type: 'line',
+        //         data: {
+        //             datasets: [{
+        //                 label: "Temperatura",
+        //                 type: 'line',
+        //                 borderColor: ['#5c8404'],
+        //                 backgroundColor: ['#7ead05']
+        //             }]
+        //         },
+        //         options: {
+        //             scales: {
+        //                 xAxes: [{
+        //                     distribution: 'series',
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }],
+        //                 yAxes: [{
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         labelString: 'Luminosidade'
+        //                     },
+        //                     ticks: {
+        //                         beginAtZero: true
+        //                     }
+        //                 }]
+        //             },
+        //             animation: {
+        //                 duration: 0
+        //             }
+        //         }
+        //     }
+        // );
+
+        // var paginacao = {};
+        // var tempo = {};
+        // function obterDados(grafico, endpoint) {
+        //     var http = new XMLHttpRequest();
+        //     http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+        //     http.send(null);
+        //     var valores = JSON.parse(http.responseText);
+        //     if (paginacao[endpoint] == null) {
+        //         paginacao[endpoint] = 0;
+        //     }
+        //     if (tempo[endpoint] == null) {
+        //         tempo[endpoint] = 0;
+        //     }
+        //     // Exibir à partir do último elemento exibido anteriormente
+        //     var ultimaPaginacao = paginacao[endpoint];
+        //     paginacao[endpoint] = valores.length;
+        //     var valores = valores.slice(ultimaPaginacao);
+        //     valores.forEach((valor) => {
+        //         //Máximo de 60 itens exibidos no gráfico
+        //         if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+        //             grafico.data.labels.shift();
+        //             grafico.data.datasets[0].data.shift();
+        //         }
+
+        //         grafico.data.labels.push(tempo[endpoint]++);
+        //         grafico.data.datasets[0].data.push(parseFloat(valor));
+        //         grafico.update();
+        //     })
+        // }
+
+        // setInterval(() => {
+        //     obterDados(dht11Umidade, 'dht11/umidade');
+        //     obterDados(dht11Temperatura, 'dht11/temperatura');
+        // }, 1000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.header {
+  background-position: center;
+  background-image: url(../assets/imgs/milhocampo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 729px;
+  backdrop-filter: brightness(60%);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul a {
+  /* color: rgb(255, 255, 255); */
+  color: black;
+  margin: 0 25px;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+}
+
+.navbar ul a::after {
+  content: "";
+  background-color: #15616D;
+  height: 3px;
+  width: 0%;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.navbar ul a:hover::after{
+  width: 100%;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 60px;
+}
+
+.btn {
+  background-color: #15616D; 
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #4f8c95;
+}
+
+* { /* O asterisco captura todos os elementos da página */
+  padding: 0;
+  margin: 0;
+} 
+
+.page {
+  width: 100vw; /* vw significa "View Width" e vh "View Height" */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: -1; /* O "z-index" controla a ordem de sobreposição de elementos na página */
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+position: absolute;
+margin-top: 50px;
+width: 718px;
+height: 616px;
+left: 400px;
+top: 80px;
+background: #FFFFFF;
+border-radius: 22px; /* "Border-radius" faz com que os cantos se tornem mais curvos conforme a quantidade de pixels aumenta */
+}
+
+
+#seuemail { /* A hashtag (#) puxa um id específico para estilização ao invés de criar uma classe */
+position: absolute;
+width: 232px;
+height: 45px;
+left: 23px;
+top: 328px; 
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+
+
+color: #000000;
+
+white-space: nowrap; /* "White-space" muda coisas na implementação visual do texto. "Nowrap" impede de que o texto tenha uma quebra de linha */
+}
+
+
+#inpemail {
+box-sizing: border-box; /* O "box-sizing" altera as propriedades padráo da box model, usada para calcular larguras e alturas dos elementos */
+
+position: absolute;
+width: 276px;
+height: 45px;
+left: 23px;
+top: 369px;
+
+background: #F3F3F3;
+border: 1px solid #D0CFCF; /* A configuração de borda funciona em uma ordem específica, "1px" definindo a grossua da borda, "solid" sendo a forma como a borda aparece e "#D0CFCF" é a cor da borda */
+border-radius: 6px;
+
+text-align: center;
+font-size: 20px;
+}
+
+#inpemail::placeholder { /* "::placeholder" é o modo de mudar o estilo do texto temporário que aparece dentro do input */
+  text-align: center;
+  font-style: italic;
+  color: #CACACA;
+  font-size: 20px;
+}
+
+#suasenha {
+position: absolute;
+width: 209px;
+height: 45px;
+left: 419px;
+top: 328px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+}
+
+#inpsenha {
+box-sizing: border-box;
+
+position: absolute;
+width: 276px;
+height: 45px;
+left: 419px;
+top: 369px;
+
+background: #F3F3F3;
+border: 1px solid #D0CFCF;
+border-radius: 6px;
+
+text-align: center;
+font-size: 20px;
+}
+
+#inpsenha::placeholder {
+  text-align: center;
+  font-style: italic;
+  color: #CACACA;
+  font-size: 20px;
+}
+
+#lembrar {
+position: absolute;
+width: 379px;
+height: 50px;
+left: 450px;
+top: 485px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 22px;
+}
+
+#esqueceubut {
+position: absolute;
+width: 270px;
+height: 22px;
+left: 419px;
+top: 530px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 24px;
+text-decoration-line: underline; /* "text-decoration-line" é a forma de alterar o estilo de certos tipos de texto (underline, itálico e negrito) */
+
+color: #5EBBFF;
+background-color: #FFFFFF;
+border: 0px;
+}
+
+#acessarbut {
+box-sizing: border-box;
+position: absolute;
+width: 276px;
+height: 45px;
+left: 23px;
+top: 471px;
+background: #15616D;
+border: 1px solid #15616D;
+border-radius: 6px;
+color: #FFFFFF;
+font-size: 23px;
+}
+
+/* Vector 1 */
+.Divisao {
+  width: 0px;
+  height: 630px;
+  border: 1px solid #D5D5D5;
+  transform: rotate(-90deg); /* "transform: rotate" rotaciona o vetor (neste caso, em 90 graus) */
+  translate: 358px;
+}
+
+.content {
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"] { /* Este é o css para remover o estilo padrão da checkbox e colocar um novo */
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 0.1rem;
+  background: #F3F3F3;
+  border: 1px solid #D0CFCF;
+  border-radius: 3px;
+  position: absolute;
+  left: 419px;
+  top: 481px;
+}
+
+input[type="checkbox"]::before { /* Este é o css para personalizar a sinalização de marcado dentro da checkbox */
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  clip-path: polygon(17% 54%, 28% 43%, 38% 54%, 70% 22%, 81% 33%, 38% 75%, 17% 54%); /* este "clip-path" conta um quadrado para mostrar um "check" em seu lugar, dentro da checkbox */
+  transform: scale(0);
+  background-color: #000000;
+}
+
+input[type="checkbox"]:checked::before { /* Esta é a transformação do "check" */
+transform: scale(1);
+}
+
+input[type="checkbox"]:hover { /* Esta é a mudança quando o mouse passa por cima da checkbox */
+  color: black;
+}
+
+@font-face { /* "@font-face" é a maneira no css para obter uma fonte personalizada no website */
+  font-family: 'Inter'; 
+  src: url('Inter-Regular.woff2') format('woff2'), /* Este é o modo que se puxa a fonte e aponta sua formatação */
+       url('Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.section {
+position: absolute;
+width: 508px;
+height: 26px;
+
+background: #FFB0B0;
+border-radius: 6px;
+
+left: 100px;
+top: 280px;
+}
+
+#erro {
+position: absolute;
+width: 477px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-size: 18px;
+line-height: 24px;
+
+color: #FF1D1D;
+
+left: 40px;
+top: 1px;
+}
+
+
+.warning {
+position: absolute;
+width: 27px;
+height: 30px;
+
+left: 3px;
+top: -2px;
+}
+
+.milhologo {
+position: absolute;
+width: 365px;
+height: 315;
+top: -40px;
+left: 170px;
+margin-left: 170px;
+}
