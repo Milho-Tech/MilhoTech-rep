@@ -7,7 +7,9 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
-    <link rel="stylesheet" href="css/styledashboard.css">
+    <link rel="stylesheet" href="styledashboard.css">
+    <script src="js/sessao.js"></script>
+    <script src="js/alerta.js"></script>
 </head>
 
 <body>
@@ -17,20 +19,24 @@
 
         <div class="div_lateral" id="div_lateral">
 
-            <img src="assets/imgs/user.png" alt="Foto indisponivel">
+            <img src="img/user.png" alt="Foto indisponivel">
             <br>
             <br>
-            <h2>Empresa:</h2>
-            <span>MilhoFarm</span> <br> <br>
-            <h2>Usuario:</h2>
-            <span>Fernando Brandão</span> <br> <br>
-            <h2>Informações adicionais:</h2>
-            <span>Os seus silos estão com a temperatura e umidade com valores inconstantes, isso pode ser prejudicial
-                para seus produtos.</span>
+            <ul class="navbar">
+                <li>Empresa: <span>MilhoFarm</span></li>
+                <li>Usuário: <span>Fernando Brandão</span></li>
+                <li><a href="#" onclick="geral()" id="botaogeral">Visão Geral</a></li>
+                <li><a href="#" onclick="silo1()" id="botaosilo1">Silo 1</a></li>
+                <li><a href="#" onclick="silo2()" id="botaosilo2">Silo 2</a></li>
+                <li><a href="#" onclick="silo3()" id="botaosilo3">Silo 3</a></li>
+                <li><a href="#" onclick="silo4()" id="botaosilo4">Silo 4</a></li>
+
+                <li><a href="#">Contato</a></li>
+            </ul>
             <br>
             <br>
 
-            <a href="index.html"><img src="assets/imgs/sair.png" class="img_sair" style="filter: invert(100%);"></a>
+            <a href="index.html"><img src="img/sair.png" class="img_sair" style="filter: invert(100%);"></a>
 
 
         </div>
@@ -44,50 +50,51 @@
 
 
         <div class="geral" id="div_geral">
-            <div class="infos" id="div_informacoes">
+            <div class="caixa-info">
+                <div class="infos" id="div_informacoes">
+                    <div class="numeros" id="div_numeros">
+                        <a>
+                            <h3>Silo 1:</h3>
+                            <img src="img/temp.png" alt="">
+                            <h4>20°</h4>
+                            <img src="img/umid.png" alt="">
+                            <h4>11%</h4>
+                        </a>
+                    </div>
 
+                    <div class="numeros" id="div_numeros">
+                        <a>
+                            <h3>Silo 2:</h3>
+                            <img src="img/temp.png" alt="">
+                            <h4>14°</h4>
+                            <img src="img/umid.png" alt="">
+                            <h4>08%</h4>
+                        </a>
+                    </div>
+                    <div class="numeros" id="div_numeros">
+                        <a>
+                            <h3>Silo 3:</h3>
+                            <img src="img/temp.png" alt="">
+                            <h4>30°</h4>
+                            <img src="img/umid.png" alt="">
+                            <h4>29%</h4>
+                        </a>
+                    </div>
 
-                <div class="numeros" id="div_numeros">
-                    <a onclick="silo1()">
-                        <h3>Silo 1:</h3>
-                        <img src="assets/imgs/temp.png" alt="">
-                        <span>20°</span>
-                        <img src="assets/imgs/umid.png" alt="">
-                        11%
+                    <div class="numeros" id="div_numeros">
+                        <a>
+                            <h3>Silo 4:</h3>
+                            <img src="img/temp.png" alt="">
+                            <h4>12°</h4>
+                            <img src="img/umid.png" alt="">
+                            <h4>10%</h4>
+                    </div>
                     </a>
                 </div>
 
-                <div class="numeros" id="div_numeros">
-                    <a onclick="silo2()">
-                        <h3>Silo 2:</h3>
-                        <h4>Temperatura:</h4>
-                        20°
-                        <h4>Umidade:</h4>
-                        11%
-                    </a>
-                </div>
             </div>
-
-            <div class="infos" id="div_informacoes">
-                <div class="numeros" id="div_numeros">
-                    <a onclick="silo3()">
-                        <h3>Silo 3:</h3>
-                        <h4>Temperatura:</h4>
-                        20°
-                        <h4>Umidade:</h4>
-                        11%
-                    </a>
-                </div>
-
-                <div class="numeros" id="div_numeros">
-                    <a onclick="silo4()">
-                        <h3>Silo 4:</h3>
-                        <h4>Temperatura:</h4>
-                        20°
-                        <h4>Umidade:</h4>
-                        11%
-                </div>
-                </a>
+            <div class="avisos">
+                teste
             </div>
 
 
@@ -95,7 +102,7 @@
             <div class="pai_titulo" id="div_silo">
             </div>
 
-            <div class="box" id="box">
+            <div class="box_inicio" id="box_inicio">
                 <section id="sessao_inicio_temp" class="graph">
                     <h1 class="text">Temperatura</h1>
                     <canvas id="myChart"></canvas>
@@ -106,18 +113,18 @@
                 </section>
             </div>
 
-            <div class="box" id="box">
+            <div class="box_silo1" id="box_silo1">
                 <section id="sessao_tempsilo1" class="graph">
                     <h1 class="text">Temperatura</h1>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart5"></canvas>
                 </section>
                 <section id="sessao_umisilo1" class="graph2">
                     <h1 class="text">Umidade</h1>
-                    <canvas id="myChart2"></canvas>
+                    <canvas id="myChart6"></canvas>
                 </section>
             </div>
 
-            <div class="box" id="box">
+            <div class="box_silo2" id="box_silo2">
                 <section id="sessao_tempsilo2" class="graph">
                     <h1 class="text">Temperatura</h1>
                     <canvas id="myChart3"></canvas>
@@ -125,6 +132,28 @@
                 <section id="sessao_umisilo2" class="graph2">
                     <h1 class="text">Umidade</h1>
                     <canvas id="myChart4"></canvas>
+                </section>
+            </div>
+
+            <div class="box_silo3" id="box_silo3">
+                <section id="sessao_tempsilo3" class="graph">
+                    <h1 class="text">Temperatura</h1>
+                    <canvas id="myChart7"></canvas>
+                </section>
+                <section id="sessao_umisilo3" class="graph2">
+                    <h1 class="text">Umidade</h1>
+                    <canvas id="myChart8"></canvas>
+                </section>
+            </div>
+
+            <div class="box_silo4" id="box_silo4">
+                <section id="sessao_tempsilo4" class="graph">
+                    <h1 class="text">Temperatura</h1>
+                    <canvas id="myChart9"></canvas>
+                </section>
+                <section id="sessao_umisilo4" class="graph2">
+                    <h1 class="text">Umidade</h1>
+                    <canvas id="myChart10"></canvas>
                 </section>
             </div>
 
@@ -137,12 +166,6 @@
     <!-- <img class="logo" src="img/logo.png" alt=""> -->
 
     <script>
-        div_silo.innerHTML = `Visão Geral`
-        document.getElementById("sessao_tempsilo1").style.display = "none";
-        document.getElementById("sessao_umisilo1").style.display = "none";
-        document.getElementById("sessao_tempsilo2").style.display = "none";
-        document.getElementById("sessao_umisilo2").style.display = "none";
-
         function mostrar() {
             document.getElementById("div_lateral").style.display = "block";
             document.getElementById("btn_tirar").style.display = "block";
@@ -154,90 +177,38 @@
             document.getElementById("btn_tirar").style.display = "none";
             document.getElementById("btn_mostrar").style.display = "block";
         }
+    document.getElementById("box_inicio").style.display = "none";
+    document.getElementById("sessao_inicio_temp").style.display = "none";
+    document.getElementById("sessao_inicio_umi").style.display = "none";
+    document.getElementById("box_silo1").style.display = "none";
+    document.getElementById("sessao_tempsilo1").style.display = "none";
+    document.getElementById("sessao_umisilo1").style.display = "none";
+    document.getElementById("box_silo2").style.display = "none";
+    document.getElementById("sessao_tempsilo2").style.display = "none";
+    document.getElementById("sessao_umisilo2").style.display = "none";
+    document.getElementById("box_silo3").style.display = "none";
+    document.getElementById("sessao_tempsilo3").style.display = "none";
+    document.getElementById("sessao_umisilo3").style.display = "none";
+    document.getElementById("box_silo4").style.display = "none";
+    document.getElementById("sessao_tempsilo4").style.display = "none";
+    document.getElementById("sessao_umisilo4").style.display = "none";
+ 
 
 
 
-        const labels = [
-            '12:00',
-            '12:30',
-            '13:00',
-            '13:30',
-            '14:00',
-            '14:30'
-        ];
-
-        const data = {
-            labels: labels,
-            datasets: [{
-                label: 'Silo 1',
-                backgroundColor: 'rgb(255, 125, 0)',
-                borderColor: 'rgb(255, 125, 0)',
-                data: [18, 17, 17, 16, 18, 20]
-            },
-            {
-                label: 'Silo 2',
-                backgroundColor: 'rgb(255, 147, 0)',
-                borderColor: 'rgb(255, 125, 0)',
-                data: [18, 17, 17, 16, 18, 20]
-            }
-            ]
-        };
-
-        const labels2 = [
-            '12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00'
-        ];
-
-        const data2 = {
-            labels: labels2,
-            datasets: [{
-                label: 'Silo 1',
-                backgroundColor: 'rgb(21, 97, 109)',
-                borderColor: 'rgb(21, 97, 109)',
-                data: [12, 12, 14, 13, 14, 11]
-            },
-            {
-                label: 'Silo 2',
-                backgroundColor: 'rgb(21, 97, 109)',
-                borderColor: 'rgb(21, 97, 109)',
-                data: [8, 10, 18, 22, 14, 12]
-            }]
-        };
-
-        const config = {
-            type: 'bar',
-            data: data,
-            options: {}
-        }
-
-        const config2 = {
-            type: 'bar',
-            data: data2,
-            options: {}
-        };
-
-        const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
-        const myChart2 = new Chart(
-            document.getElementById('myChart2'),
-            config2
-        )
-
-
-
-
-        function silo1() {
-            document.getElementById("sessao_tempsilo2").style.display = "block";
-            document.getElementById("sessao_umisilo2").style.display = "block";
-
-
-            div_silo.innerHTML = `Silo 1`
+        function geral() {
+            div_silo.innerHTML = `Visão Geral`;
+            document.getElementById("sessao_tempsilo1").style.display = "none";
+            document.getElementById("sessao_umisilo1").style.display = "none";
+            document.getElementById("sessao_tempsilo2").style.display = "none";
+            document.getElementById("sessao_umisilo2").style.display = "none";
+            document.getElementById("sessao_tempsilo3").style.display = "none";
+            document.getElementById("sessao_umisilo3").style.display = "none";
+            document.getElementById("sessao_tempsilo4").style.display = "none";
+            document.getElementById("sessao_umisilo4").style.display = "none";
+            document.getElementById("sessao_inicio_temp").style.display = "block";
+            document.getElementById("sessao_inicio_umi").style.display = "block";
+            document.getElementById("box_inicio").style.display = "flex";
 
             const labels = [
                 '12:00',
@@ -251,11 +222,18 @@
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'Temperatura',
+                    label: 'Silo 1',
                     backgroundColor: 'rgb(255, 125, 0)',
                     borderColor: 'rgb(255, 125, 0)',
+                    data: [18, 17, 17, 16, 18, 0]
+                },
+                {
+                    label: 'Silo 2',
+                    backgroundColor: 'rgb(255, 147, 0)',
+                    borderColor: 'rgb(255, 125, 0)',
                     data: [18, 17, 17, 16, 18, 20]
-                }]
+                }
+                ]
             };
 
             const labels2 = [
@@ -270,6 +248,92 @@
             const data2 = {
                 labels: labels2,
                 datasets: [{
+                    label: 'Silo 1',
+                    backgroundColor: 'rgb(21, 97, 109)',
+                    borderColor: 'rgb(21, 97, 109)',
+                    data: [12, 12, 14, 13, 14, 11]
+                },
+                {
+                    label: 'Silo 2',
+                    backgroundColor: 'rgb(21, 97, 109)',
+                    borderColor: 'rgb(21, 97, 109)',
+                    data: [8, 10, 18, 22, 14, 12]
+                }]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {}
+            }
+
+            const config2 = {
+                type: 'bar',
+                data: data2,
+                options: {}
+            };
+
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+            const myChart2 = new Chart(
+                document.getElementById('myChart2'),
+                config2
+            )
+
+        }
+
+
+        function silo1() {
+            document.getElementById("box_inicio").style.display = "none";
+            document.getElementById("sessao_inicio_temp").style.display = "none";
+            document.getElementById("sessao_inicio_umi").style.display = "none";
+            document.getElementById("box_silo1").style.display = "flex";
+            document.getElementById("sessao_tempsilo1").style.display = "block";
+            document.getElementById("sessao_umisilo1").style.display = "block";
+            document.getElementById("box_silo2").style.display = "none";
+            document.getElementById("sessao_tempsilo2").style.display = "none";
+            document.getElementById("sessao_umisilo2").style.display = "none";
+            document.getElementById("sessao_tempsilo3").style.display = "none";
+            document.getElementById("sessao_umisilo3").style.display = "none";
+            document.getElementById("sessao_tempsilo4").style.display = "none";
+            document.getElementById("sessao_umisilo4").style.display = "none";
+
+            div_silo.innerHTML = `Silo 1`
+
+            const labels5 = [
+                '12:00',
+                '12:30',
+                '13:00',
+                '13:30',
+                '14:00',
+                '14:30'
+            ];
+
+            const data5 = {
+                labels: labels5,
+                datasets: [{
+                    label: 'Temperatura',
+                    backgroundColor: 'rgb(255, 125, 0)',
+                    borderColor: 'rgb(255, 125, 0)',
+                    data: [18, 17, 17, 16, 18, 20]
+                }]
+            };
+
+            const labels6 = [
+                '12:00',
+                '13:00',
+                '14:00',
+                '15:00',
+                '16:00',
+                '17:00'
+            ];
+
+            const data6 = {
+                labels: labels6,
+                datasets: [{
                     label: 'Umidade',
                     backgroundColor: 'rgb(21, 97, 109)',
                     borderColor: 'rgb(21, 97, 109)',
@@ -277,25 +341,25 @@
                 }]
             };
 
-            const config = {
+            const config5 = {
                 type: 'line',
-                data: data,
+                data: data5,
                 options: {}
             }
 
-            const config2 = {
+            const config6 = {
                 type: 'line',
-                data: data2,
+                data: data6,
                 options: {}
             };
 
-            const myChart = Chart(
-                document.getElementById('myChart'),
-                config
+            const myChart5 = new Chart(
+                document.getElementById('myChart5'),
+                config5
             );
-            const myChart2 = Chart(
-                document.getElementById('myChart2'),
-                config2
+            const myChart6 = new Chart(
+                document.getElementById('myChart6'),
+                config6
             )
 
         }
@@ -308,7 +372,13 @@
             document.getElementById("sessao_inicio_umi").style.display = "none";
             document.getElementById("sessao_tempsilo1").style.display = "none";
             document.getElementById("sessao_umisilo1").style.display = "none";
-            document.getElementById("box").style.display = "none";
+            document.getElementById("box_inicio").style.display = "none";
+            document.getElementById("box_silo1").style.display = "none";
+            document.getElementById("box_silo2").style.display = "flex";
+            document.getElementById("sessao_tempsilo3").style.display = "none";
+            document.getElementById("sessao_umisilo3").style.display = "none";
+            document.getElementById("sessao_tempsilo4").style.display = "none";
+            document.getElementById("sessao_umisilo4").style.display = "none";
 
             div_silo.innerHTML = `Silo 2`
 
@@ -373,7 +443,165 @@
             )
 
         }
+        function silo3() {
+            document.getElementById("box_inicio").style.display = "none";
+            document.getElementById("sessao_inicio_temp").style.display = "none";
+            document.getElementById("sessao_inicio_umi").style.display = "none";
+            document.getElementById("box_silo1").style.display = "none";
+            document.getElementById("sessao_tempsilo1").style.display = "none";
+            document.getElementById("sessao_umisilo1").style.display = "none";
+            document.getElementById("box_silo2").style.display = "none";
+            document.getElementById("sessao_tempsilo2").style.display = "none";
+            document.getElementById("sessao_umisilo2").style.display = "none";
+            document.getElementById("box_silo3").style.display = "flex";
+            document.getElementById("sessao_tempsilo3").style.display = "block";
+            document.getElementById("sessao_umisilo3").style.display = "block";
+            document.getElementById("box_silo4").style.display = "none";
+            document.getElementById("sessao_tempsilo4").style.display = "none";
+            document.getElementById("sessao_umisilo4").style.display = "none";
 
+            div_silo.innerHTML = `Silo 3`
+
+            const labels5 = [
+                '12:00',
+                '12:30',
+                '13:00',
+                '13:30',
+                '14:00',
+                '14:30'
+            ];
+
+            const data5 = {
+                labels: labels5,
+                datasets: [{
+                    label: 'Temperatura',
+                    backgroundColor: 'rgb(255, 125, 0)',
+                    borderColor: 'rgb(255, 125, 0)',
+                    data: [18, 15, 17, 14, 19, 20]
+                }]
+            };
+
+            const labels6 = [
+                '12:00',
+                '13:00',
+                '14:00',
+                '15:00',
+                '16:00',
+                '17:00'
+            ];
+
+            const data6 = {
+                labels: labels6,
+                datasets: [{
+                    label: 'Umidade',
+                    backgroundColor: 'rgb(21, 97, 109)',
+                    borderColor: 'rgb(21, 97, 109)',
+                    data: [12, 12, 14, 13, 14, 11]
+                }]
+            };
+
+            const config5 = {
+                type: 'line',
+                data: data5,
+                options: {}
+            }
+
+            const config6 = {
+                type: 'line',
+                data: data6,
+                options: {}
+            };
+
+            const myChart7 = new Chart(
+                document.getElementById('myChart7'),
+                config5
+            );
+            const myChart8 = new Chart(
+                document.getElementById('myChart8'),
+                config6
+            )
+
+        }
+
+        function silo4() {
+    document.getElementById("box_inicio").style.display = "none";
+    document.getElementById("sessao_inicio_temp").style.display = "none";
+    document.getElementById("sessao_inicio_umi").style.display = "none";
+    document.getElementById("box_silo1").style.display = "none";
+    document.getElementById("sessao_tempsilo1").style.display = "none";
+    document.getElementById("sessao_umisilo1").style.display = "none";
+    document.getElementById("box_silo2").style.display = "none";
+    document.getElementById("sessao_tempsilo2").style.display = "none";
+    document.getElementById("sessao_umisilo2").style.display = "none";
+    document.getElementById("box_silo3").style.display = "none";
+    document.getElementById("sessao_tempsilo3").style.display = "none";
+    document.getElementById("sessao_umisilo3").style.display = "none";
+    document.getElementById("box_silo4").style.display = "flex";
+    document.getElementById("sessao_tempsilo4").style.display = "block";
+    document.getElementById("sessao_umisilo4").style.display = "block";
+
+    div_silo.innerHTML = `Silo 4`;
+
+    const labels9 = [
+        '12:00',
+        '12:30',
+        '13:00',
+        '13:30',
+        '14:00',
+        '14:30'
+    ];
+
+    const data9 = {
+        labels: labels9,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 125, 0)',
+            borderColor: 'rgb(255, 125, 0)',
+            data: [18, 17, 17, 16, 18, 20]
+        }]
+    };
+
+    const labels10 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00'
+    ];
+
+    const data10 = {
+        labels: labels10,
+        datasets: [{
+            label: 'Umidade',
+            backgroundColor: 'rgb(21, 97, 109)',
+            borderColor: 'rgb(21, 97, 109)',
+            data: [32, 10, 13, 13, 18, 30]
+        }]
+    };
+
+    const config9 = {
+        type: 'line',
+        data: data9,
+        options: {}
+    };
+
+    const config10 = {
+        type: 'line',
+        data: data10,
+        options: {}
+    };
+
+    const myChart9 = new Chart(
+        document.getElementById('myChart9'),
+        config9
+    );
+
+    const myChart10 = new Chart(
+        document.getElementById('myChart10'),
+        config10
+    );
+}
 
 
 
