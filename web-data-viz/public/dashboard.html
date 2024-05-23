@@ -7,7 +7,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
-    <link rel="stylesheet" href="styledashboard.css">
+    <link rel="stylesheet" href="css/styledashboard.css">
     <script src="js/sessao.js"></script>
     <script src="js/alerta.js"></script>
 </head>
@@ -19,7 +19,7 @@
 
         <div class="div_lateral" id="div_lateral">
 
-            <img src="img/user.png" alt="Foto indisponivel">
+            <img src="assets/imgs/user.png" alt="Foto indisponivel">
             <br>
             <br>
             <ul class="navbar">
@@ -36,7 +36,7 @@
             <br>
             <br>
 
-            <a href="index.html"><img src="img/sair.png" class="img_sair" style="filter: invert(100%);"></a>
+            <a href="index.html"><img src="assets/imgs/sair.png" class="img_sair" style="filter: invert(100%);"></a>
 
 
         </div>
@@ -52,51 +52,37 @@
         <div class="geral" id="div_geral">
             <div class="caixa-info">
                 <div class="infos" id="div_informacoes">
-                    <div class="numeros" id="div_numeros">
-                        <a>
-                            <h3>Silo 1:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>20°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>11%</h4>
-                        </a>
+                    <div class="numeros perigo_frio" id="div_numeros">
+                            <span>Perigo</span>
+                            <span>
+                                <=14°C</span>
                     </div>
 
-                    <div class="numeros" id="div_numeros">
-                        <a>
-                            <h3>Silo 2:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>14°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>08%</h4>
-                        </a>
+                    <div class="numeros alerta" id="div_numeros">
+                            <span>Alerta</span>
+                            <span> =13 °C</span>
+                            
                     </div>
-                    <div class="numeros" id="div_numeros">
-                        <a>
-                            <h3>Silo 3:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>30°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>29%</h4>
-                        </a>
+                    <div class="numeros ideal" id="div_numeros">
+                            <span>Ideal</span>
+                            <span>>=18°C</span>
+                            
                     </div>
 
-                    <div class="numeros" id="div_numeros">
-                        <a>
-                            <h3>Silo 4:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>12°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>10%</h4>
+                    <div class="numeros alerta" id="div_numeros">
+                            <span>Alerta</span>
+                            <span>18°C</span>
+                            
                     </div>
-                    </a>
+                    <div class="numeros perigo_quente" id="div_numeros">
+                            <span>Perigo</span>
+                            <span>>=21°C</span>
+                            
+                        </a>
+                    </div>
                 </div>
 
             </div>
-            <div class="avisos">
-                teste
-            </div>
-
 
 
             <div class="pai_titulo" id="div_silo">
@@ -163,23 +149,29 @@
 
 
     </div>
+    <div class="resumo">
+        <h1>Silos que já passaram do limite de temperatura e/ou umidade hoje</h1>
+    </div>
     <!-- <img class="logo" src="img/logo.png" alt=""> -->
+</body>
+</html>
 
-    <script>
-        function mostrar() {
-            document.getElementById("div_lateral").style.display = "block";
-            document.getElementById("btn_tirar").style.display = "block";
-            document.getElementById("btn_mostrar").style.display = "none";
-        }
+<script>
+    function mostrar() {
+        document.getElementById("div_lateral").style.display = "block";
+        document.getElementById("btn_tirar").style.display = "block";
+        document.getElementById("btn_mostrar").style.display = "none";
+    }
 
-        function apagar() {
-            document.getElementById("div_lateral").style.display = "none";
-            document.getElementById("btn_tirar").style.display = "none";
-            document.getElementById("btn_mostrar").style.display = "block";
-        }
-    document.getElementById("box_inicio").style.display = "none";
-    document.getElementById("sessao_inicio_temp").style.display = "none";
-    document.getElementById("sessao_inicio_umi").style.display = "none";
+    function apagar() {
+        document.getElementById("div_lateral").style.display = "none";
+        document.getElementById("btn_tirar").style.display = "none";
+        document.getElementById("btn_mostrar").style.display = "block";
+    }
+    div_silo.innerHTML = `Visão Geral`;
+    document.getElementById("box_inicio").style.display = "flex";
+    document.getElementById("sessao_inicio_temp").style.display = "flex";
+    document.getElementById("sessao_inicio_umi").style.display = "block";
     document.getElementById("box_silo1").style.display = "none";
     document.getElementById("sessao_tempsilo1").style.display = "none";
     document.getElementById("sessao_umisilo1").style.display = "none";
@@ -192,357 +184,9 @@
     document.getElementById("box_silo4").style.display = "none";
     document.getElementById("sessao_tempsilo4").style.display = "none";
     document.getElementById("sessao_umisilo4").style.display = "none";
- 
+    document.getElementById("resumo").style.display = "flex";
 
-
-
-        function geral() {
-            div_silo.innerHTML = `Visão Geral`;
-            document.getElementById("sessao_tempsilo1").style.display = "none";
-            document.getElementById("sessao_umisilo1").style.display = "none";
-            document.getElementById("sessao_tempsilo2").style.display = "none";
-            document.getElementById("sessao_umisilo2").style.display = "none";
-            document.getElementById("sessao_tempsilo3").style.display = "none";
-            document.getElementById("sessao_umisilo3").style.display = "none";
-            document.getElementById("sessao_tempsilo4").style.display = "none";
-            document.getElementById("sessao_umisilo4").style.display = "none";
-            document.getElementById("sessao_inicio_temp").style.display = "block";
-            document.getElementById("sessao_inicio_umi").style.display = "block";
-            document.getElementById("box_inicio").style.display = "flex";
-
-            const labels = [
-                '12:00',
-                '12:30',
-                '13:00',
-                '13:30',
-                '14:00',
-                '14:30'
-            ];
-
-            const data = {
-                labels: labels,
-                datasets: [{
-                    label: 'Silo 1',
-                    backgroundColor: 'rgb(255, 125, 0)',
-                    borderColor: 'rgb(255, 125, 0)',
-                    data: [18, 17, 17, 16, 18, 0]
-                },
-                {
-                    label: 'Silo 2',
-                    backgroundColor: 'rgb(255, 147, 0)',
-                    borderColor: 'rgb(255, 125, 0)',
-                    data: [18, 17, 17, 16, 18, 20]
-                }
-                ]
-            };
-
-            const labels2 = [
-                '12:00',
-                '13:00',
-                '14:00',
-                '15:00',
-                '16:00',
-                '17:00'
-            ];
-
-            const data2 = {
-                labels: labels2,
-                datasets: [{
-                    label: 'Silo 1',
-                    backgroundColor: 'rgb(21, 97, 109)',
-                    borderColor: 'rgb(21, 97, 109)',
-                    data: [12, 12, 14, 13, 14, 11]
-                },
-                {
-                    label: 'Silo 2',
-                    backgroundColor: 'rgb(21, 97, 109)',
-                    borderColor: 'rgb(21, 97, 109)',
-                    data: [8, 10, 18, 22, 14, 12]
-                }]
-            };
-
-            const config = {
-                type: 'bar',
-                data: data,
-                options: {}
-            }
-
-            const config2 = {
-                type: 'bar',
-                data: data2,
-                options: {}
-            };
-
-
-            const myChart = new Chart(
-                document.getElementById('myChart'),
-                config
-            );
-            const myChart2 = new Chart(
-                document.getElementById('myChart2'),
-                config2
-            )
-
-        }
-
-
-        function silo1() {
-            document.getElementById("box_inicio").style.display = "none";
-            document.getElementById("sessao_inicio_temp").style.display = "none";
-            document.getElementById("sessao_inicio_umi").style.display = "none";
-            document.getElementById("box_silo1").style.display = "flex";
-            document.getElementById("sessao_tempsilo1").style.display = "block";
-            document.getElementById("sessao_umisilo1").style.display = "block";
-            document.getElementById("box_silo2").style.display = "none";
-            document.getElementById("sessao_tempsilo2").style.display = "none";
-            document.getElementById("sessao_umisilo2").style.display = "none";
-            document.getElementById("sessao_tempsilo3").style.display = "none";
-            document.getElementById("sessao_umisilo3").style.display = "none";
-            document.getElementById("sessao_tempsilo4").style.display = "none";
-            document.getElementById("sessao_umisilo4").style.display = "none";
-
-            div_silo.innerHTML = `Silo 1`
-
-            const labels5 = [
-                '12:00',
-                '12:30',
-                '13:00',
-                '13:30',
-                '14:00',
-                '14:30'
-            ];
-
-            const data5 = {
-                labels: labels5,
-                datasets: [{
-                    label: 'Temperatura',
-                    backgroundColor: 'rgb(255, 125, 0)',
-                    borderColor: 'rgb(255, 125, 0)',
-                    data: [18, 17, 17, 16, 18, 20]
-                }]
-            };
-
-            const labels6 = [
-                '12:00',
-                '13:00',
-                '14:00',
-                '15:00',
-                '16:00',
-                '17:00'
-            ];
-
-            const data6 = {
-                labels: labels6,
-                datasets: [{
-                    label: 'Umidade',
-                    backgroundColor: 'rgb(21, 97, 109)',
-                    borderColor: 'rgb(21, 97, 109)',
-                    data: [12, 12, 14, 13, 14, 11]
-                }]
-            };
-
-            const config5 = {
-                type: 'line',
-                data: data5,
-                options: {}
-            }
-
-            const config6 = {
-                type: 'line',
-                data: data6,
-                options: {}
-            };
-
-            const myChart5 = new Chart(
-                document.getElementById('myChart5'),
-                config5
-            );
-            const myChart6 = new Chart(
-                document.getElementById('myChart6'),
-                config6
-            )
-
-        }
-
-
-        function silo2() {
-            document.getElementById("sessao_tempsilo2").style.display = "block";
-            document.getElementById("sessao_umisilo2").style.display = "block";
-            document.getElementById("sessao_inicio_temp").style.display = "none";
-            document.getElementById("sessao_inicio_umi").style.display = "none";
-            document.getElementById("sessao_tempsilo1").style.display = "none";
-            document.getElementById("sessao_umisilo1").style.display = "none";
-            document.getElementById("box_inicio").style.display = "none";
-            document.getElementById("box_silo1").style.display = "none";
-            document.getElementById("box_silo2").style.display = "flex";
-            document.getElementById("sessao_tempsilo3").style.display = "none";
-            document.getElementById("sessao_umisilo3").style.display = "none";
-            document.getElementById("sessao_tempsilo4").style.display = "none";
-            document.getElementById("sessao_umisilo4").style.display = "none";
-
-            div_silo.innerHTML = `Silo 2`
-
-
-            const labels3 = [
-                '12:30',
-                '13:00',
-                '13:30',
-                '14:00',
-                '14:30',
-                '15:00'
-            ];
-
-            const data3 = {
-                labels: labels3,
-                datasets: [{
-                    label: 'Temperatura',
-                    backgroundColor: 'rgb(255, 125, 0)',
-                    borderColor: 'rgb(255, 125, 0)',
-                    data: [10, 12, 16, 20, 14, 15]
-                }]
-            };
-
-            const labels4 = [
-                '12:00',
-                '13:00',
-                '14:00',
-                '15:00',
-                '16:00',
-                '17:00'
-            ];
-
-            const data4 = {
-                labels: labels4,
-                datasets: [{
-                    label: 'Umidade',
-                    backgroundColor: 'rgb(21, 97, 109)',
-                    borderColor: 'rgb(21, 97, 109)',
-                    data: [14, 13, 14, 11, 13, 11]
-                }]
-            };
-
-            const config3 = {
-                type: 'line',
-                data: data3,
-                options: {}
-            }
-
-            const config4 = {
-                type: 'line',
-                data: data4,
-                options: {}
-            };
-
-            const myChart3 = new Chart(
-                document.getElementById('myChart3'),
-                config3
-            );
-            const myChart4 = new Chart(
-                document.getElementById('myChart4'),
-                config4
-            )
-
-        }
-        function silo3() {
-            document.getElementById("box_inicio").style.display = "none";
-            document.getElementById("sessao_inicio_temp").style.display = "none";
-            document.getElementById("sessao_inicio_umi").style.display = "none";
-            document.getElementById("box_silo1").style.display = "none";
-            document.getElementById("sessao_tempsilo1").style.display = "none";
-            document.getElementById("sessao_umisilo1").style.display = "none";
-            document.getElementById("box_silo2").style.display = "none";
-            document.getElementById("sessao_tempsilo2").style.display = "none";
-            document.getElementById("sessao_umisilo2").style.display = "none";
-            document.getElementById("box_silo3").style.display = "flex";
-            document.getElementById("sessao_tempsilo3").style.display = "block";
-            document.getElementById("sessao_umisilo3").style.display = "block";
-            document.getElementById("box_silo4").style.display = "none";
-            document.getElementById("sessao_tempsilo4").style.display = "none";
-            document.getElementById("sessao_umisilo4").style.display = "none";
-
-            div_silo.innerHTML = `Silo 3`
-
-            const labels5 = [
-                '12:00',
-                '12:30',
-                '13:00',
-                '13:30',
-                '14:00',
-                '14:30'
-            ];
-
-            const data5 = {
-                labels: labels5,
-                datasets: [{
-                    label: 'Temperatura',
-                    backgroundColor: 'rgb(255, 125, 0)',
-                    borderColor: 'rgb(255, 125, 0)',
-                    data: [18, 15, 17, 14, 19, 20]
-                }]
-            };
-
-            const labels6 = [
-                '12:00',
-                '13:00',
-                '14:00',
-                '15:00',
-                '16:00',
-                '17:00'
-            ];
-
-            const data6 = {
-                labels: labels6,
-                datasets: [{
-                    label: 'Umidade',
-                    backgroundColor: 'rgb(21, 97, 109)',
-                    borderColor: 'rgb(21, 97, 109)',
-                    data: [12, 12, 14, 13, 14, 11]
-                }]
-            };
-
-            const config5 = {
-                type: 'line',
-                data: data5,
-                options: {}
-            }
-
-            const config6 = {
-                type: 'line',
-                data: data6,
-                options: {}
-            };
-
-            const myChart7 = new Chart(
-                document.getElementById('myChart7'),
-                config5
-            );
-            const myChart8 = new Chart(
-                document.getElementById('myChart8'),
-                config6
-            )
-
-        }
-
-        function silo4() {
-    document.getElementById("box_inicio").style.display = "none";
-    document.getElementById("sessao_inicio_temp").style.display = "none";
-    document.getElementById("sessao_inicio_umi").style.display = "none";
-    document.getElementById("box_silo1").style.display = "none";
-    document.getElementById("sessao_tempsilo1").style.display = "none";
-    document.getElementById("sessao_umisilo1").style.display = "none";
-    document.getElementById("box_silo2").style.display = "none";
-    document.getElementById("sessao_tempsilo2").style.display = "none";
-    document.getElementById("sessao_umisilo2").style.display = "none";
-    document.getElementById("box_silo3").style.display = "none";
-    document.getElementById("sessao_tempsilo3").style.display = "none";
-    document.getElementById("sessao_umisilo3").style.display = "none";
-    document.getElementById("box_silo4").style.display = "flex";
-    document.getElementById("sessao_tempsilo4").style.display = "block";
-    document.getElementById("sessao_umisilo4").style.display = "block";
-
-    div_silo.innerHTML = `Silo 4`;
-
-    const labels9 = [
+    const labels = [
         '12:00',
         '12:30',
         '13:00',
@@ -551,17 +195,38 @@
         '14:30'
     ];
 
-    const data9 = {
-        labels: labels9,
+    const data = {
+        labels: labels,
         datasets: [{
-            label: 'Temperatura',
-            backgroundColor: 'rgb(255, 125, 0)',
+            label: 'Silo 1',
+            backgroundColor: 'rgb(0,0,128)',
+            borderColor: 'rgb(255, 125, 0)',
+            data: [18, 17, 17, 16, 18, 0]
+        },
+        {
+            label: 'Silo 2',
+            backgroundColor: 'rgb(21, 97, 109)',
+            borderColor: 'rgb(255, 125, 0)',
+            data: [10, 20, 3, 4, 18, 20]
+        },
+        {
+            label: 'Silo 3',
+            backgroundColor: 'rgb(72,61,139)',
             borderColor: 'rgb(255, 125, 0)',
             data: [18, 17, 17, 16, 18, 20]
-        }]
+        },
+        {
+            label: 'Silo 4',
+            backgroundColor: 'rgb(0,206,209)',
+            borderColor: 'rgb(255, 125, 0)',
+            data: [18, 17, 17, 16, 18, 20]
+        }
+
+
+        ]
     };
 
-    const labels10 = [
+    const labels2 = [
         '12:00',
         '13:00',
         '14:00',
@@ -570,159 +235,588 @@
         '17:00'
     ];
 
-    const data10 = {
-        labels: labels10,
+    const data2 = {
+        labels: labels2,
         datasets: [{
-            label: 'Umidade',
+            label: 'Silo 1',
+            backgroundColor: 'rgb(0,0,128)',
+            borderColor: 'rgb(21, 97, 109)',
+            data: [12, 12, 14, 13, 14, 11]
+        },
+        {
+            label: 'Silo 2',
             backgroundColor: 'rgb(21, 97, 109)',
             borderColor: 'rgb(21, 97, 109)',
-            data: [32, 10, 13, 13, 18, 30]
-        }]
+            data: [8, 10, 18, 22, 14, 12]
+        },
+        {
+            label: 'Silo 3',
+            backgroundColor: 'rgb(72,61,139)',
+            borderColor: 'rgb(21, 97, 109)',
+            data: [8, 10, 18, 22, 14, 12]
+        },
+        {
+            label: 'Silo 4',
+            backgroundColor: 'rgb(0,206,209)',
+            borderColor: 'rgb(21, 97, 109)',
+            data: [8, 10, 18, 22, 14, 12]
+        }
+    
+    
+    ]
     };
 
-    const config9 = {
-        type: 'line',
-        data: data9,
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    }
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
         options: {}
     };
 
-    const config10 = {
-        type: 'line',
-        data: data10,
-        options: {}
-    };
 
-    const myChart9 = new Chart(
-        document.getElementById('myChart9'),
-        config9
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
     );
-
-    const myChart10 = new Chart(
-        document.getElementById('myChart10'),
-        config10
-    );
-}
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    )
 
 
 
 
-        // /* -- dht11Umidade -- */
-        // var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-        // contextoDht11Umidade.canvas.width = 1000;
-        // contextoDht11Umidade.canvas.height = 500;
-        // var dht11Umidade = new Chart(
-        //     contextoDht11Umidade,
-        //     {
-        //         type: 'line',
-        //         data: {
-        //             datasets: [{
-        //                 label: 'Umidade',
-        //                 type: 'line',
-        //                 borderColor: ['#c7a302'],
-        //                 backgroundColor: ['#f7cb02']
-        //             }]
-        //         },
-        //         options: {
-        //             scales: {
-        //                 xAxes: [{
-        //                     distribution: 'series',
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }],
-        //                 yAxes: [{
-        //                     scaleLabel: {
-        //                         display: true,
-        //                         labelString: 'Umidade'
-        //                     },
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }]
-        //             },
-        //             animation: {
-        //                 duration: 0
-        //             }
-        //         }
-        //     }
-        // );
-        // /* -- dht11Temperatura -- */
-        // var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
-        // contextoDht11Temperatura.canvas.width = 1000;
-        // contextoDht11Temperatura.canvas.height = 500;
-        // var dht11Temperatura = new Chart(
-        //     contextoDht11Temperatura,
-        //     {
-        //         type: 'line',
-        //         data: {
-        //             datasets: [{
-        //                 label: "Temperatura",
-        //                 type: 'line',
-        //                 borderColor: ['#5c8404'],
-        //                 backgroundColor: ['#7ead05']
-        //             }]
-        //         },
-        //         options: {
-        //             scales: {
-        //                 xAxes: [{
-        //                     distribution: 'series',
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }],
-        //                 yAxes: [{
-        //                     scaleLabel: {
-        //                         display: true,
-        //                         labelString: 'Luminosidade'
-        //                     },
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }]
-        //             },
-        //             animation: {
-        //                 duration: 0
-        //             }
-        //         }
-        //     }
-        // );
 
-        // var paginacao = {};
-        // var tempo = {};
-        // function obterDados(grafico, endpoint) {
-        //     var http = new XMLHttpRequest();
-        //     http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
-        //     http.send(null);
-        //     var valores = JSON.parse(http.responseText);
-        //     if (paginacao[endpoint] == null) {
-        //         paginacao[endpoint] = 0;
-        //     }
-        //     if (tempo[endpoint] == null) {
-        //         tempo[endpoint] = 0;
-        //     }
-        //     // Exibir à partir do último elemento exibido anteriormente
-        //     var ultimaPaginacao = paginacao[endpoint];
-        //     paginacao[endpoint] = valores.length;
-        //     var valores = valores.slice(ultimaPaginacao);
-        //     valores.forEach((valor) => {
-        //         //Máximo de 60 itens exibidos no gráfico
-        //         if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-        //             grafico.data.labels.shift();
-        //             grafico.data.datasets[0].data.shift();
-        //         }
 
-        //         grafico.data.labels.push(tempo[endpoint]++);
-        //         grafico.data.datasets[0].data.push(parseFloat(valor));
-        //         grafico.update();
-        //     })
-        // }
+    function geral() {
+        div_silo.innerHTML = `Visão Geral`;
+        document.getElementById("sessao_tempsilo1").style.display = "none";
+        document.getElementById("sessao_umisilo1").style.display = "none";
+        document.getElementById("sessao_tempsilo2").style.display = "none";
+        document.getElementById("sessao_umisilo2").style.display = "none";
+        document.getElementById("sessao_tempsilo3").style.display = "none";
+        document.getElementById("sessao_umisilo3").style.display = "none";
+        document.getElementById("sessao_tempsilo4").style.display = "none";
+        document.getElementById("sessao_umisilo4").style.display = "none";
+        document.getElementById("sessao_inicio_temp").style.display = "flex";
+        document.getElementById("sessao_inicio_umi").style.display = "block";
+        document.getElementById("box_inicio").style.display = "flex";
 
-        // setInterval(() => {
-        //     obterDados(dht11Umidade, 'dht11/umidade');
-        //     obterDados(dht11Temperatura, 'dht11/temperatura');
-        // }, 1000);
+        const labels = [
+            '12:00',
+            '12:30',
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30'
+        ];
 
-    </script>
-</body>
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Silo 1',
+                backgroundColor: 'rgb(255, 125, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 17, 17, 16, 18, 0]
+            },
+            {
+                label: 'Silo 2',
+                backgroundColor: 'rgb(255, 147, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 17, 17, 16, 18, 20]
+            }
+            ]
+        };
 
-</html>
+        const labels2 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Silo 1',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [12, 12, 14, 13, 14, 11]
+            },
+            {
+                label: 'Silo 2',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [8, 10, 18, 22, 14, 12]
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        }
+
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
+
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        )
+
+    }
+
+
+    function silo1() {
+        document.getElementById("box_inicio").style.display = "none";
+        document.getElementById("sessao_inicio_temp").style.display = "none";
+        document.getElementById("sessao_inicio_umi").style.display = "none";
+        document.getElementById("box_silo1").style.display = "flex";
+        document.getElementById("sessao_tempsilo1").style.display = "block";
+        document.getElementById("sessao_umisilo1").style.display = "block";
+        document.getElementById("box_silo2").style.display = "none";
+        document.getElementById("sessao_tempsilo2").style.display = "none";
+        document.getElementById("sessao_umisilo2").style.display = "none";
+        document.getElementById("sessao_tempsilo3").style.display = "none";
+        document.getElementById("sessao_umisilo3").style.display = "none";
+        document.getElementById("sessao_tempsilo4").style.display = "none";
+        document.getElementById("sessao_umisilo4").style.display = "none";
+
+        div_silo.innerHTML = `Silo 1`
+
+        const labels5 = [
+            '12:00',
+            '12:30',
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30'
+        ];
+
+        const data5 = {
+            labels: labels5,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'rgb(255, 125, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 17, 17, 16, 18, 20]
+            }]
+        };
+
+        const labels6 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data6 = {
+            labels: labels6,
+            datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [12, 12, 14, 13, 14, 11]
+            }]
+        };
+
+        const config5 = {
+            type: 'line',
+            data: data5,
+            options: {}
+        }
+
+        const config6 = {
+            type: 'line',
+            data: data6,
+            options: {}
+        };
+
+        const myChart5 = new Chart(
+            document.getElementById('myChart5'),
+            config5
+        );
+        const myChart6 = new Chart(
+            document.getElementById('myChart6'),
+            config6
+        )
+
+    }
+
+
+    function silo2() {
+        document.getElementById("sessao_tempsilo2").style.display = "block";
+        document.getElementById("sessao_umisilo2").style.display = "block";
+        document.getElementById("sessao_inicio_temp").style.display = "none";
+        document.getElementById("sessao_inicio_umi").style.display = "none";
+        document.getElementById("sessao_tempsilo1").style.display = "none";
+        document.getElementById("sessao_umisilo1").style.display = "none";
+        document.getElementById("box_inicio").style.display = "none";
+        document.getElementById("box_silo1").style.display = "none";
+        document.getElementById("box_silo2").style.display = "flex";
+        document.getElementById("sessao_tempsilo3").style.display = "none";
+        document.getElementById("sessao_umisilo3").style.display = "none";
+        document.getElementById("sessao_tempsilo4").style.display = "none";
+        document.getElementById("sessao_umisilo4").style.display = "none";
+
+        div_silo.innerHTML = `Silo 2`
+
+
+        const labels3 = [
+            '12:30',
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30',
+            '15:00'
+        ];
+
+        const data3 = {
+            labels: labels3,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'rgb(255, 125, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [10, 12, 16, 20, 14, 15]
+            }]
+        };
+
+        const labels4 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data4 = {
+            labels: labels4,
+            datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [14, 13, 14, 11, 13, 11]
+            }]
+        };
+
+        const config3 = {
+            type: 'line',
+            data: data3,
+            options: {}
+        }
+
+        const config4 = {
+            type: 'line',
+            data: data4,
+            options: {}
+        };
+
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+        const myChart4 = new Chart(
+            document.getElementById('myChart4'),
+            config4
+        )
+
+    }
+    function silo3() {
+        document.getElementById("box_inicio").style.display = "none";
+        document.getElementById("sessao_inicio_temp").style.display = "none";
+        document.getElementById("sessao_inicio_umi").style.display = "none";
+        document.getElementById("box_silo1").style.display = "none";
+        document.getElementById("sessao_tempsilo1").style.display = "none";
+        document.getElementById("sessao_umisilo1").style.display = "none";
+        document.getElementById("box_silo2").style.display = "none";
+        document.getElementById("sessao_tempsilo2").style.display = "none";
+        document.getElementById("sessao_umisilo2").style.display = "none";
+        document.getElementById("box_silo3").style.display = "flex";
+        document.getElementById("sessao_tempsilo3").style.display = "block";
+        document.getElementById("sessao_umisilo3").style.display = "block";
+        document.getElementById("box_silo4").style.display = "none";
+        document.getElementById("sessao_tempsilo4").style.display = "none";
+        document.getElementById("sessao_umisilo4").style.display = "none";
+
+        div_silo.innerHTML = `Silo 3`
+
+        const labels5 = [
+            '12:00',
+            '12:30',
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30'
+        ];
+
+        const data5 = {
+            labels: labels5,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'rgb(255, 125, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 15, 17, 14, 19, 20]
+            }]
+        };
+
+        const labels6 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data6 = {
+            labels: labels6,
+            datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [12, 12, 14, 13, 14, 11]
+            }]
+        };
+
+        const config5 = {
+            type: 'line',
+            data: data5,
+            options: {}
+        }
+
+        const config6 = {
+            type: 'line',
+            data: data6,
+            options: {}
+        };
+
+        const myChart7 = new Chart(
+            document.getElementById('myChart7'),
+            config5
+        );
+        const myChart8 = new Chart(
+            document.getElementById('myChart8'),
+            config6
+        )
+
+    }
+
+    function silo4() {
+        document.getElementById("box_inicio").style.display = "none";
+        document.getElementById("sessao_inicio_temp").style.display = "none";
+        document.getElementById("sessao_inicio_umi").style.display = "none";
+        document.getElementById("box_silo1").style.display = "none";
+        document.getElementById("sessao_tempsilo1").style.display = "none";
+        document.getElementById("sessao_umisilo1").style.display = "none";
+        document.getElementById("box_silo2").style.display = "none";
+        document.getElementById("sessao_tempsilo2").style.display = "none";
+        document.getElementById("sessao_umisilo2").style.display = "none";
+        document.getElementById("box_silo3").style.display = "none";
+        document.getElementById("sessao_tempsilo3").style.display = "none";
+        document.getElementById("sessao_umisilo3").style.display = "none";
+        document.getElementById("box_silo4").style.display = "flex";
+        document.getElementById("sessao_tempsilo4").style.display = "block";
+        document.getElementById("sessao_umisilo4").style.display = "block";
+
+        div_silo.innerHTML = `Silo 4`;
+
+        const labels9 = [
+            '12:00',
+            '12:30',
+            '13:00',
+            '13:30',
+            '14:00',
+            '14:30'
+        ];
+
+        const data9 = {
+            labels: labels9,
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'rgb(255, 125, 0)',
+                borderColor: 'rgb(255, 125, 0)',
+                data: [18, 17, 17, 16, 18, 20]
+            }]
+        };
+
+        const labels10 = [
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00'
+        ];
+
+        const data10 = {
+            labels: labels10,
+            datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(21, 97, 109)',
+                borderColor: 'rgb(21, 97, 109)',
+                data: [32, 10, 13, 13, 18, 30]
+            }]
+        };
+
+        const config9 = {
+            type: 'line',
+            data: data9,
+            options: {}
+        };
+
+        const config10 = {
+            type: 'line',
+            data: data10,
+            options: {}
+        };
+
+        const myChart9 = new Chart(
+            document.getElementById('myChart9'),
+            config9
+        );
+
+        const myChart10 = new Chart(
+            document.getElementById('myChart10'),
+            config10
+        );
+    }
+
+
+
+
+    // /* -- dht11Umidade -- */
+    // var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+    // contextoDht11Umidade.canvas.width = 1000;
+    // contextoDht11Umidade.canvas.height = 500;
+    // var dht11Umidade = new Chart(
+    //     contextoDht11Umidade,
+    //     {
+    //         type: 'line',
+    //         data: {
+    //             datasets: [{
+    //                 label: 'Umidade',
+    //                 type: 'line',
+    //                 borderColor: ['#c7a302'],
+    //                 backgroundColor: ['#f7cb02']
+    //             }]
+    //         },
+    //         options: {
+    //             scales: {
+    //                 xAxes: [{
+    //                     distribution: 'series',
+    //                     ticks: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }],
+    //                 yAxes: [{
+    //                     scaleLabel: {
+    //                         display: true,
+    //                         labelString: 'Umidade'
+    //                     },
+    //                     ticks: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }]
+    //             },
+    //             animation: {
+    //                 duration: 0
+    //             }
+    //         }
+    //     }
+    // );
+    // /* -- dht11Temperatura -- */
+    // var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
+    // contextoDht11Temperatura.canvas.width = 1000;
+    // contextoDht11Temperatura.canvas.height = 500;
+    // var dht11Temperatura = new Chart(
+    //     contextoDht11Temperatura,
+    //     {
+    //         type: 'line',
+    //         data: {
+    //             datasets: [{
+    //                 label: "Temperatura",
+    //                 type: 'line',
+    //                 borderColor: ['#5c8404'],
+    //                 backgroundColor: ['#7ead05']
+    //             }]
+    //         },
+    //         options: {
+    //             scales: {
+    //                 xAxes: [{
+    //                     distribution: 'series',
+    //                     ticks: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }],
+    //                 yAxes: [{
+    //                     scaleLabel: {
+    //                         display: true,
+    //                         labelString: 'Luminosidade'
+    //                     },
+    //                     ticks: {
+    //                         beginAtZero: true
+    //                     }
+    //                 }]
+    //             },
+    //             animation: {
+    //                 duration: 0
+    //             }
+    //         }
+    //     }
+    // );
+
+    // var paginacao = {};
+    // var tempo = {};
+    // function obterDados(grafico, endpoint) {
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+    //     http.send(null);
+    //     var valores = JSON.parse(http.responseText);
+    //     if (paginacao[endpoint] == null) {
+    //         paginacao[endpoint] = 0;
+    //     }
+    //     if (tempo[endpoint] == null) {
+    //         tempo[endpoint] = 0;
+    //     }
+    //     // Exibir à partir do último elemento exibido anteriormente
+    //     var ultimaPaginacao = paginacao[endpoint];
+    //     paginacao[endpoint] = valores.length;
+    //     var valores = valores.slice(ultimaPaginacao);
+    //     valores.forEach((valor) => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+    //             grafico.data.labels.shift();
+    //             grafico.data.datasets[0].data.shift();
+    //         }
+
+    //         grafico.data.labels.push(tempo[endpoint]++);
+    //         grafico.data.datasets[0].data.push(parseFloat(valor));
+    //         grafico.update();
+    //     })
+    // }
+
+    // setInterval(() => {
+    //     obterDados(dht11Umidade, 'dht11/umidade');
+    //     obterDados(dht11Temperatura, 'dht11/temperatura');
+    // }, 1000);
+
+</script>

@@ -7,7 +7,6 @@
   <title>Tela de login - MilhoTech</title>
   <link rel="stylesheet" href="css/stylelogin.css">
   <script src="./js/sessao.js"></script>
-  <script src="js/scriptlogin.js"></script>
 </head>
 
 <body style="font-family: Inter;">
@@ -30,6 +29,10 @@
       </div>
     </div>
     <div class="container"> <!-- Retângulo que contém tudo dentro dele -->
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
       <img src="assets/imgs/logo.png" class="milhologo">
       <div class="section" style="visibility: hidden;" id="section">
         <!-- Seção escondida que apresenta erro caso login ou senha estiver(em) errado(s) -->
@@ -40,13 +43,18 @@
       <span id="seuemail">Seu e-mail/Registro:</span>
       <span id="suasenha">Sua senha/chave:</span>
       <span id="lembrar">Lembrar minha identificação de usuário</span>
-      <div><button id="acessarbut" onclick="login()">Acessar</button></div>
+      <div><button id="acessarbut" onclick="entrar()">Acessar</button></div>
 
       <div><input type="text" id="email_input" placeholder="exemplo@gmail.com"></div>
       <div><input type="password" id="senha_input" placeholder="Sua senha aqui"></div>
 
       <div><input type="checkbox" id="checklembrar"></div>
       <div><button id="esqueceubut" onclick="recuperar()">Esqueceu o usuário ou a senha?</button></div>
+      <div id="div_aguardar" class="loading-div">
+        <img src="./assets/circle-loading.gif" id="loading-gif" />
+      </div>
+
+      <div id="div_erros_login"></div>
     </div>
   </div>
 </body>
@@ -94,12 +102,11 @@
           console.log(JSON.stringify(json));
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.NOME_USUARIO = json.nome;
-          sessionStorage.ID_USUARIO = json.id;
+          sessionStorage.ID_USUARIO = json.idFuncionario;
           sessionStorage.CPF_USUARIO = json.cpf;
-          sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
           setTimeout(function () {
-            window.location = "./dashboard/cards.html";
+            window.location = "dashboard.html";
           }, 1000); // apenas para exibir o loading
 
         });

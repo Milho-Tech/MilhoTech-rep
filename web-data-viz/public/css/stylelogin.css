@@ -223,6 +223,7 @@ border: 0px;
 }
 
 #acessarbut {
+cursor: pointer;
 box-sizing: border-box;
 position: absolute;
 width: 276px;

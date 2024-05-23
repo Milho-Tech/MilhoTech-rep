@@ -32,6 +32,11 @@
     </div>
 
     <div class="container"> <!-- Retângulo que contém tudo dentro dele -->
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
+      </div>
       <img src="assets/imgs/logo.png" class="milhologo">
       <div class="section" style="visibility: hidden;" id="section">
         <!-- Seção escondida que apresenta erro caso login ou senha estiver(em) errado(s) -->
@@ -50,14 +55,23 @@
       <!--Botão "Acessar" presente na página -->
 
       <div>
-        <div><select name="Empresas" id="listaEmpresas"></select></div>
+        <div>
+          <select name="Empresas" id="listaEmpresas">
+            <option value="#" disabled selected>Selecione sua empresa</option>
+          </select>
+        </div>
         <div><input type="text" id="nome_input" placeholder="Seu nome"></div>
-        <div><input type="text" id="email_input" placeholder="exemplo@gmail.com"></div> 
+        <div><input type="text" id="email_input" placeholder="exemplo@gmail.com"></div>
         <div><input type="number" id="cpf_input" placeholder="Seu CPF aqui"></div>
         <div><input type="password" id="senha_input" placeholder="Sua senha aqui"></div>
         <div><input type="password" id="confirmacao_senha_input" placeholder="Confirme seu senha"></div>
       </div>
 
+      <div id="div_aguardar" class="loading-div">
+        <img src="./assets/circle-loading.gif" id="loading-gif" />
+      </div>
+
+      <div id="div_erros_login"></div>
     </div>
 </body>
 
@@ -65,7 +79,7 @@
 
 <script>
 
-    function cadastrar() {
+  function cadastrar() {
     aguardar();
 
     //Recupere o valor da nova input pelo nome do id
@@ -189,7 +203,7 @@
       .then(function (resposta) {
         resposta.json().then((empresas) => {
           empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.nome}</option>`;
+            listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.nome}</option>`;
           });
         });
       })
