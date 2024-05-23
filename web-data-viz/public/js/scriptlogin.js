@@ -1,6 +1,6 @@
 function login() {
-    var email = inpemail.value; // Var do input do E-mail
-    var senha = inpsenha.value; // Var do input da senha
+    var email = email_input.value; // Var do input do E-mail
+    var senha = email_input.value; // Var do input da senha
 
     var emailower = email.toLowerCase(); // Var para deixar o input do E-mail em minúsculo para melhor digitação
 
