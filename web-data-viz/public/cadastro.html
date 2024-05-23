@@ -42,7 +42,7 @@
       <div class="Divisao"></div> <!-- Divisão no meio da container -->
 
       <span id="seuemail">Cadastre seu e-mail:</span>
-      <span id="suacnpj">Cadastre sua CNPJ:</span>
+      <span id="suacnpj">Cadastre seu CPF:</span>
       <span id="suasenha">Cadastre sua senha:</span>
       <span id="suasenha2">Confirme sua senha:</span>
 
@@ -50,6 +50,7 @@
       <!--Botão "Acessar" presente na página -->
 
       <div>
+        <div><select name="Empresas" id="listaEmpresas"></select></div>
         <div><input type="text" id="nome_input" placeholder="Seu nome"></div>
         <div><input type="text" id="email_input" placeholder="exemplo@gmail.com"></div> 
         <div><input type="number" id="cpf_input" placeholder="Seu CPF aqui"></div>
@@ -188,7 +189,7 @@
       .then(function (resposta) {
         resposta.json().then((empresas) => {
           empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.nome}</option>`;
           });
         });
       })
