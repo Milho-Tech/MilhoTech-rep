@@ -51,8 +51,9 @@
 
         <div class="geral" id="div_geral">
             <div class="caixa-info">
-                <div class="infos" id="div_informacoes" >
-                    <div class="numeros" id="div_numeros" style="background-color: white;">
+                <div class="informacoes" id="div_informacoes" >
+                    <div class="infos" id="div_todos numeros">
+                    <div onclick="silo1()" class="numeros" id="div_numeros" style="background-color: white;">
                         <a>
                             <h3>Silo 1:</h3>
                             <img src="img/temp.png" alt="">
@@ -62,7 +63,7 @@
                         </a>
                     </div>
 
-                    <div class="numeros" id="div_numeros"style="background-color: white;">
+                    <div onclick="silo2()" class="numeros" id="div_numeros"style="background-color: white;">
                         <a>
                             <h3>Silo 2:</h3>
                             <img src="img/temp.png" alt="">
@@ -73,7 +74,8 @@
                             
                     </div>
 
-                    <div class="numeros" id="div_numeros" style="background-color: white;">
+                    <div onclick="silo3()" class="numeros" id="div_numeros" style="background-color: rgb(255, 187, 187);
+                    color: #cb0000;">
                         <a>
                             <h3>Silo 3:</h3>
                             <img src="img/temp.png" alt="">
@@ -82,7 +84,7 @@
                             <h4>29%</h4>
                         </a>      
                     </div>
-                    <div class="numeros" id="div_numeros" style="background-color: white;">
+                    <div onclick="silo4()" class="numeros" id="div_numeros" style="background-color: white;">
                         <a>
                             <h3>Silo 4:</h3>
                             <img src="img/temp.png" alt="">
@@ -93,6 +95,25 @@
                             
                         </a>
                     </div>
+                </div>
+
+                    <div class="grupo_avisos" id="div_avisos">
+                        <div class="avisos" id="div_numeros">
+                            
+                                <img src="img/warning.gif" alt="">
+                                <h3>Aviso:</h3> 
+                                <h4>O silo 3 teve alterações prejudiciais na temperatura!</h4>
+                            
+                        </div>
+                        <div class="avisos" id="div_numeros">
+                            
+                            <img src="img/warning.gif" alt="">
+                            <h3>Aviso:</h3> 
+                            <h4>O silo 3 teve alterações prejudiciais na humidade!</h4>
+                        
+                    </div>
+                    </div>
+
                 </div>
 
             </div>
