@@ -85,6 +85,8 @@ canvas {
 .infos {
   display: flex;
   flex-direction: row;
+  background-color: rgb(255, 255, 255, 0.9);
+  border-radius: 10px;
   justify-content: space-around;
   align-items: center;
   width: 100%;
