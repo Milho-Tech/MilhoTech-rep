@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="css/stylecalculadora.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">
+            <img src="assets/imgs/logo.png" alt="Logo" class="logo">
+        </a>
+        <ul class="ul">
+            <a href="index.html">Home</a>
+            <a href="index.html #sobre">Sobre</a>
+            <a href="index.html #milhotech">MilhoTech</a>
+            <a href="index.html #calculadora">Calculadora</a>
+            <a class="btn" href="cadastro_index.html">cadastrar</a>
+        </ul>
+    </div>
+
+    <div class="box">
+    <div class="card">
+
+        <h3 align = "center">Calculadora Milho Tech</h3><br> <br>
+
+
+            <!-- Qnt de Silo, Capacidade p/ silo, faturamento, gasto -->
+        <div class="texto">
+            Insira a quantidade de hectares que a sua plantação possui: <input type="number"
+                id="input_hectar" placeholder="Em hectares"><br> <br>
+
+            Insira o valor de um hectare do seu milho: <input type="number"
+                id="input_milho" placeholder="Valor do hectare"><br> <br>
+
+            Insira o gasto total para a produção de um hectar de milho <br> (Custos com agua, empregados, manutenção,
+            energia
+            <br> e
+            todos os gastos necessarios para a produção do milho): <input type="number"
+                id="input_custo" placeholder="Gasto total"><br><br><br>
+
+        </div>
+
+        <button class="button" onclick="calcular()"> Calcular potencial de perda do milho </button> <br> <br>
+
+        <div id="div_mensagem"></div>
+        </div>
+
+        </div>
+
+    <br>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        //Declarações
+        var custo = Number(input_custo.value);
+        var hectar = Number(input_hectar.value);
+        var milho = Number(input_milho.value);
+
+        //Contas
+        var receitatot = milho * hectar;
+        var luc_brut = (milho * hectar) - (custo * hectar);
+        var dolar = milho * 0.2;
+
+        //perda em reais
+        var maior_perda = (milho * hectar) * 0.5;
+        var menor_perda = (milho * hectar) * 0.3;
+        var media = Number(maior_perda + menor_perda) / 2;
+
+        //perda em dolar 
+        var maior_perda_dolar = (dolar * hectar) * 0.5;
+        var menor_perda_dolar = (dolar * hectar) * 0.3;
+        var media_dolar = Number(maior_perda_dolar + menor_perda_dolar) / 2;
+
+        //perda da plantação em relação ao custo 
+        var prodhec = custo * hectar;
+        var perdaplantm = (media * 100) / prodhec;
+        var perdaplantmax = (maior_perda * 100) / prodhec;
+        var perdaplantmin = (menor_perda * 100) / prodhec;
+
+
+        for (var cont = 1; cont <= 1; cont++) {
+        div_mensagem.innerHTML += `<b>Simulação</b> - Potencial de perda da plantação de <b style="color: red;"> R$ ${menor_perda} </b> até <b style="color: red;"> R$ ${maior_perda} </b> <br> 
+        Média: <b style="color: red;"> R$ ${media} </b> <br><br>
+
+        Em dólares: <b style="color: red;"> $ ${menor_perda_dolar} </b> até  <b style="color: red;"> $ ${maior_perda_dolar} </b> <br> 
+        Média: <b style="color: red;"> $ ${media_dolar} </b> <br><br>
+
+        Custo de produção: <b style="color: red;"> R$ ${prodhec} </b> <br> 
+        Perda em relação ao custo de produção: <b style="color: red;"> ${perdaplantmin} % </b> até <b style="color: red;"> ${perdaplantmax} % </b> <br>
+       Média: <b style="color: red;">  ${perdaplantm} % </b> <br> <br>
+
+        Caso ocorra a adoção do projeto, a perda causada pela umidade relativa incorreta será neutralizada,<br> fazendo com que a receita total da plantação se  torne: <b style="color: green;"> R$ ${receitatot} </b> <br>
+        Lucro bruto: <b style="color: green;"> R$ ${luc_brut} </b></br></br>`;
+    }
+    }
+</script>
