@@ -14,4 +14,4 @@
             window.location.href = "indexlogin.html"
 
         }
-    }
+    } 

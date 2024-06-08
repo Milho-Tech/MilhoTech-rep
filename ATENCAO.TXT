@@ -1,4 +1,4 @@
-Política de Integração de Código:
+MAIN:
 
 Para garantir a estabilidade e a qualidade do nosso projeto, é essencial seguir uma política de integração de código cuidadosa. Abaixo, detalhamos a diretriz sobre quando e como integrar mudanças no repositório `main`.
 

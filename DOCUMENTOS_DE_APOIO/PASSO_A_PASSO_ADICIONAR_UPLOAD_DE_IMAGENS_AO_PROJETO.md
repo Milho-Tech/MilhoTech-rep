@@ -11,3 +11,4 @@ Caso você queira adicionar a funcionalidade de "upload de imagens" no seu proje
   - Contras: Nem todos os Bancos de Dados suportam este tipo de dado. Trazer a imagem do banco para exibi-la na sua tela pode ser trabalhoso demais e te atrasar em relação a outros entregáveis.
 
 **Não há a "melhor opção" e nenhuma destas opções "vale mais pontos" ou "seu projeto vai necessariamente ficar melhor porque você escolheu tal opção".**
+ 

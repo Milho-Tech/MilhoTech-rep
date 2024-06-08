@@ -1,5 +1,5 @@
 var alertas = [];
-
+ 
 function obterdados(idAquario) {
     fetch(`/medidas/tempo-real/${idAquario}`)
         .then(resposta => {

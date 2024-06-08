@@ -5,7 +5,7 @@
 /*
 comandos para mysql server
 */
-
+ 
 CREATE DATABASE aquatech;
 
 USE aquatech;

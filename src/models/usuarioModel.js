@@ -25,4 +25,4 @@ function cadastrar(nome, email, senha, empresaId, cpf) {
 module.exports = {
     autenticar,
     cadastrar
-};
+}; 
