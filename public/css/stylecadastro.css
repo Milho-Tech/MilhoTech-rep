@@ -8,9 +8,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } 
  
-body {
-  overflow: hidden;
-}
 
 /*CSS da navbar*/
 .header {
@@ -19,7 +16,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 750px;
+  height: 850px;
 
 }
 
@@ -124,11 +121,12 @@ body {
 position: absolute;
 margin-top: 50px;
 width: 718px;
-height: 616px;
+height: 680px;
 left: 400px;
 top: 80px;
 background: #FFFFFF;
 border-radius: 22px;
+
 }
 
 /* E-mail----------------------------------------------------------------------------------------------------------*/
@@ -283,8 +281,58 @@ font-size: 20px;
   font-size: 20px;
 }
 
+/* Selecione Empresa----------------------------------------------------------------------------------------------------------*/
 
-/*----------------------------------------------------------------------------------------------------------*/
+#listaEmpresas { /* A hashtag (#) puxa um id específico para estilização ao invés de criar uma classe */
+  position: absolute;
+  box-sizing: border-box;
+  width: 276px;
+  height: 50px;
+  left: 419px;
+  top: 525px;
+  background: #F3F3F3;
+  border: 1px solid #D0CFCF;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  border-radius: 6px;
+  text-align: center;
+  
+  color: #000000;
+  
+  white-space: nowrap; /* "White-space" muda coisas na implementação visual do texto. "Nowrap" impede de que o texto tenha uma quebra de linha */
+}
+
+
+/* Nome----------------------------------------------------------------------------------------------------------*/
+
+#nome_input { /* A hashtag (#) puxa um id específico para estilização ao invés de criar uma classe */
+  position: absolute;
+  box-sizing: border-box;
+  width: 276px;
+  height: 45px;
+  left: 23px;
+  top: 525px;
+  background: #F3F3F3;
+  border: 1px solid #D0CFCF;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  border-radius: 6px;
+  text-align: center;
+  
+  color: #000000;
+  
+  white-space: nowrap; /* "White-space" muda coisas na implementação visual do texto. "Nowrap" impede de que o texto tenha uma quebra de linha */
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------*/
+
 
 #lembrar {
 position: absolute;
@@ -319,10 +367,10 @@ border: 0px;
 #acessarbut {
 box-sizing: border-box;
 position: absolute;
-width: 276px;
-height: 45px;
-left: 222px;
-top: 530px;
+width: 376px;
+height: 55px;
+left: 156px;
+top: 600px;
 background: #15616D;
 border: 1px solid #15616D;
 border-radius: 6px;
