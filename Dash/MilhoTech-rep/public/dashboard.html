@@ -12,7 +12,7 @@
     <script src="js/alerta.js"></script>
 </head>
 
-<body onload = 'geral()'>
+<body onload='geral()'>
 
 
     <div class="div_conteudo" id="div_conteudo">
@@ -51,51 +51,51 @@
 
         <div class="geral" id="div_geral">
             <div class="caixa-info">
-                <div class="informacoes" id="div_informacoes" >
+                <div class="informacoes" id="div_informacoes">
                     <div class="infos" id="div_todos numeros">
-                    <div onclick="silo1()" class="numeros" id="div_numeros" style="background-color: white;">
-                        <a>
-                            <h3>Silo 1:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>20°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>11%</h4>
-                        </a>
-                    </div> 
+                        <div onclick="silo1()" class="numeros" id="div_numeros" style="background-color: white;">
+                            <a>
+                                <h3>Silo 1:</h3>
+                                <img src="img/temp.png" alt="">
+                                <h4>20°</h4>
+                                <img src="img/umid.png" alt="">
+                                <h4>11%</h4>
+                            </a>
+                        </div>
 
-                    <div onclick="silo2()" class="numeros" id="div_numeros"style="background-color: white;">
-                        <a>
-                            <h3>Silo 2:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>14°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>08%</h4>
-                        </a>
-                            
-                    </div> 
+                        <div onclick="silo2()" class="numeros" id="div_numeros" style="background-color: white;">
+                            <a>
+                                <h3>Silo 2:</h3>
+                                <img src="img/temp.png" alt="">
+                                <h4>14°</h4>
+                                <img src="img/umid.png" alt="">
+                                <h4>08%</h4>
+                            </a>
 
-                    <div onclick="silo3()" class="numeros" id="div_numeros" style="background-color: rgb(255, 187, 187);
+                        </div>
+
+                        <div onclick="silo3()" class="numeros" id="div_numeros" style="background-color: rgb(255, 187, 187);
                     color: #cb0000;">
-                        <a>
-                            <h3>Silo 3:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>30°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>29%</h4>
-                        </a>      
-                    </div> 
-                    <div onclick="silo4()" class="numeros" id="div_numeros" style="background-color: white;">
-                        <a>
-                            <h3>Silo 4:</h3>
-                            <img src="img/temp.png" alt="">
-                            <h4>12°</h4>
-                            <img src="img/umid.png" alt="">
-                            <h4>10%</h4>
-                        </a>
-                            
-                        </a>
+                            <a>
+                                <h3>Silo 3:</h3>
+                                <img src="img/temp.png" alt="">
+                                <h4>30°</h4>
+                                <img src="img/umid.png" alt="">
+                                <h4>29%</h4>
+                            </a>
+                        </div>
+                        <div onclick="silo4()" class="numeros" id="div_numeros" style="background-color: white;">
+                            <a>
+                                <h3>Silo 4:</h3>
+                                <img src="img/temp.png" alt="">
+                                <h4>12°</h4>
+                                <img src="img/umid.png" alt="">
+                                <h4>10%</h4>
+                            </a>
+
+                            </a>
+                        </div>
                     </div>
-                </div>
 
                 </div>
 
@@ -106,22 +106,26 @@
             </div>
 
             <div class="box_inicio" id="box_inicio">
-                
+
                 <div id="dashintrod" class="introducaodash"><br>
                     <h3>Olá,<span id="b_usuario2">usuário</span>!</h3><br>
                     <h3>Ultima medição: <span style="color: #2C3E50;" id="rodada"> Ainda Não Fez</span></h3>
-                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho"> Ainda Não Fez</span> </h3>
-                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho"> Ainda Não Fez</span> </h3>
-                    <h3>Silo com menor umidade:<span style="color: #2C3E50;" id="maiorumi_milho"> Ainda Não Fez</span> </h3>
-                    <h3>Silo com maior umidade: <span style="color: #2C3E50;" id="menorumi_milho"> Ainda Não Fez</span></h3><br>
+                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho"> Ainda Não
+                            Fez</span> </h3>
+                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho"> Ainda Não
+                            Fez</span> </h3>
+                    <h3>Silo com menor umidade:<span style="color: #2C3E50;" id="maiorumi_milho"> Ainda Não Fez</span>
+                    </h3>
+                    <h3>Silo com maior umidade: <span style="color: #2C3E50;" id="menorumi_milho"> Ainda Não Fez</span>
+                    </h3><br>
                 </div>
-                
+
             </div>
 
             <div class="box_silo1" id="box_silo1">
                 <section id="sessao_tempsilo1" class="graph">
                     <h1 class="text">Temperatura</h1>
-                    <canvas id="myChart5"></canvas>
+                    <canvas id="myCharttemp1"></canvas>
                 </section>
                 <section id="sessao_umisilo1" class="graph2">
                     <h1 class="text">Umidade</h1>
@@ -165,50 +169,56 @@
             <div class="caixa-info">
                 <div class="infos" id="div_informacoes">
                     <div class="numeros" id="div_numeros">
-                    <div class="numeros perigo_frio" id="div_numeros">
+                        <div class="numeros perigo_frio" id="div_numeros">
                             <span>Perigo</span>
-                            <span><= 13°C</span>
-                    </div>
-         
-                    <div class="numeros alerta" id="div_numeros">
+                            <span>
+                                <= 13°C</span>
+                        </div>
+
+                        <div class="numeros alerta" id="div_numeros">
                             <span>Alerta</span>
-                            <span> <= 14°C</span>
-         
-                    </div>
-                    <div class="numeros ideal" id="div_numeros">
+                            <span>
+                                <= 14°C</span>
+
+                        </div>
+                        <div class="numeros ideal" id="div_numeros">
                             <span>Ideal</span>
                             <span> 15° ~ 18°C</span>
-         
-                    </div>
-         
-                    <div class="numeros alerta" id="div_numeros">
+
+                        </div>
+
+                        <div class="numeros alerta" id="div_numeros">
                             <span>Alerta</span>
                             <span> >= 18°C</span>
-         
-                    </div>
-                    <div class="numeros perigo_quente" id="div_numeros">
+
+                        </div>
+                        <div class="numeros perigo_quente" id="div_numeros">
                             <span>Perigo</span>
                             <span> >= 21°C</span>
-         
-                        </a>
+
+                            </a>
+                        </div>
+
                     </div>
 
-        </div>
-      
-   </div>
-   <div class="geral" id="div_geral">
-    
-        </div>
- 
-    </div>
+                </div>
+                <div class="geral" id="div_geral">
 
-    <!-- <img class="logo" src="img/logo.png" alt=""> -->
+                </div>
+
+            </div>
+
+            <!-- <img class="logo" src="img/logo.png" alt=""> -->
 </body>
+
 </html>
 
 <script>
- nome_user.innerHTML = sessionStorage.NOME_USUARIO;
-var id_Usuario = sessionStorage.ID_USUARIO;
+    nome_user.innerHTML = sessionStorage.NOME_USUARIO;
+    var idUsuario = sessionStorage.ID_USUARIO;
+    var idSilo = 1;
+    var idEmpresa = sessionStorage.ID_EMPRESA;
+
 
 
     function mostrar() {
@@ -222,133 +232,9 @@ var id_Usuario = sessionStorage.ID_USUARIO;
         document.getElementById("btn_tirar").style.display = "none";
         document.getElementById("btn_mostrar").style.display = "block";
     }
-    // div_silo.innerHTML = `Visão Geral`;
-    // document.getElementById("box_inicio").style.display = "flex";
-    // document.getElementById("sessao_inicio_temp").style.display = "flex";
-    // document.getElementById("sessao_inicio_umi").style.display = "block";
-    // document.getElementById("box_silo1").style.display = "none";
-    // document.getElementById("sessao_tempsilo1").style.display = "none";
-    // document.getElementById("sessao_umisilo1").style.display = "none";
-    // document.getElementById("box_silo2").style.display = "none";
-    // document.getElementById("sessao_tempsilo2").style.display = "none";
-    // document.getElementById("sessao_umisilo2").style.display = "none";
-    // document.getElementById("box_silo3").style.display = "none";
-    // document.getElementById("sessao_tempsilo3").style.display = "none";
-    // document.getElementById("sessao_umisilo3").style.display = "none";
-    // document.getElementById("box_silo4").style.display = "none";
-    // document.getElementById("sessao_tempsilo4").style.display = "none";
-    // document.getElementById("sessao_umisilo4").style.display = "none";
-    // document.getElementById("resumo").style.display = "flex";
-
-    // const labels = [
-    //     '12:00',
-    //     '12:30',
-    //     '13:00',
-    //     '13:30',
-    //     '14:00',
-    //     '14:30'
-    // ];
-
-    // const data = {
-    //     labels: labels,
-    //     datasets: [{
-    //         label: 'Silo 1',
-    //         backgroundColor: 'rgb(0,0,128)',
-    //         borderColor: 'rgb(255, 125, 0)',
-    //         data: [18, 17, 17, 16, 18, 0]
-    //     },
-    //     {
-    //         label: 'Silo 2',
-    //         backgroundColor: 'rgb(21, 97, 109)',
-    //         borderColor: 'rgb(255, 125, 0)',
-    //         data: [10, 20, 3, 4, 18, 20]
-    //     },
-    //     {
-    //         label: 'Silo 3',
-    //         backgroundColor: 'rgb(72,61,139)',
-    //         borderColor: 'rgb(255, 125, 0)',
-    //         data: [18, 17, 17, 16, 18, 20]
-    //     },
-    //     {
-    //         label: 'Silo 4',
-    //         backgroundColor: 'rgb(0,206,209)',
-    //         borderColor: 'rgb(255, 125, 0)',
-    //         data: [18, 17, 17, 16, 18, 20]
-    //     }
-
-
-    //     ]
-    // };
-
-    // const labels2 = [
-    //     '12:00',
-    //     '13:00',
-    //     '14:00',
-    //     '15:00',
-    //     '16:00',
-    //     '17:00'
-    // ];
-
-    // const data2 = {
-    //     labels: labels2,
-    //     datasets: [{
-    //         label: 'Silo 1',
-    //         backgroundColor: 'rgb(0,0,128)',
-    //         borderColor: 'rgb(21, 97, 109)',
-    //         data: [12, 12, 14, 13, 14, 11]
-    //     },
-    //     {
-    //         label: 'Silo 2',
-    //         backgroundColor: 'rgb(21, 97, 109)',
-    //         borderColor: 'rgb(21, 97, 109)',
-    //         data: [8, 10, 18, 22, 14, 12]
-    //     },
-    //     {
-    //         label: 'Silo 3',
-    //         backgroundColor: 'rgb(72,61,139)',
-    //         borderColor: 'rgb(21, 97, 109)',
-    //         data: [8, 10, 18, 22, 14, 12]
-    //     },
-    //     {
-    //         label: 'Silo 4',
-    //         backgroundColor: 'rgb(0,206,209)',
-    //         borderColor: 'rgb(21, 97, 109)',
-    //         data: [8, 10, 18, 22, 14, 12]
-    //     }
     
-    
-    // ]
-    // };
-
-    // const config = {
-    //     type: 'bar',
-    //     data: data,
-    //     options: {}
-    // }
-
-    // const config2 = {
-    //     type: 'bar',
-    //     data: data2,
-    //     options: {}
-    // };
-
-
-    // const myChart = new Chart(
-    //     document.getElementById('myChart'),
-    //     config
-    // );
-    // const myChart2 = new Chart(
-    //     document.getElementById('myChart2'),
-    //     config2
-    // )
-
-
-
-
-
-
     function geral() {
-      
+
         div_silo.innerHTML = `Visão Geral`;
         document.getElementById("sessao_tempsilo1").style.display = "none";
         document.getElementById("sessao_umisilo1").style.display = "none";
@@ -360,11 +246,14 @@ var id_Usuario = sessionStorage.ID_USUARIO;
         document.getElementById("sessao_umisilo4").style.display = "none";
         document.getElementById("box_inicio").style.display = "flex";
 
-        atualizacaoPeriodica()
+        // atualizacaoPeriodica();  
     }
 
 
     function silo1() {
+        obterDadosGrafico(idSilo);
+        obterDadosGraficotemp(idSilo);
+
         document.getElementById("box_inicio").style.display = "none";
         document.getElementById("box_silo1").style.display = "flex";
         document.getElementById("sessao_tempsilo1").style.display = "block";
@@ -378,26 +267,166 @@ var id_Usuario = sessionStorage.ID_USUARIO;
         document.getElementById("sessao_umisilo4").style.display = "none";
 
         div_silo.innerHTML = `Silo 1`
+        idSilo = 1;
 
     }
 
-    window.onload = obterDadosGrafico(fkSilo);
 
-    function obterDadosGrafico(fkSilo) {
 
-alterarTitulo(fkSIlo)
+  
+// umidade silo1
+    function obterDadosGrafico(idSilo) {
 
-if (proximaAtualizacao != undefined) {
-    clearTimeout(proximaAtualizacao);
-}
 
-fetch(`/medidas/ultimas/${fkSilo}`, { cache: 'no-store' }).then(function (response) {
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
+
+        fetch(`/medidas/ultimas/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                   // resposta.reverse();
+
+                    plotarGrafico(resposta, idSilo);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta, idSilo) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Umidade',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.dtRegistro);
+            dados.datasets[0].data.push(registro.umidade);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myCharthumi1`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+    }
+
+    function atualizarGrafico(idSilo, dados, myChart) {
+
+
+
+        fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    obterdados(idSilo);
+                    // alertar(novoRegistro, idAquario);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    //let avisoCaptura = document.getElementById(`avisoCaptura${idSilo}`)
+                 //   avisoCaptura.innerHTML = "ver depois"
+
+
+                    if (novoRegistro[0].dtRegistro == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].dtRegistro)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro[0].dtRegistro); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+                        dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+                        myChart.update();
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+// temperatura silo1
+
+    function obterDadosGraficotemp(idSilo) {
+
+
+// if (proximaAtualizacao != undefined) {
+//     clearTimeout(proximaAtualizacao);
+// }
+
+fetch(`/medidas/ultimas/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+
     if (response.ok) {
         response.json().then(function (resposta) {
             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.reverse();
+           // resposta.reverse();
 
-            plotarGrafico(resposta, fkSilo);
+            plotarGraficotemp(resposta, idSilo);
 
         });
     } else {
@@ -409,7 +438,7 @@ fetch(`/medidas/ultimas/${fkSilo}`, { cache: 'no-store' }).then(function (respon
     });
 }
 
-function plotarGrafico(resposta, fkSilo) {
+function plotarGraficotemp(resposta, idSilo) {
 
 console.log('iniciando plotagem do gráfico...');
 
@@ -420,10 +449,10 @@ let labels = [];
 let dados = {
     labels: labels,
     datasets: [{
-        label: 'Umidade',
+        label: 'temperatura',
         data: [],
         fill: false,
-        borderColor: 'rgb(75, 192, 192)',
+        borderColor: '#ed9600',
         tension: 0.1
     }]
 };
@@ -435,8 +464,8 @@ console.log(resposta)
 // Inserindo valores recebidos em estrutura para plotar o gráfico
 for (i = 0; i < resposta.length; i++) {
     var registro = resposta[i];
-    labels.push(registro.momento_grafico);
-    dados.datasets[0].data.push(registro.umidade);
+    labels.push(registro.dtRegistro);
+    dados.datasets[0].data.push(registro.temperatura);
 }
 
 console.log('----------------------------------------------')
@@ -455,93 +484,288 @@ const config = {
 
 // Adicionando gráfico criado em div na tela
 let myChart = new Chart(
-    document.getElementById(`myCharthumi1`),
+    document.getElementById(`myCharttemp1`),
     config
 );
 
-setTimeout(() => atualizarGrafico(fkSilo, dados, myChart), 2000);
+setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+}
+
+function atualizarGrafico(idSilo, dados, myChart) {
+    fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    obterdados(idSilo);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+
+                    if (novoRegistro[0].dtRegistro == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].dtRegistro)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        dados.labels.shift();
+                        dados.labels.push(novoRegistro[0].dtRegistro);
+
+                        dados.datasets[0].data.shift(); 
+                        dados.datasets[0].data.push(novoRegistro[0].umidade); 
+
+                        dados.datasets[1].data.shift(); 
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura); 
+
+                        myChart.update();
+                    }
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+}
+
+
+// DOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+function silo2() { 
+    idSilo = 2; 
+    obterDadosGrafico2(idSilo); // função específica para obter dados do silo2 
+    // obterDadosGrafico2(idSilo); // função específica para obter dados de temperatura do silo2 
+    document.getElementById("box_inicio").style.display = "none"; 
+    document.getElementById("box_silo1").style.display = "none"; 
+    document.getElementById("sessao_tempsilo1").style.display = "none"; 
+    document.getElementById("sessao_umisilo1").style.display = "none"; 
+    document.getElementById("box_silo2").style.display = "flex"; 
+    document.getElementById("sessao_tempsilo2").style.display = "block"; 
+    document.getElementById("sessao_umisilo2").style.display = "block"; 
+    document.getElementById("sessao_tempsilo3").style.display = "none"; 
+    document.getElementById("sessao_umisilo3").style.display = "none"; 
+    document.getElementById("sessao_tempsilo4").style.display = "none"; 
+    document.getElementById("sessao_umisilo4").style.display = "none"; 
+    
+    div_silo.innerHTML = `Silo 2`;
+}
+    
+    function obterDadosGrafico2(idSilo) { 
+        fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }) .then(function (response) { 
+            if (response.ok) { 
+                console.log(response);
+                response.json().then(function (resposta) { 
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`); 
+            plotarGrafico2(resposta, idSilo); 
+        }); } else { console.error('Nenhum dado encontrado ou erro na API'); } }) .catch(function (error) { 
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`); }); 
+    } 
+    
+    function plotarGrafico2(resposta, idSilo) { 
+    console.log('iniciando plotagem do gráfico...'); 
+
+    let labels = [];
+
+let dados = {
+    labels: labels,
+    datasets: [{
+        label: 'Umidade',
+        data: [],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+    }]
+};
+
+console.log('----------------------------------------------')
+console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+console.log(resposta)
+
+for (i = 0; i < resposta.length; i++) {
+    var registro = resposta[i];
+    labels.push(registro.momento_grafico);
+    dados.datasets[0].data.push(registro.umidade);
+}
+
+console.log('----------------------------------------------')
+console.log('O gráfico será plotado com os respectivos valores:')
+console.log('Labels:')
+console.log(labels)
+console.log('Dados:')
+console.log(dados.datasets)
+console.log('----------------------------------------------')
+
+const config = {
+    type: 'line',
+    data: dados,
+};
+
+let myChart = new Chart(
+    document.getElementById(`myChart4`),
+    config
+);
+
+setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000); } 
+        
+        function atualizarGrafico2(idSilo, dados, myChart) { 
+            fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }) .then(function (response) { 
+                if (response.ok) { response.json().then(function (novoRegistro) { console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`); 
+                    
+                if (novoRegistro[0].dtRegistro == dados.labels[dados.labels.length - 1]) { 
+                    console.log("Como não há dados novos para captura, o gráfico não atualizará."); 
+                } else { dados.labels.shift(); 
+                    
+                    
+            dados.labels.push(novoRegistro[0].momento_grafico); 
+            dados.datasets[0].data.shift(); 
+            dados.datasets[0].data.push(novoRegistro[0].umidade); 
+            
+            myChart.update(); } setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000); }); 
+        } else { console.error('Nenhum dado encontrado ou erro na API'); 
+        setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000); } }) .catch(function (error) { 
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`); }); }
+
+
+            // temperatura silo2
+
+    function obterDadosGraficotemp2(idSilo) {
+
+
+// if (proximaAtualizacao != undefined) {
+//     clearTimeout(proximaAtualizacao);
+// }
+
+fetch(`/medidas/ultimas/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+
+    if (response.ok) {
+        response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+           // resposta.reverse();
+
+            plotarGraficotemp2(resposta, idSilo);
+
+        });
+    } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+    }
+})
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+}
+
+function plotarGraficotemp2(resposta, idSilo) {
+
+console.log('iniciando plotagem do gráfico...');
+
+// Criando estrutura para plotar gráfico - labels
+let labels = [];
+
+// Criando estrutura para plotar gráfico - dados
+let dados = {
+    labels: labels,
+    datasets: [{
+        label: 'temperatura',
+        data: [],
+        fill: false,
+        borderColor: '#ed9600',
+        tension: 0.1
+    }]
+};
+
+console.log('----------------------------------------------')
+console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+console.log(resposta)
+
+// Inserindo valores recebidos em estrutura para plotar o gráfico
+for (i = 0; i < resposta.length; i++) {
+    var registro = resposta[i];
+    labels.push(registro.momento_grafico);
+    dados.datasets[0].data.push(registro.temperatura);
+}
+
+console.log('----------------------------------------------')
+console.log('O gráfico será plotado com os respectivos valores:')
+console.log('Labels:')
+console.log(labels)
+console.log('Dados:')
+console.log(dados.datasets)
+console.log('----------------------------------------------')
+
+// Criando estrutura para plotar gráfico - config
+const config = {
+    type: 'line',
+    data: dados,
+};
+
+// Adicionando gráfico criado em div na tela
+let myChart = new Chart(
+    document.getElementById(`myChart3`),
+    config
+);
+
+setTimeout(() => atualizarGrafico3(idSilo, dados, myChart), 2000);
+}
+
+function atualizarGrafico3(idSilo, dados, myChart) {
+    fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    obterdados(idSilo);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+
+                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].momento_grafico)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        dados.labels.shift();
+                        dados.labels.push(novoRegistro[0].momento_grafico);
+
+                        dados.datasets[0].data.shift(); 
+                        dados.datasets[0].data.push(novoRegistro[0].umidade); 
+
+                        dados.datasets[1].data.shift(); 
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura); 
+
+                        myChart.update();
+                    }
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico3(idSilo, dados, myChart), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico3(idSilo, dados, myChart), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
 }
 
 
 
 
+// SILO 3 - INICIO  
 
-    function silo2() {
-        document.getElementById("sessao_tempsilo2").style.display = "block";
-        document.getElementById("sessao_umisilo2").style.display = "block";
-        document.getElementById("sessao_tempsilo1").style.display = "none";
-        document.getElementById("sessao_umisilo1").style.display = "none";
-        document.getElementById("box_inicio").style.display = "none";
-        document.getElementById("box_silo1").style.display = "none";
-        document.getElementById("box_silo2").style.display = "flex";
-        document.getElementById("sessao_tempsilo3").style.display = "none";
-        document.getElementById("sessao_umisilo3").style.display = "none";
-        document.getElementById("sessao_tempsilo4").style.display = "none";
-        document.getElementById("sessao_umisilo4").style.display = "none";
-
-        div_silo.innerHTML = `Silo 2`
-
-
-        const labels3 = [
-            '12:30',
-            '13:00',
-            '13:30',
-            '14:00',
-            '14:30',
-            '15:00'
-        ];
-
-        const data3 = {
-            labels: labels3,
-            datasets: [{
-                label: 'Temperatura',
-                backgroundColor: 'rgb(255, 125, 0)',
-                borderColor: 'rgb(255, 125, 0)',
-                data: [10, 12, 16, 20, 14, 15]
-            }]
-        };
-
-        const labels4 = [
-            '12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00'
-        ];
-
-        const data4 = {
-            labels: labels4,
-            datasets: [{
-                label: 'Umidade',
-                backgroundColor: 'rgb(21, 97, 109)',
-                borderColor: 'rgb(21, 97, 109)',
-                data: [14, 13, 14, 11, 13, 11]
-            }]
-        };
-
-        const config3 = {
-            type: 'line',
-            data: data3,
-            options: {}
-        }
-
-        const config4 = {
-            type: 'line',
-            data: data4,
-            options: {}
-        };
-
-        const myChart3 = new Chart(
-            document.getElementById('myChart3'),
-            config3
-        );
-        const myChart4 = new Chart(
-            document.getElementById('myChart4'),
-            config4
-        )
-
-    }
     function silo3() {
         document.getElementById("box_inicio").style.display = "none";
         document.getElementById("box_silo1").style.display = "none";
@@ -557,68 +781,14 @@ setTimeout(() => atualizarGrafico(fkSilo, dados, myChart), 2000);
         document.getElementById("sessao_tempsilo4").style.display = "none";
         document.getElementById("sessao_umisilo4").style.display = "none";
 
-        div_silo.innerHTML = `Silo 3`
-
-        const labels5 = [
-            '12:00',
-            '12:30',
-            '13:00',
-            '13:30',
-            '14:00',
-            '14:30'
-        ];
-
-        const data5 = {
-            labels: labels5,
-            datasets: [{
-                label: 'Temperatura',
-                backgroundColor: 'rgb(255, 125, 0)',
-                borderColor: 'rgb(255, 125, 0)',
-                data: [18, 15, 17, 14, 19, 20]
-            }]
-        };
-
-        const labels6 = [
-            '12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00'
-        ];
-
-        const data6 = {
-            labels: labels6,
-            datasets: [{
-                label: 'Umidade',
-                backgroundColor: 'rgb(21, 97, 109)',
-                borderColor: 'rgb(21, 97, 109)',
-                data: [12, 12, 14, 13, 14, 11]
-            }]
-        };
-
-        const config5 = {
-            type: 'line',
-            data: data5,
-            options: {}
-        }
-
-        const config6 = {
-            type: 'line',
-            data: data6,
-            options: {}
-        };
-
-        const myChart7 = new Chart(
-            document.getElementById('myChart7'),
-            config5
-        );
-        const myChart8 = new Chart(
-            document.getElementById('myChart8'),
-            config6
-        )
-
     }
+
+    
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function silo4() {
         document.getElementById("box_inicio").style.display = "none";
@@ -636,6 +806,9 @@ setTimeout(() => atualizarGrafico(fkSilo, dados, myChart), 2000);
         document.getElementById("sessao_umisilo4").style.display = "block";
 
         div_silo.innerHTML = `Silo 4`;
+
+        idSilo = 4;
+
 
         const labels9 = [
             '12:00',
@@ -697,124 +870,5 @@ setTimeout(() => atualizarGrafico(fkSilo, dados, myChart), 2000);
             config10
         );
     }
-
-
-
-
-    // /* -- dht11Umidade -- */
-    // var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-    // contextoDht11Umidade.canvas.width = 1000;
-    // contextoDht11Umidade.canvas.height = 500;
-    // var dht11Umidade = new Chart(
-    //     contextoDht11Umidade,
-    //     {
-    //         type: 'line',
-    //         data: {
-    //             datasets: [{
-    //                 label: 'Umidade',
-    //                 type: 'line',
-    //                 borderColor: ['#c7a302'],
-    //                 backgroundColor: ['#f7cb02']
-    //             }]
-    //         },
-    //         options: {
-    //             scales: {
-    //                 xAxes: [{
-    //                     distribution: 'series',
-    //                     ticks: {
-    //                         beginAtZero: true
-    //                     }
-    //                 }],
-    //                 yAxes: [{
-    //                     scaleLabel: {
-    //                         display: true,
-    //                         labelString: 'Umidade'
-    //                     },
-    //                     ticks: {
-    //                         beginAtZero: true
-    //                     }
-    //                 }]
-    //             },
-    //             animation: {
-    //                 duration: 0
-    //             }
-    //         }
-    //     }
-    // );
-    // /* -- dht11Temperatura -- */
-    // var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
-    // contextoDht11Temperatura.canvas.width = 1000;
-    // contextoDht11Temperatura.canvas.height = 500;
-    // var dht11Temperatura = new Chart(
-    //     contextoDht11Temperatura,
-    //     {
-    //         type: 'line',
-    //         data: {
-    //             datasets: [{
-    //                 label: "Temperatura",
-    //                 type: 'line',
-    //                 borderColor: ['#5c8404'],
-    //                 backgroundColor: ['#7ead05']
-    //             }]
-    //         },
-    //         options: {
-    //             scales: {
-    //                 xAxes: [{
-    //                     distribution: 'series',
-    //                     ticks: {
-    //                         beginAtZero: true
-    //                     }
-    //                 }],
-    //                 yAxes: [{
-    //                     scaleLabel: {
-    //                         display: true,
-    //                         labelString: 'Luminosidade'
-    //                     },
-    //                     ticks: {
-    //                         beginAtZero: true
-    //                     }
-    //                 }]
-    //             },
-    //             animation: {
-    //                 duration: 0
-    //             }
-    //         }
-    //     }
-    // );
-
-    // var paginacao = {};
-    // var tempo = {};
-    // function obterDados(grafico, endpoint) {
-    //     var http = new XMLHttpRequest();
-    //     http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
-    //     http.send(null);
-    //     var valores = JSON.parse(http.responseText);
-    //     if (paginacao[endpoint] == null) {
-    //         paginacao[endpoint] = 0;
-    //     }
-    //     if (tempo[endpoint] == null) {
-    //         tempo[endpoint] = 0;
-    //     }
-    //     // Exibir à partir do último elemento exibido anteriormente
-    //     var ultimaPaginacao = paginacao[endpoint];
-    //     paginacao[endpoint] = valores.length;
-    //     var valores = valores.slice(ultimaPaginacao);
-    //     valores.forEach((valor) => {
-    //         //Máximo de 60 itens exibidos no gráfico
-    //         if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-    //             grafico.data.labels.shift();
-    //             grafico.data.datasets[0].data.shift();
-    //         }
-
-    //         grafico.data.labels.push(tempo[endpoint]++);
-    //         grafico.data.datasets[0].data.push(parseFloat(valor));
-    //         grafico.update();
-    //     })
-    // }
-
-    // setInterval(() => {
-    //     obterDados(dht11Umidade, 'dht11/umidade');
-    //     obterDados(dht11Temperatura, 'dht11/temperatura');
-    // }, 1000);
 
 </script>

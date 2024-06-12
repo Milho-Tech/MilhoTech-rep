@@ -1,17 +1,37 @@
 var alertas = [];
 
-function obterdados(EmpresaId) {
-    fetch(`/medidas/tempo-real/${EmpresaId}`)
+function obterdados(idSilo) {
+    fetch(`/medidas/tempo-real/${idSilo}`)
         .then(resposta => {
             if (resposta.status == 200) {
                 resposta.json().then(resposta => {
 
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                    alertar(resposta, EmpresaId);
+                    alertar(resposta, idSilo);
                 });
             } else {
-                console.error(`Nenhum dado encontrado para o id ${EmpresaId} ou erro na API`);
+                console.error(`Nenhum dado encontrado para o id ${idSilo} ou erro na API`);
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+        });
+
+}
+
+function obterdados2(idSilo) {
+    fetch(`/medidas/tempo-real/${idSilo}`)
+        .then(resposta => {
+            if (resposta.status == 200) {
+                resposta.json().then(resposta => {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    alertar(resposta, idSilo);
+                });
+            } else {
+                console.error(`Nenhum dado encontrado para o id ${idSilo} ou erro na API`);
             }
         })
         .catch(function (error) {
@@ -122,4 +142,11 @@ function atualizacaoPeriodica() {
         obterdados(item.id)
     });
     setTimeout(atualizacaoPeriodica, 5000);
+}
+
+function atualizacaoPeriodica2() {
+    JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+        obterdados(item.id)
+    });
+    setTimeout(atualizacaoPeriodica2, 5000);
 }
