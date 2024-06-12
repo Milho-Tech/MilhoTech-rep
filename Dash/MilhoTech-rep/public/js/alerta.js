@@ -21,7 +21,7 @@ function obterdados(idSilo) {
 }
 
 function obterdados2(idSilo) {
-    fetch(`/medidas/tempo-real/${idSilo}`)
+    fetch(`/medidas/tempo-real2/${idSilo}`)
         .then(resposta => {
             if (resposta.status == 200) {
                 resposta.json().then(resposta => {
