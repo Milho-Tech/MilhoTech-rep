@@ -34,14 +34,14 @@ function buscarMedidasEmTempoReal(idSilo) {
 
     var instrucaoSql = `
  SELECT  
-        temperatura,
+        umidade,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro WHERE fkSilo = 2
                     ORDER BY fkSilo ASC
     `;
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    console.log("Executando a instrução SQL : \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
@@ -49,13 +49,14 @@ function buscarMedidasEmTempoReal(idSilo) {
 function buscarUltimasMedidasSilo2() {
 
     var instrucaoSql = ` SELECT  
-        umidade,
+    umidade,
+        temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro WHERE fkSilo = 2
                     ORDER BY fkSilo ASC LIMIT 7;`
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    console.log("Executando a instrução  SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
@@ -63,7 +64,8 @@ function buscarUltimasMedidastemp2() {
 
     var instrucaoSql = `
  SELECT  
-        temperatura,
+ temperatura,
+       umidade ,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro WHERE fkSilo = 2

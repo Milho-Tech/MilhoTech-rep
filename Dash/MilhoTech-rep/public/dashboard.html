@@ -543,7 +543,7 @@
         idSilo = 2;
         obterDadosGrafico2(idSilo);
         obterDadosGraficotemp2(idSilo);
-        
+
         document.getElementById("box_inicio").style.display = "none";
         document.getElementById("box_silo1").style.display = "none";
         document.getElementById("sessao_tempsilo1").style.display = "none";
@@ -567,7 +567,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     plotarGrafico2(resposta, idSilo);
                 });
-            } else { console.error('Nenhum dado encontrado ou erro na API'); }
+            } else { console.error('Nenhum dado encontrado ou erro na API AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'); }
         }).catch(function (error) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
@@ -617,11 +617,11 @@
             config
         );
 
-        setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
+        // setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
     }
 
     function atualizarGrafico2(idSilo, dados, myChart) {
-        fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (resposta) {
+        fetch(`/medidas/tempo-real2/${idSilo}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
@@ -650,9 +650,7 @@
 
 
     // temperatura silo2
-    function obterDadosGraficotemp2(idSilo)
-    
-    {
+    function obterDadosGraficotemp2(idSilo) {
         fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 console.log(response);
@@ -677,7 +675,7 @@
                 label: 'Temperatura',
                 data: [],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: '#ed9600',
                 tension: 0.1
             }]
         };
