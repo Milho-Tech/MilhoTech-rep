@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de login - MilhoTech</title>
+  <link rel="stylesheet" href="css/stylelogin.css">
+  <script src="./js/sessao.js"></script>
+</head>
+
+<body style="font-family: Inter;">
+  <div class="LoginPage"> <!-- Div que representa a página inteira -->
+    <div class="header">
+      <div class="container1">
+        <div class="navbar">
+          <a href="index.html">
+            <img src="assets/imgs/logo.png" alt="Logo" class="logo">
+          </a>
+          <ul class="ul">
+            <a href="index.html ">Home</a>
+            <a href="index.html #sobre">Sobre</a>
+            <a href="index.html #milhotech">MilhoTech</a>
+            <a href="Código-Cal-Financeira.html">Calculadora</a>
+            <a class="btn" href="cadastro.html">Cadastro/Entrar</a>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="container"> <!-- Retângulo que contém tudo dentro dele -->
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
+      <img src="assets/imgs/logo.png" class="milhologo">
+      <div class="section" style="visibility: hidden;" id="section">
+        <!-- Seção escondida que apresenta erro caso login ou senha estiver(em) errado(s) -->
+        <span id="erro">O e-mail ou senha inserido(s) está(ão) incorreto(s)</span>
+        <img src="assets/imgs/warning_4201973.png" class="warning">
+      </div>
+      <div class="Divisao"></div> <!-- Divisão no meio da container -->
+      <span id="seuemail">Seu e-mail/Registro:</span>
+      <span id="suasenha">Sua senha/chave:</span>
+      <span id="lembrar">Lembrar minha identificação de usuário</span>
+      <div><button id="acessarbut" onclick="entrar()">Acessar</button></div>
+
+      <div><input type="text" id="email_input" placeholder="exemplo@gmail.com"></div>
+      <div><input type="password" id="senha_input" placeholder="Sua senha aqui"></div>
+
+      <div><input type="checkbox" id="checklembrar"></div>
+      <div><button id="esqueceubut" onclick="recuperar()">Esqueceu o usuário ou a senha?</button></div>
+      <div id="div_aguardar" class="loading-div">
+        <!-- <img src="./assets/circle-loading.gif" id="loading-gif" /> -->
+      </div>
+
+      <div id="div_erros_login"></div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  function entrar() {
+    aguardar();
+
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+
+    if (emailVar == "" || senhaVar == "") {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+      finalizarAguardar();
+      return false;
+    }
+    else {
+      setInterval(sumirMensagem, 5000)
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          sessionStorage.EMAIL_USUARIO = json.email;
+          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.ID_USUARIO = json.idFuncionario;
+          sessionStorage.CPF_USUARIO = json.cpf;
+          sessionStorage.ID_EMPRESA = json.empresaId;
+          sessionStorage.SILOS = JSON.stringify(json.silos);
+
+          setTimeout(function () {
+            window.location = "dashboard.html";
+          }, 1000); // apenas para exibir o loading
+
+        });
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+          console.error(texto);
+          finalizarAguardar(texto);
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none"
+  }
+
+</script>

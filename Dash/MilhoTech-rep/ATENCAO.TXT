@@ -1,0 +1,38 @@
+Política de Integração de Código:
+
+Para garantir a estabilidade e a qualidade do nosso projeto, é essencial seguir uma política de integração de código cuidadosa. Abaixo, detalhamos a diretriz sobre quando e como integrar mudanças no repositório `main`.
+
+
+
+Regras para Integrar na `main`:
+
+A branch `main` é a linha de vida do nosso projeto. É a versão que todos os stakeholders, sejam internos ou externos, esperam estar estável e funcional. Portanto, **somente adicione ou altere código na `main` se tiver absoluta certeza de que está funcionando corretamente**. Isso significa que todas as mudanças devem:
+
+1. **Passar por testes rigorosos**: Faça testes manuais, conforme apropriado, para garantir que sua mudança não introduza bugs ou quebras de funcionalidade.
+2. **Ser revisadas**: Sempre que possível, utilize revisões de código para obter feedback e identificar potenciais problemas antes de integrar na `main`.
+3. **Estar completas**: As funcionalidades devem estar totalmente implementadas e verificadas.
+
+#### Exemplo Prático
+
+Imagine que você está trabalhando na funcionalidade de cadastro de usuários. Durante o desenvolvimento, você percebe que a funcionalidade ainda não está completa e que ainda precisa de ajustes e testes adicionais. Neste caso, ao invés de subir diretamente para a `main`, você deve:
+
+1. **Trabalhar em uma branch específica**: Continue o desenvolvimento da funcionalidade na sua branch de trabalho;
+    
+
+2. **Subir suas mudanças para a branch**: Commite e faça push das suas alterações para a branch específica;
+    
+
+3. **Realizar testes e revisões na branch**: Continue desenvolvendo e testando até ter certeza de que a funcionalidade está completa e funcional;
+
+
+ Uma vez que a funcionalidade esteja completa e testada, mande uma mensagem no grupo de comunicação oficial (WhatsApp) para que outros membros da equipe possam revisar e aprovar as mudanças.
+   
+
+#### Conclusão
+
+Seguindo esta abordagem, garantimos que a `main` permaneça estável e confiável, minimizando o risco de introduzir bugs ou funcionalidades incompletas na versão principal do nosso projeto. Lembre-se, a qualidade e a estabilidade do código são responsabilidades compartilhadas por todos nós.
+
+Vamos continuar a desenvolver de maneira organizada e responsável, assegurando que a `main` reflita sempre o melhor estado do nosso trabalho coletivo.
+
+
+08/06/2024 MilhoTech
