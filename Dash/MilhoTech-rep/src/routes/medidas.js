@@ -25,7 +25,6 @@ router.get("/ultimas2/:idSilo/:idEmpresa", function (req, res) {
     medidaController.buscarUltimasMedidastemp2(req, res);
 });
 
-<<<<<<< HEAD
 // silo 3
 router.get("/ultimas3/:idSilo/:idEmpresa", function (req, res) {
     medidaController.buscarUltimasMedidasSilo3(req, res);
@@ -44,9 +43,13 @@ router.get("/ultimas4/:idSilo/:idEmpresa", function (req, res) {
     medidaController.buscarUltimasMedidastemp4(req, res);
 });
 
-module.exports = router;
-=======
+// VISÃO GERAL DA DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+router.get("/maiortemp", function (req, res) {
+    medidaController.maiortemp(req, res);
+});
 
 
 module.exports = router;
->>>>>>> b275350d24dc3de8ac3f943d99ae6507324b9093
+
+

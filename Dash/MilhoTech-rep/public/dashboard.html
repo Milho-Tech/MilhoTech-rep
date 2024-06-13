@@ -57,7 +57,7 @@
                             <a>
                                 <h3>Silo 1:</h3>
                                 <img src="img/temp.png" alt="">
-                                <h4>20°</h4>
+                                <h4><span id="tempsilo1"></span></h4>
                                 <img src="img/umid.png" alt="">
                                 <h4>11%</h4>
                             </a>
@@ -108,15 +108,8 @@
             <div class="box_inicio" id="box_inicio">
 
                 <div id="dashintrod" class="introducaodash"><br>
-                    <h3>Olá,<span id="b_usuario2">usuário</span>!</h3><br>
-                    <h3>Ultima medição: <span style="color: #2C3E50;" id="rodada"> Ainda Não Fez</span></h3>
-                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho"> Ainda Não
-                            Fez</span> </h3>
-                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho"> Ainda Não
-                            Fez</span> </h3>
-                    <h3>Silo com menor umidade:<span style="color: #2C3E50;" id="maiorumi_milho"> Ainda Não Fez</span>
-                    </h3>
-                    <h3>Silo com maior umidade: <span style="color: #2C3E50;" id="menorumi_milho"> Ainda Não Fez</span>
+                    <h3>Olá,<span id="b_usuario">usuário</span>!</h3><br>
+                    <h3>Clique nos botões ao lado para ver as medições de temperatura e umidade dos seus silos.
                     </h3><br>
                 </div>
 
@@ -215,6 +208,8 @@
 
 <script>
     nome_user.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     var idUsuario = sessionStorage.ID_USUARIO;
     var idSilo = 1;
     var idEmpresa = sessionStorage.ID_EMPRESA;
@@ -1140,6 +1135,20 @@ function obterDadosGraficotemp4(idSilo, idEmpresa) {
         }).catch(function (error) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
+    }
+
+
+
+
+    function maiortemp() {
+        fetch(`/medidas/maiortemp`, { cache: 'no-store' })
+            .then(response => response.json())
+            .then(data => {
+                var temp = data[0].temperatura;
+                console.log(data);
+                maiortemp_milho.innerHTML = temp;
+            })
+            .catch(error => console.error('Falha na captura de acertos(max,min)', error));
     }
 
 </script>

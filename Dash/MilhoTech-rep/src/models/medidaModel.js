@@ -141,6 +141,26 @@ function buscarUltimasMedidastemp4() {
     return database.executar(instrucaoSql);
 }
 
+function maiortemp() {
+
+    var instrucaoSql = `
+ SELECT 
+  fkSilo,
+  temperatura,
+  dtRegistro
+FROM 
+  Registro
+ORDER BY 
+  temperatura DESC
+LIMIT 1;
+
+
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarUltimasMedidas,
     buscarUltimasMedidastemp,
@@ -150,5 +170,6 @@ module.exports = {
     buscarUltimasMedidasSilo3,
     buscarUltimasMedidastemp3,
     buscarUltimasMedidasSilo4,
-    buscarUltimasMedidastemp4
+    buscarUltimasMedidastemp4,
+    maiortemp
 }
