@@ -24,7 +24,7 @@ function buscarUltimasMedidastemp(idSilo) {
                         fkSilo 
                         FROM Registro 
                     ORDER BY fkSilo ASC 
-                    LIMIT 1`;
+                    LIMIT 7`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
