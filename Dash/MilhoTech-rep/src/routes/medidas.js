@@ -21,7 +21,7 @@ router.get("/ultimas2/:idSilo/:idEmpresa", function (req, res) {
     medidaController.buscarUltimasMedidasSilo2(req, res);
 });
 
-router.get("/ultimas2/:idSilo/:idEmpresa", function (req, res) {
+router.get("/ultimas2/temp/:idSilo/:idEmpresa", function (req, res) {
     medidaController.buscarUltimasMedidastemp2(req, res);
 });
 
