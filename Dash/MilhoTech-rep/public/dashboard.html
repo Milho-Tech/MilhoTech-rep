@@ -294,7 +294,7 @@ function ultimaMedicaoUmid1(idSilo) {
 }
 
 function ultimaMedicaoTemp2(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp2/${idSilo}`, { cache: 'no-store' })
+    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Falha na requisição.');
@@ -311,7 +311,7 @@ function ultimaMedicaoTemp2(idSilo) {
 }
 
 function ultimaMedicaoUmid2(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid2/${idSilo}`, { cache: 'no-store' })
+    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Falha na requisição.');
