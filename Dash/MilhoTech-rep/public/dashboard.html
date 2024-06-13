@@ -1169,4 +1169,31 @@ function obterDadosGraficotemp4(idSilo, idEmpresa) {
         });
     }
 
+    function maiorTemp() {
+        fetch(`/medidas/maiorTemp/${idSilo}`, { cache: 'no-store' })
+            .then(response => response.json())
+            .then(data => {
+
+
+                var maiorTemperatura = data.map(item => item.silo_maiortemp);
+                console.log(data);
+                document.getElementById('maiortemp_milho').innerHTML = maiorTemp;
+
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
+    function menorTemp() {
+        fetch(`/medidas/menorTemp/${idSilo}`, { cache: 'no-store' })
+            .then(response => response.json())
+            .then(data => {
+
+
+                var menorTemperatura = data.map(item => item.silo_menortemp);
+                console.log(data);
+                document.getElementById('menortemp_milho').innerHTML = menorTemp;
+
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
+
 </script>
