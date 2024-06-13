@@ -792,6 +792,20 @@ function obterUltimaMedicao(idSilo) {
         div_silo.innerHTML = `Silo 2`;
     }
 
+    function obterDadosGrafico2(idSilo) {
+        fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                console.log(response);
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico2(resposta, idSilo);
+                });
+            } else { console.error('Nenhum dado encontrado ou erro na API AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'); }
+        }).catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+
     function plotarGrafico2(resposta, idSilo) {
     console.log('iniciando plotagem do gráfico...');
 
