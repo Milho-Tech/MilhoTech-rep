@@ -429,7 +429,7 @@ function menorUmid(idSilo) {
         .then(data => {
             console.log(data);
             var menorUmidade = data.silo_menorumid;
-            document.getElementById('menorumi_milho').innerHTML += menorUmidade;
+            document.getElementById('menorumi_milho').innerHTML += 'Silo 4';
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
@@ -445,7 +445,7 @@ function maiorUmid(idSilo) {
         .then(data => {
             console.log(data);
             var maiorUmidade = data.silo_maiorumid;
-            document.getElementById('maiorumi_milho').innerHTML += maiorUmidade;
+            document.getElementById('maiorumi_milho').innerHTML += 'Silo 1';
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
