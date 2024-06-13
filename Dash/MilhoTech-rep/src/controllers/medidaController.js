@@ -524,7 +524,7 @@ module.exports = {
     buscarUltimasMedidas2,
     buscarMedidasEmTempoReal2,
     buscarUltimasMedidastemp2,
-    buscarUltimasMedidasSilo2,
+    // buscarUltimasMedidasSilo2,
     // buscarUltimasMedidastemp2,
     // buscarUltimasMedidasSilo3,
     // buscarUltimasMedidastemp3,
