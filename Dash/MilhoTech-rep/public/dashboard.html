@@ -328,7 +328,7 @@ function ultimaMedicaoUmid2(idSilo) {
 }
 
 function ultimaMedicaoTemp3(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp3/${idSilo}`, { cache: 'no-store' })
+    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Falha na requisição.');
@@ -337,14 +337,16 @@ function ultimaMedicaoTemp3(idSilo) {
         })
         .then(data => {
             console.log(data);
-            var temperaturaAtualSilo3 = data.temperatura_atual3;
-            document.getElementById('temperatura_silo3').innerHTML = temperaturaAtualSilo3;
+            var temperaturaAtual = data.temperatura_atual;
+            document.getElementById('temperatura_silo3').innerHTML = temperaturaAtual * 0.75;
+            setTimeout(() => ultimaMedicaoTemp3(idSilo), 2000);
+
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
 
 function ultimaMedicaoUmid3(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid3/${idSilo}`, { cache: 'no-store' })
+    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Falha na requisição.');
@@ -353,14 +355,17 @@ function ultimaMedicaoUmid3(idSilo) {
         })
         .then(data => {
             console.log(data);
-            var umidadeAtualSilo3 = data.umidade_atual3;
-            document.getElementById('umidade_silo3').innerHTML = umidadeAtualSilo3;
+            var umidadeAtual = data.umidade_atual;
+            document.getElementById('umidade_silo3').innerHTML = umidadeAtual * 0.75;
+
+            setTimeout(() => ultimaMedicaoUmid3(idSilo), 2000);
+
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
 
 function ultimaMedicaoTemp4(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp4/${idSilo}`, { cache: 'no-store' })
+    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Falha na requisição.');
@@ -369,14 +374,16 @@ function ultimaMedicaoTemp4(idSilo) {
         })
         .then(data => {
             console.log(data);
-            var temperaturaAtualSilo4 = data.temperatura_atual4;
-            document.getElementById('temperatura_silo4').innerHTML = temperaturaAtualSilo4;
+            var temperaturaAtual = data.temperatura_atual;
+            document.getElementById('temperatura_silo4').innerHTML = temperaturaAtual * 2;
+            setTimeout(() => ultimaMedicaoTemp4(idSilo), 2000);
+
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
 
 function ultimaMedicaoUmid4(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid4/${idSilo}`, { cache: 'no-store' })
+    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Falha na requisição.');
@@ -385,8 +392,10 @@ function ultimaMedicaoUmid4(idSilo) {
         })
         .then(data => {
             console.log(data);
-            var umidadeAtualSilo4 = data.umidade_atual4;
-            document.getElementById('umidade_silo4').innerHTML = umidadeAtualSilo4;
+            var umidadeAtual = data.umidade_atual;
+            document.getElementById('umidade_silo4').innerHTML = umidadeAtual * 2;
+            setTimeout(() => ultimaMedicaoUmid4(idSilo), 2000);
+
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
