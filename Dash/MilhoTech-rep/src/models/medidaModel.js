@@ -171,9 +171,9 @@ function ultimaMedicaoUmid1(idSilo) {
 
 function ultimaMedicaoTemp2(idSilo) {
     var instrucaoSql = `
-        SELECT temperatura as temperatura_atual2
+        SELECT temperatura as temperatura_atual2 * 1.2
         FROM Registro
-        WHERE fkSilo = 2
+        WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
@@ -183,9 +183,9 @@ function ultimaMedicaoTemp2(idSilo) {
 
 function ultimaMedicaoUmid2(idSilo) {
     var instrucaoSql = `
-        SELECT umidade as umidade_atual2
+        SELECT umidade as umidade_atual2 * 1.2
         FROM Registro
-        WHERE fkSilo = 2
+        WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
@@ -195,9 +195,9 @@ function ultimaMedicaoUmid2(idSilo) {
 
 function ultimaMedicaoTemp3(idSilo) {
     var instrucaoSql = `
-        SELECT temperatura as temperatura_atual3
+        SELECT temperatura as temperatura_atual3 * 0.75
         FROM Registro
-        WHERE fkSilo = 3
+        WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
@@ -207,9 +207,9 @@ function ultimaMedicaoTemp3(idSilo) {
 
 function ultimaMedicaoUmid3(idSilo) {
     var instrucaoSql = `
-        SELECT umidade as umidade_atual3
+        SELECT umidade as umidade_atual3 * 0.75
         FROM Registro
-        WHERE fkSilo = 3
+        WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
@@ -219,9 +219,9 @@ function ultimaMedicaoUmid3(idSilo) {
 
 function ultimaMedicaoTemp4(idSilo) {
     var instrucaoSql = `
-        SELECT temperatura as temperatura_atual4
+        SELECT temperatura as temperatura_atual4 * 2
         FROM Registro
-        WHERE fkSilo = 4
+        WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
@@ -231,9 +231,9 @@ function ultimaMedicaoTemp4(idSilo) {
 
 function ultimaMedicaoUmid4(idSilo) {
     var instrucaoSql = `
-        SELECT umidade as umidade_atual4
+        SELECT umidade as umidade_atual4 * 2
         FROM Registro
-        WHERE fkSilo = 4
+        WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
