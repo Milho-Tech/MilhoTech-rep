@@ -871,6 +871,8 @@
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].dtRegistro); // incluir um novo momento
 
+                        alert(umidade);
+
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(umidade); // incluir uma nova medida de umidade
 
