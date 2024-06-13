@@ -145,7 +145,6 @@ function buscarUltimasMedidastemp4() {
     return database.executar(instrucaoSql);
 }
 
-<<<<<<< HEAD
 function ultimaMedicaoTemp1(idSilo) {
     var instrucaoSql = `
         SELECT temperatura as temperatura_atual
@@ -249,29 +248,10 @@ FROM registro
 ORDER BY temperatura DESC
 LIMIT 1;
     `;
-=======
-function maiortemp() {
-
-    var instrucaoSql = `
- SELECT 
-  fkSilo,
-  temperatura,
-  dtRegistro
-FROM 
-  Registro
-ORDER BY 
-  temperatura DESC
-LIMIT 1;
-
-
-    `;
-
->>>>>>> d4be01abb084276aa7e168e00a0f0e79deeb9f85
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-<<<<<<< HEAD
 function menorTemp(idSilo) {
     var instrucaoSql = `
         SELECT fkSilo as silo_menortemp
@@ -317,8 +297,6 @@ function ultimaMedicao(idSilo) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-=======
->>>>>>> d4be01abb084276aa7e168e00a0f0e79deeb9f85
 module.exports = {
     buscarUltimasMedidas,
     buscarUltimasMedidastemp,
@@ -329,7 +307,6 @@ module.exports = {
     buscarUltimasMedidastemp3,
     buscarUltimasMedidasSilo4,
     buscarUltimasMedidastemp4,
-<<<<<<< HEAD
     ultimaMedicaoUmid1,
     ultimaMedicaoTemp1,
     ultimaMedicaoUmid2,
@@ -343,7 +320,4 @@ module.exports = {
     menorUmid,
     maiorUmid,
     ultimaMedicao
-=======
-    maiortemp
->>>>>>> d4be01abb084276aa7e168e00a0f0e79deeb9f85
 }
