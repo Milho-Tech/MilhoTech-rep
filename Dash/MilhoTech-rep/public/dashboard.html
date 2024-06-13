@@ -835,7 +835,7 @@ function obterUltimaMedicao(idSilo) {
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[0].data.push(registro.temperatura);
         }
 
         console.log('----------------------------------------------')
@@ -873,7 +873,7 @@ function obterUltimaMedicao(idSilo) {
 
                         dados.labels.push(novoRegistro[0].momento_grafico);
                         dados.datasets[0].data.shift();
-                        dados.datasets[0].data.push(novoRegistro[0].umidade);
+                        dados.datasets[0].data.push(novoRegistro[0].temperatura);
 
                         myChart.update();
                     } setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
