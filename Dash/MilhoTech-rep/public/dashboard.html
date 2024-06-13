@@ -303,8 +303,9 @@ function ultimaMedicaoTemp2(idSilo) {
         })
         .then(data => {
             console.log(data);
-            var temperaturaAtualSilo2 = data.temperatura_atual2;
-            document.getElementById('temperatura_silo2').innerHTML = temperaturaAtualSilo2;
+            var temperaturaAtual = data.temperatura_atual;
+            document.getElementById('temperatura_silo2').innerHTML = temperaturaAtual * 1.25;
+            setTimeout(() => ultimaMedicaoTemp1(idSilo), 2000);
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
@@ -319,8 +320,9 @@ function ultimaMedicaoUmid2(idSilo) {
         })
         .then(data => {
             console.log(data);
-            var umidadeAtualSilo2 = data.umidade_atual2;
-            document.getElementById('umidade_silo2').innerHTML = umidadeAtualSilo2;
+            var umidadeAtual = data.umidade_atual;
+            document.getElementById('umidade_silo2').innerHTML = umidadeAtual * 1.25;
+            setTimeout(() => ultimaMedicaoUmid1(idSilo), 2000);
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
