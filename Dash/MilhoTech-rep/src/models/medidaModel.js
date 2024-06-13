@@ -21,9 +21,9 @@ function buscarUltimasMedidastemp(idSilo) {
         temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 1
-                    ORDER BY fkSilo ASC LIMIT 1
-
+                        FROM Registro
+                    ORDER BY fkSilo ASC 
+                    LIMIT 7
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -35,10 +35,11 @@ function buscarMedidasEmTempoReal(idSilo) {
     var instrucaoSql = `
  SELECT  
         umidade,
+        temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 2
-                    ORDER BY fkSilo ASC
+                        FROM Registro WHERE fkSilo = 1
+                    ORDER BY fkSilo ASC LIMIT 7
     `;
 
     console.log("Executando a instrução SQL : \n" + instrucaoSql);
@@ -53,8 +54,9 @@ function buscarUltimasMedidasSilo2() {
         temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 2
-                    ORDER BY fkSilo ASC LIMIT 7;`
+                        FROM Registro 
+                    ORDER BY fkSilo ASC 
+                    LIMIT 7;`
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -68,9 +70,9 @@ function buscarUltimasMedidastemp2() {
        umidade ,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 2
+                        FROM Registro 
                     ORDER BY fkSilo
-
+                    LIMIT 7
     `;
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
@@ -85,8 +87,9 @@ function buscarUltimasMedidasSilo3() {
         temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 3
-                    ORDER BY fkSilo ASC;`
+                        FROM Registro 
+                    ORDER BY fkSilo ASC
+                    LIMIT 7;`
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -100,9 +103,9 @@ function buscarUltimasMedidastemp3() {
        umidade ,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 3
+                        FROM Registro 
                     ORDER BY fkSilo
-
+                    LIMIT 7
     `;
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
@@ -117,8 +120,9 @@ function buscarUltimasMedidasSilo4() {
         temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 4
-                    ORDER BY fkSilo ASC;`
+                        FROM Registro 
+                    ORDER BY fkSilo ASC
+                    LIMIT 7;`
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -132,8 +136,9 @@ function buscarUltimasMedidastemp4() {
        umidade ,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro WHERE fkSilo = 4
+                        FROM Registro 
                     ORDER BY fkSilo
+                    LIMIT 7
 
     `;
 
@@ -141,6 +146,158 @@ function buscarUltimasMedidastemp4() {
     return database.executar(instrucaoSql);
 }
 
+function ultimaMedicaoTemp1(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual
+        FROM registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoUmid1(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual
+        FROM registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoTemp2(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual2
+        FROM registro
+        WHERE fkSilo = 2
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoUmid2(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual2
+        FROM registro
+        WHERE fkSilo = 2
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoTemp3(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual3
+        FROM registro
+        WHERE fkSilo = 3
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoUmid3(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual3
+        FROM registro
+        WHERE fkSilo = 3
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoTemp4(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual4
+        FROM registro
+        WHERE fkSilo = 4
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicaoUmid4(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual4
+        FROM registro
+        WHERE fkSilo = 4
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function maiorTemp(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_maiortemp
+FROM registro
+ORDER BY temperatura DESC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function menorTemp(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_menortemp
+FROM registro
+ORDER BY temperatura ASC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function menorUmid(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_menorumid, MIN(umidade) as menor_umidade
+FROM registro
+GROUP BY fkSilo
+ORDER BY menor_umidade ASC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function maiorUmid(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_maiorumid, MAX(umidade) as maior_umidade
+FROM registro
+GROUP BY fkSilo
+ORDER BY maior_umidade DESC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function ultimaMedicao(idSilo) {
+    var instrucaoSql = `
+        SELECT DATE_FORMAT(dtRegistro, '%d/%m/%y') as data_formatada
+        FROM registro
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     buscarUltimasMedidas,
     buscarUltimasMedidastemp,
@@ -150,5 +307,18 @@ module.exports = {
     buscarUltimasMedidasSilo3,
     buscarUltimasMedidastemp3,
     buscarUltimasMedidasSilo4,
-    buscarUltimasMedidastemp4
+    buscarUltimasMedidastemp4,
+    ultimaMedicaoUmid1,
+    ultimaMedicaoTemp1,
+    ultimaMedicaoUmid2,
+    ultimaMedicaoTemp2,
+    ultimaMedicaoUmid3,
+    ultimaMedicaoTemp3,
+    ultimaMedicaoUmid4,
+    ultimaMedicaoTemp4,
+    maiorTemp,
+    menorTemp,
+    menorUmid,
+    maiorUmid,
+    ultimaMedicao
 }
