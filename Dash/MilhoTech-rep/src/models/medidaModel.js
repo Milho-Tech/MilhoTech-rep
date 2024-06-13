@@ -8,7 +8,7 @@ function buscarUltimasMedidas(idSilo, idEmpresa) {
         temperatura,
                         dtRegistro,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as dtRegistro
-                    FROM registro join silos on idsilos = fkSilo where fkSilo = ${idSilo} and fkEmpresa = ${idEmpresa};`;
+                    FROM Registro join silos on idsilos = fkSilo where fkSilo = ${idSilo} and fkEmpresa = ${idEmpresa};`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -16,15 +16,14 @@ function buscarUltimasMedidas(idSilo, idEmpresa) {
 
 function buscarUltimasMedidastemp(idSilo) {
 
-    var instrucaoSql = `
- SELECT  
+    var instrucaoSql = ` SELECT  
+    umidade,
         temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
-                        FROM Registro
+                        FROM Registro 
                     ORDER BY fkSilo ASC 
-                    LIMIT 7
-    `;
+                    LIMIT 7`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -72,7 +71,7 @@ function buscarUltimasMedidastemp2() {
                         fkSilo 
                         FROM Registro 
                     ORDER BY fkSilo
-                    LIMIT 7
+                    LIMIT 7;
     `;
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
@@ -105,7 +104,7 @@ function buscarUltimasMedidastemp3() {
                         fkSilo 
                         FROM Registro 
                     ORDER BY fkSilo
-                    LIMIT 7
+                    LIMIT 7;
     `;
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
@@ -121,7 +120,7 @@ function buscarUltimasMedidasSilo4() {
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro 
-                    ORDER BY fkSilo ASC
+                    ORDER BY fkSilo 
                     LIMIT 7;`
 
     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
