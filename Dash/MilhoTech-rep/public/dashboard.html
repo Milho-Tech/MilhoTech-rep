@@ -304,7 +304,7 @@ function ultimaMedicaoTemp2(idSilo) {
         .then(data => {
             console.log(data);
             var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo2').innerHTML = temperaturaAtual * 1.25;
+            document.getElementById('temperatura_silo2').innerHTML = (temperaturaAtual * 1.25).toFixed(2);
             setTimeout(() => ultimaMedicaoTemp2(idSilo), 2000);
         })
         .catch(error => console.error('Falha na captura de rodada', error));
@@ -321,7 +321,7 @@ function ultimaMedicaoUmid2(idSilo) {
         .then(data => {
             console.log(data);
             var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo2').innerHTML = umidadeAtual * 1.25;
+            document.getElementById('umidade_silo2').innerHTML = (umidadeAtual * 1.25).toFixed(2);
             setTimeout(() => ultimaMedicaoUmid2(idSilo), 2000);
         })
         .catch(error => console.error('Falha na captura de rodada', error));
@@ -338,7 +338,7 @@ function ultimaMedicaoTemp3(idSilo) {
         .then(data => {
             console.log(data);
             var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo3').innerHTML = temperaturaAtual * 0.75;
+            document.getElementById('temperatura_silo3').innerHTML = (temperaturaAtual * 0.75).toFixed(2);
             setTimeout(() => ultimaMedicaoTemp3(idSilo), 2000);
 
         })
@@ -356,7 +356,7 @@ function ultimaMedicaoUmid3(idSilo) {
         .then(data => {
             console.log(data);
             var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo3').innerHTML = umidadeAtual * 0.75;
+            document.getElementById('umidade_silo3').innerHTML = (umidadeAtual * 0.75).toFixed(2);
 
             setTimeout(() => ultimaMedicaoUmid3(idSilo), 2000);
 
@@ -375,7 +375,7 @@ function ultimaMedicaoTemp4(idSilo) {
         .then(data => {
             console.log(data);
             var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo4').innerHTML = temperaturaAtual * 2;
+            document.getElementById('temperatura_silo4').innerHTML = (temperaturaAtual * 2).toFixed(2);
             setTimeout(() => ultimaMedicaoTemp4(idSilo), 2000);
 
         })
@@ -393,7 +393,7 @@ function ultimaMedicaoUmid4(idSilo) {
         .then(data => {
             console.log(data);
             var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo4').innerHTML = umidadeAtual * 2;
+            document.getElementById('umidade_silo4').innerHTML = (umidadeAtual * 2).toFixed(2);
             setTimeout(() => ultimaMedicaoUmid4(idSilo), 2000);
 
         })
