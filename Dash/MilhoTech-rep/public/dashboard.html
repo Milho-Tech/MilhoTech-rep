@@ -9,10 +9,11 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
     <link rel="stylesheet" href="css/styledashboard.css">
     <script src="js/sessao.js"></script>
-   
+
 </head>
 
-<body onload='geral(), ultimaMedicaoUmid1(), ultimaMedicaoTemp1(), ultimaMedicaoUmid2(), ultimaMedicaoTemp2(), ultimaMedicaoTemp3(), ultimaMedicaoUmid3(), ultimaMedicaoUmid4(), ultimaMedicaoTemp4(), maiorTemp(), menorTemp(), menorUmid(), maiorUmid(), obterUltimaMedicao()'>
+<body
+    onload='geral(), ultimaMedicaoUmid1(), ultimaMedicaoTemp1(), ultimaMedicaoUmid2(), ultimaMedicaoTemp2(), ultimaMedicaoTemp3(), ultimaMedicaoUmid3(), ultimaMedicaoUmid4(), ultimaMedicaoTemp4(), maiorTemp(), menorTemp(), menorUmid(), maiorUmid(), obterUltimaMedicao()'>
 
 
     <div class="div_conteudo" id="div_conteudo">
@@ -27,7 +28,7 @@
                 <li>Usuário: <span id="nome_user">Fernando Brandão</span></li>
                 <li><a href="#" onclick="geral()" id="botaogeral">Visão Geral</a></li>
                 <li><a href="#" onclick="silo1()" id="botaosilo1">Silo 1</a></li>
-                <li><a href="#" onclick="silo2()" id="botaosilo2">Silo 2</a></li>
+                <li><a href="#" onclick="silo1()" id="botaosilo1">Silo 2</a></li>
                 <li><a href="#" onclick="silo3()" id="botaosilo3">Silo 3</a></li>
                 <li><a href="#" onclick="silo4()" id="botaosilo4">Silo 4</a></li>
 
@@ -53,7 +54,8 @@
             <div class="caixa-info">
                 <div class="informacoes" id="div_informacoes">
                     <div class="infos" id="div_todos numeros">
-                        <div onclick="silo1()" class="numeros" id="div_numeros" style="background-color: rgb(255, 187, 187);">
+                        <div onclick="silo1()" class="numeros" id="div_numeros"
+                            style="background-color: rgb(255, 187, 187);">
                             <a>
                                 <h3>Silo 1:</h3>
                                 <img src="img/temp.png" alt="">
@@ -63,7 +65,8 @@
                             </a>
                         </div>
 
-                        <div onclick="silo2()" class="numeros" id="div_numeros" style="background-color: rgb(255, 187, 187);">
+                        <div onclick="silo2()" class="numeros" id="div_numeros"
+                            style="background-color: rgb(255, 187, 187);">
                             <a>
                                 <h3>Silo 2:</h3>
                                 <img src="img/temp.png" alt="">
@@ -84,7 +87,8 @@
                                 <span style="color: #000000;" id="umidade_silo3">58</span>
                             </a>
                         </div>
-                        <div onclick="silo4()" class="numeros" id="div_numeros" style="background-color: rgb(169, 243, 167);">
+                        <div onclick="silo4()" class="numeros" id="div_numeros"
+                            style="background-color: rgb(169, 243, 167);">
                             <a>
                                 <h3>Silo 4:</h3>
                                 <img src="img/temp.png" alt="">
@@ -110,8 +114,10 @@
                 <div id="dashintrod" class="introducaodash"><br>
                     <h3>Olá,<span id="b_usuario2">usuário</span>!</h3><br>
                     <h3>Ultima medição: <span style="color: #2C3E50;" id="data_medicao">Sem medição</span></h3>
-                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho">Silo 2</span> </h3>
-                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho">Silo 4</span> </h3>
+                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho">Silo 2</span>
+                    </h3>
+                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho">Silo 4</span>
+                    </h3>
                     <h3>Silo com menor umidade:<span style="color: #2C3E50;" id="maiorumi_milho"> </span>
                     </h3>
                     <h3>Silo com maior umidade: <span style="color: #2C3E50;" id="menorumi_milho"> </span>
@@ -201,49 +207,49 @@
                     </div>
 
                 </div>
-            <div class="caixa-info">
-                <div class="infos" id="div_informacoes">
-                    <div class="numeros" id="div_numeros">
-                        <div class="numeros perigo_frio" id="div_numeros">
-                            <span>Perigo</span>
-                            <span>
-                                <= 13°C</span>
+                <div class="caixa-info">
+                    <div class="infos" id="div_informacoes">
+                        <div class="numeros" id="div_numeros">
+                            <div class="numeros perigo_frio" id="div_numeros">
+                                <span>Perigo</span>
+                                <span>
+                                    <= 13°C</span>
+                            </div>
+
+                            <div class="numeros alerta" id="div_numeros">
+                                <span>Alerta</span>
+                                <span>
+                                    <= 14°C</span>
+
+                            </div>
+                            <div class="numeros ideal" id="div_numeros">
+                                <span>Ideal</span>
+                                <span> 15° ~ 18°C</span>
+
+                            </div>
+
+                            <div class="numeros alerta" id="div_numeros">
+                                <span>Alerta</span>
+                                <span> >= 18°C</span>
+
+                            </div>
+                            <div class="numeros perigo_quente" id="div_numeros">
+                                <span>Perigo</span>
+                                <span> >= 21°C</span>
+
+                                </a>
+                            </div>
+
                         </div>
 
-                        <div class="numeros alerta" id="div_numeros">
-                            <span>Alerta</span>
-                            <span>
-                                <= 14°C</span>
-
-                        </div>
-                        <div class="numeros ideal" id="div_numeros">
-                            <span>Ideal</span>
-                            <span> 15° ~ 18°C</span>
-
-                        </div>
-
-                        <div class="numeros alerta" id="div_numeros">
-                            <span>Alerta</span>
-                            <span> >= 18°C</span>
-
-                        </div>
-                        <div class="numeros perigo_quente" id="div_numeros">
-                            <span>Perigo</span>
-                            <span> >= 21°C</span>
-
-                            </a>
-                        </div>
+                    </div>
+                    <div class="geral" id="div_geral">
 
                     </div>
 
                 </div>
-                <div class="geral" id="div_geral">
 
-                </div>
-
-            </div>
-
-            <!-- <img class="logo" src="img/logo.png" alt=""> -->
+                <!-- <img class="logo" src="img/logo.png" alt=""> -->
 </body>
 
 </html>
@@ -257,228 +263,228 @@
     var idEmpresa = sessionStorage.ID_EMPRESA;
 
     function ultimaMedicaoTemp1(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo1').innerHTML = temperaturaAtual;
-            setTimeout(() => ultimaMedicaoTemp1(idSilo), 2000);
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
+        fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var temperaturaAtual = data.temperatura_atual;
+                document.getElementById('temperatura_silo1').innerHTML = temperaturaAtual;
+                setTimeout(() => ultimaMedicaoTemp1(idSilo), 2000);
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
 
 
-}
+    }
 
-function ultimaMedicaoUmid1(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo1').innerHTML = umidadeAtual;
-            setTimeout(() => ultimaMedicaoUmid1(idSilo), 2000);
+    function ultimaMedicaoUmid1(idSilo) {
+        fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var umidadeAtual = data.umidade_atual;
+                document.getElementById('umidade_silo1').innerHTML = umidadeAtual;
+                setTimeout(() => ultimaMedicaoUmid1(idSilo), 2000);
 
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function ultimaMedicaoTemp2(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo2').innerHTML = (temperaturaAtual * 1.25).toFixed(2);
-            setTimeout(() => ultimaMedicaoTemp2(idSilo), 2000);
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function ultimaMedicaoTemp2(idSilo) {
+        fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var temperaturaAtual = data.temperatura_atual;
+                document.getElementById('temperatura_silo2').innerHTML = (temperaturaAtual * 1.25).toFixed(2);
+                setTimeout(() => ultimaMedicaoTemp2(idSilo), 2000);
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function ultimaMedicaoUmid2(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo2').innerHTML = (umidadeAtual * 1.25).toFixed(2);
-            setTimeout(() => ultimaMedicaoUmid2(idSilo), 2000);
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function ultimaMedicaoUmid2(idSilo) {
+        fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var umidadeAtual = data.umidade_atual;
+                document.getElementById('umidade_silo2').innerHTML = (umidadeAtual * 1.25).toFixed(2);
+                setTimeout(() => ultimaMedicaoUmid2(idSilo), 2000);
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function ultimaMedicaoTemp3(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo3').innerHTML = (temperaturaAtual * 0.75).toFixed(2);
-            setTimeout(() => ultimaMedicaoTemp3(idSilo), 2000);
+    function ultimaMedicaoTemp3(idSilo) {
+        fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var temperaturaAtual = data.temperatura_atual;
+                document.getElementById('temperatura_silo3').innerHTML = (temperaturaAtual * 0.75).toFixed(2);
+                setTimeout(() => ultimaMedicaoTemp3(idSilo), 2000);
 
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function ultimaMedicaoUmid3(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo3').innerHTML = (umidadeAtual * 0.75).toFixed(2);
+    function ultimaMedicaoUmid3(idSilo) {
+        fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var umidadeAtual = data.umidade_atual;
+                document.getElementById('umidade_silo3').innerHTML = (umidadeAtual * 0.75).toFixed(2);
 
-            setTimeout(() => ultimaMedicaoUmid3(idSilo), 2000);
+                setTimeout(() => ultimaMedicaoUmid3(idSilo), 2000);
 
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function ultimaMedicaoTemp4(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo4').innerHTML = (temperaturaAtual * 2).toFixed(2);
-            setTimeout(() => ultimaMedicaoTemp4(idSilo), 2000);
+    function ultimaMedicaoTemp4(idSilo) {
+        fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var temperaturaAtual = data.temperatura_atual;
+                document.getElementById('temperatura_silo4').innerHTML = (temperaturaAtual * 2).toFixed(2);
+                setTimeout(() => ultimaMedicaoTemp4(idSilo), 2000);
 
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function ultimaMedicaoUmid4(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo4').innerHTML = (umidadeAtual * 2).toFixed(2);
-            setTimeout(() => ultimaMedicaoUmid4(idSilo), 2000);
+    function ultimaMedicaoUmid4(idSilo) {
+        fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var umidadeAtual = data.umidade_atual;
+                document.getElementById('umidade_silo4').innerHTML = (umidadeAtual * 2).toFixed(2);
+                setTimeout(() => ultimaMedicaoUmid4(idSilo), 2000);
 
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function maiorTemp(idSilo) {
-    fetch(`/medidas/maiorTemp/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var maiorTemperatura = data.silo_maiortemp;
-            document.getElementById('maiortemp_milho').innerHTML += maiorTemperatura;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function maiorTemp(idSilo) {
+        fetch(`/medidas/maiorTemp/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var maiorTemperatura = data.silo_maiortemp;
+                document.getElementById('maiortemp_milho').innerHTML += maiorTemperatura;
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function menorTemp(idSilo) {
-    fetch(`/medidas/menorTemp/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var menorTemperatura = data.silo_menortemp;
-            document.getElementById('menortemp_milho').innerHTML += menorTemperatura;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function menorTemp(idSilo) {
+        fetch(`/medidas/menorTemp/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var menorTemperatura = data.silo_menortemp;
+                document.getElementById('menortemp_milho').innerHTML += menorTemperatura;
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function menorUmid(idSilo) {
-    fetch(`/medidas/menorUmid/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var menorUmidade = data.silo_menorumid;
-            document.getElementById('menorumi_milho').innerHTML += 'Silo 4';
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function menorUmid(idSilo) {
+        fetch(`/medidas/menorUmid/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var menorUmidade = data.silo_menorumid;
+                document.getElementById('menorumi_milho').innerHTML += 'Silo 4';
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function maiorUmid(idSilo) {
-    fetch(`/medidas/maiorUmid/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var maiorUmidade = data.silo_maiorumid;
-            document.getElementById('maiorumi_milho').innerHTML += 'Silo 1';
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function maiorUmid(idSilo) {
+        fetch(`/medidas/maiorUmid/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var maiorUmidade = data.silo_maiorumid;
+                document.getElementById('maiorumi_milho').innerHTML += 'Silo 1';
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
-function obterUltimaMedicao(idSilo) {
-    fetch(`/medidas/ultimaMedicao/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var dataMedicao = data.data_formatada;
-            document.getElementById('data_medicao').innerHTML = dataMedicao;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
+    function obterUltimaMedicao(idSilo) {
+        fetch(`/medidas/ultimaMedicao/${idSilo}`, { cache: 'no-store' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na requisição.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                var dataMedicao = data.data_formatada;
+                document.getElementById('data_medicao').innerHTML = dataMedicao;
+            })
+            .catch(error => console.error('Falha na captura de rodada', error));
+    }
 
 
 
@@ -554,72 +560,9 @@ function obterUltimaMedicao(idSilo) {
             });
     }
 
-    function obterDadosGrafico2(idSilo) {
-        fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
 
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    // resposta.reverse();
 
-                    plotarGrafico(resposta, idSilo);
 
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-
-    function plotarGrafico2(resposta, idSilo) {
-        console.log('iniciando plotagem do gráfico...');
-        let labels = [];
-
-        let dados = {
-            labels: labels,
-            datasets: [{
-                label: 'Umidade',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            }]
-        };
-
-        console.log('----------------------------------------------')
-        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        console.log(resposta)
-
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.dtRegistro);
-            dados.datasets[0].data.push(registro.umidade);
-        }
-
-        console.log('----------------------------------------------')
-        console.log('O gráfico será plotado com os respectivos valores:')
-        console.log('Labels:')
-        console.log(labels)
-        console.log('Dados:')
-        console.log(dados.datasets)
-        console.log('----------------------------------------------')
-
-        const config = {
-            type: 'line',
-            data: dados,
-        };
-
-        let myChart = new Chart(
-            document.getElementById(`myChart4`),
-            config
-        );
-
-        setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
-    }
 
     function plotarGrafico(resposta, idSilo) {
         console.log('iniciando plotagem do gráfico...');
@@ -740,28 +683,9 @@ function obterUltimaMedicao(idSilo) {
             });
     }
 
-    function obterDadosGraficotemp2(idSilo) {
-        fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
-
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    // resposta.reverse();
-
-                    plotarGraficotemp(resposta, idSilo);
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
 
     function plotarGraficotemp(resposta, idSilo) {
-        setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000); 
+        setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -778,61 +702,7 @@ function obterUltimaMedicao(idSilo) {
                 borderColor: '#ed9600',
                 tension: 0.1
             }]
-        } ;
-
-        console.log('----------------------------------------------')
-        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        console.log(resposta)
-
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.dtRegistro);
-            dados.datasets[0].data.push(registro.temperatura);
-        }
-
-        console.log('----------------------------------------------')
-        console.log('O gráfico será plotado com os respectivos valores:')
-        console.log('Labels:')
-        console.log(labels)
-        console.log('Dados:')
-        console.log(dados.datasets)
-        console.log('----------------------------------------------')
-
-        // Criando estrutura para plotar gráfico - config
-        const config = {
-            type: 'line',
-            data: dados,
         };
-
-        // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChart3`),
-            config
-        );
-
-        setTimeout(() => atualizarGrafico1(idSilo, dados, myChart), 2000);
-    }
-
-    function plotarGraficotemp(resposta, idSilo) {
-        setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000); 
-
-        console.log('iniciando plotagem do gráfico...');
-
-        // Criando estrutura para plotar gráfico - labels
-        let labels = [];
-
-        // Criando estrutura para plotar gráfico - dados
-        let dados = {
-            labels: labels,
-            datasets: [{
-                label: 'temperatura',
-                data: [],
-                fill: false,
-                borderColor: '#ed9600',
-                tension: 0.1
-            }]
-        } ;
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
@@ -885,6 +755,7 @@ function obterUltimaMedicao(idSilo) {
                         // avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                         console.log("Horário do novo dado capturado:")
                         console.log(novoRegistro[0].dtRegistro)
+
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
@@ -934,20 +805,143 @@ function obterUltimaMedicao(idSilo) {
     }
 
     function obterDadosGrafico2(idSilo) {
-        fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+
             if (response.ok) {
-                console.log(response);
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGrafico2(resposta, idSilo);
+                    // resposta.reverse();
+
+                    plotarGrafico(resposta, idSilo);
+
                 });
-            } else { console.error('Nenhum dado encontrado ou erro na API AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'); }
-        }).catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 
     function atualizarGrafico2(idSilo, dados, myChart) {
+        fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    // obterdados(idSilo);
+                    // alertar(novoRegistro, idAquario);
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    //let avisoCaptura = document.getElementById(`avisoCaptura${idSilo}`)
+                    //   avisoCaptura.innerHTML = "ver depois"
+
+
+                    if (novoRegistro[0].dtRegistro == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        // avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].dtRegistro)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro[0].dtRegistro); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+                        myChart.update();
+                    }
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function obterDadosGraficotemp2(idSilo) {
+        fetch(`/medidas/ultimas/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    // resposta.reverse();
+
+                    plotarGraficotemp(resposta, idSilo);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico2(resposta, idSilo) {
+        console.log('iniciando plotagem do gráfico...');
+        let labels = [];
+
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Umidade',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.dtRegistro);
+            dados.datasets[0].data.push(registro.umidade);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        let myChart = new Chart(
+            document.getElementById(`myCharthumi1`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
+    }
+
+    // temperatura silo2
+    function atualizarGraficotemp2(idSilo, dados, myChart) {
         fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
@@ -957,157 +951,74 @@ function obterUltimaMedicao(idSilo) {
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.");
                     } else {
                         dados.labels.shift();
-
-
                         dados.labels.push(novoRegistro[0].momento_grafico);
                         dados.datasets[0].data.shift();
-                        dados.datasets[0].data.push(novoRegistro[0].umidade);
-
+                        dados.datasets[0].data.push(novoRegistro[0].temperatura);
                         myChart.update();
-                    } setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
+                    }
+                    setTimeout(() => atualizarGraficotemp2(idSilo, dados, myChart), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
+                setTimeout(() => atualizarGraficotemp2(idSilo, dados, myChart), 2000);
             }
         }).catch(function (error) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
     }
+    function plotarGraficotemp2(resposta, idSilo) {
+        setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);
 
-    function obterDadosGraficotemp2(idSilo) {
-        fetch(`/medidas/ultimas2/temp/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                console.log(response);
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGraficotemp2(resposta, idSilo);
-                });
-            } else { console.error('Nenhum dado encontrado ou erro na API'); }
-        }).catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
-    }
+        console.log('iniciando plotagem do gráfico...');
 
-    function plotarGrafico2(resposta, idSilo) {
-    console.log('iniciando plotagem do gráfico...');
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
 
-    let labels = [];
-    let dados = {
-        labels: labels,
-        datasets: [{
-            label: 'Umidade',
-            data: [],
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        }]
-    };
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'temperatura',
+                data: [],
+                fill: false,
+                borderColor: '#ed9600',
+                tension: 0.1
+            }]
+        };
 
-    console.log('----------------------------------------------');
-    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":');
-    console.log(resposta);
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
 
-    for (let i = 0; i < resposta.length; i++) {
-        var registro = resposta[i];
-        labels.push(registro.momento_grafico);
-        dados.datasets[0].data.push(registro.umidade);
-    }
-
-    console.log('----------------------------------------------');
-    console.log('O gráfico será plotado com os respectivos valores:');
-    console.log('Labels:');
-    console.log(labels);
-    console.log('Dados:');
-    console.log(dados.datasets);
-    console.log('----------------------------------------------');
-
-    const config = {
-        type: 'line',
-        data: dados,
-    };
-
-    let myChart = new Chart(
-        document.getElementById(`myChart4`),
-        config
-    );
-
-    setTimeout(() => atualizarGrafico2(idSilo, dados, myChart), 2000);  
-}
-
-function plotarGraficotemp2(resposta, idSilo) {
-    console.log('iniciando plotagem do gráfico...');
-
-    let labels = [];
-    let dados = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperatura',
-            data: [],
-            fill: false,
-            borderColor: '#ed9600',
-            tension: 0.1
-        }]
-    };
-
-    console.log('----------------------------------------------');
-    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":');
-    console.log(resposta);
-
-    for (let i = 0; i < resposta.length; i++) {
-        var registro = resposta[i];
-        labels.push(registro.momento_grafico);
-        dados.datasets[0].data.push(registro.temperatura);
-    }
-
-    console.log('----------------------------------------------');
-    console.log('O gráfico será plotado com os respectivos valores:');
-    console.log('Labels:');
-    console.log(labels);
-    console.log('Dados:');
-    console.log(dados.datasets);
-    console.log('----------------------------------------------');
-
-    const config = {
-        type: 'line',
-        data: dados,
-    };
-
-    let myChart = new Chart(
-        document.getElementById(`myChart3`),
-        config
-    );
-
-    setTimeout(() => atualizarGraficotemp2(idSilo, dados, myChart), 2000);
-}
-
-    // temperatura silo2
-    function atualizarGraficotemp2(idSilo, dados, myChart) {
-    fetch(`/medidas/tempo-real/${idSilo}`, { cache: 'no-store' }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (novoRegistro) {
-                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-
-                if (novoRegistro[0].dtRegistro == dados.labels[dados.labels.length - 1]) {
-                    console.log("Como não há dados novos para captura, o gráfico não atualizará.");
-                } else {
-                    dados.labels.shift();
-                    dados.labels.push(novoRegistro[0].momento_grafico);
-                    dados.datasets[0].data.shift();
-                    dados.datasets[0].data.push(novoRegistro[0].temperatura);
-                    myChart.update();
-                }
-                setTimeout(() => atualizarGraficotemp2(idSilo, dados, myChart), 2000);
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-            setTimeout(() => atualizarGraficotemp2(idSilo, dados, myChart), 2000);
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.dtRegistro);
+            dados.datasets[0].data.push(registro.temperatura);
         }
-    }).catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-}
 
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myCharttemp1`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico1(idSilo, dados, myChart), 2000);
+    }
 
     // SILO 3 - INICIO  
 
@@ -1132,21 +1043,21 @@ function plotarGraficotemp2(resposta, idSilo) {
         div_silo.innerHTML = `Silo 3`;
     }
 
-    
-function obterDadosGrafico3(idSilo, idEmpresa) {
-    fetch(`/medidas/ultimas3/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (resposta) {
-                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                plotarGrafico3(resposta, idSilo);
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-        }
-    }).catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-}
+
+    function obterDadosGrafico3(idSilo, idEmpresa) {
+        fetch(`/medidas/ultimas3/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico3(resposta, idSilo);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
 
     function plotarGrafico3(resposta, idSilo) {
         console.log('iniciando plotagem do gráfico...');
@@ -1341,19 +1252,19 @@ function obterDadosGrafico3(idSilo, idEmpresa) {
     }
 
     function obterDadosGrafico4(idSilo, idEmpresa) {
-    fetch(`/medidas/ultimas4/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (resposta) {
-                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                plotarGrafico4(resposta, idSilo);
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-        }
-    }).catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-}
+        fetch(`/medidas/ultimas4/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico4(resposta, idSilo);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        }).catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
 
     function plotarGrafico4(resposta, idSilo) {
         console.log('iniciando plotagem do gráfico...');
@@ -1399,7 +1310,7 @@ function obterDadosGrafico3(idSilo, idEmpresa) {
             config
         );
 
-        setTimeout(() => atualizarGrafico4  (idSilo, dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico4(idSilo, dados, myChart), 2000);
 
     }
 
@@ -1431,8 +1342,8 @@ function obterDadosGrafico3(idSilo, idEmpresa) {
         });
     }
 
-// temperatura silo 4
-function obterDadosGraficotemp4(idSilo, idEmpresa) {
+    // temperatura silo 4
+    function obterDadosGraficotemp4(idSilo, idEmpresa) {
         fetch(`/medidas/ultimas4/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 console.log(response);
