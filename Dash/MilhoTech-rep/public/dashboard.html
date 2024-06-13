@@ -851,12 +851,28 @@
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
                     } else {
+
+                        var minT = 1;
+                        var maxT = 5;
+                        var minU = 1;
+                        var maxU = 12;
+                        var intervaloT = maxT - minT;
+                        var intervaloU = maxU - minU;
+
+                        var aleatorioT = Math.random() * intervalo + minT;
+                        var aleatorioU = Math.random() * intervalo + minU;
+
+                        var aleatorioIntT = aleatorioT.toFixed(0);
+                        var aleatorioIntU = aleatorioU.toFixed(0);
+
+                        var umidade = Number(novoRegistro[0].umidade);
+                        umidade += aleatorioIntU
                         // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].dtRegistro); // incluir um novo momento
 
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+                        dados.datasets[0].data.push(umidade); // incluir uma nova medida de umidade
 
                         myChart.update();
                     }
