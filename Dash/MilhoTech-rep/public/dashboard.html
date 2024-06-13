@@ -760,7 +760,7 @@ function obterUltimaMedicao(idSilo) {
             });
     }
 
-    function plotarGraficotemp2(resposta, idSilo) {
+    function plotarGraficotemp(resposta, idSilo) {
         setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000); 
 
         console.log('iniciando plotagem do gráfico...');
@@ -913,25 +913,25 @@ function obterUltimaMedicao(idSilo) {
 
 
     // DOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-    function silo2() {
-        idSilo = 2;
-        obterDadosGrafico2(idSilo);
-        obterDadosGraficotemp2(idSilo);
+//     function silo2() {
+//         idSilo = 2;
+//         obterDadosGrafico2(idSilo);
+//         obterDadosGraficotemp2(idSilo);
 
-        document.getElementById("box_inicio").style.display = "none";
-        document.getElementById("box_silo1").style.display = "none";
-        document.getElementById("sessao_tempsilo1").style.display = "none";
-        document.getElementById("sessao_umisilo1").style.display = "none";
-        document.getElementById("box_silo2").style.display = "flex";
-        document.getElementById("sessao_tempsilo2").style.display = "block";
-        document.getElementById("sessao_umisilo2").style.display = "block";
-        document.getElementById("sessao_tempsilo3").style.display = "none";
-        document.getElementById("sessao_umisilo3").style.display = "none";
-        document.getElementById("sessao_tempsilo4").style.display = "none";
-        document.getElementById("sessao_umisilo4").style.display = "none";
+//         document.getElementById("box_inicio").style.display = "none";
+//         document.getElementById("box_silo1").style.display = "none";
+//         document.getElementById("sessao_tempsilo1").style.display = "none";
+//         document.getElementById("sessao_umisilo1").style.display = "none";
+//         document.getElementById("box_silo2").style.display = "flex";
+//         document.getElementById("sessao_tempsilo2").style.display = "block";
+//         document.getElementById("sessao_umisilo2").style.display = "block";
+//         document.getElementById("sessao_tempsilo3").style.display = "none";
+//         document.getElementById("sessao_umisilo3").style.display = "none";
+//         document.getElementById("sessao_tempsilo4").style.display = "none";
+//         document.getElementById("sessao_umisilo4").style.display = "none";
 
-        div_silo.innerHTML = `Silo 2`;
-    }
+//         div_silo.innerHTML = `Silo 2`;
+//     }
 
 //     function obterDadosGrafico2(idSilo) {
 //         fetch(`/medidas/ultimas2/${idSilo}/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {

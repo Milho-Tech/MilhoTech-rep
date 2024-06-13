@@ -29,42 +29,31 @@ router.get("/tempo-real2/:idSilo", function (req, res) {
     medidaController.buscarMedidasEmTempoReal2(req, res);
 });
 // silo2
+router.get("/ultimas2/:idSilo/:idEmpresa", function (req, res) {
+    medidaController.buscarUltimasMedidasSilo2(req, res);
+});
 
-
-
-
-
-
-
-
-
-
-
-// router.get("/ultimas2/:idSilo/:idEmpresa", function (req, res) {
-//     medidaController.buscarUltimasMedidasSilo2(req, res);
-// });
-
-// router.get("/ultimas2/temp/:idSilo/:idEmpresa", function (req, res) {
-//     medidaController.buscarUltimasMedidastemp2(req, res);
-// });
+router.get("/ultimas2/temp/:idSilo/:idEmpresa", function (req, res) {
+    medidaController.buscarUltimasMedidastemp2(req, res);
+});
 
 // silo 3
-// router.get("/ultimas3/:idSilo/:idEmpresa", function (req, res) {
-//     medidaController.buscarUltimasMedidasSilo3(req, res);
-// });
+router.get("/ultimas3/:idSilo/:idEmpresa", function (req, res) {
+    medidaController.buscarUltimasMedidasSilo3(req, res);
+});
 
-// router.get("/ultimas3/:idSilo/:idEmpresa", function (req, res) {
-//     medidaController.buscarUltimasMedidastemp3(req, res);
-// });
+router.get("/ultimas3/:idSilo/:idEmpresa", function (req, res) {
+    medidaController.buscarUltimasMedidastemp3(req, res);
+});
 
-// // silo 4
-// router.get("/ultimas4/:idSilo/:idEmpresa", function (req, res) {
-//     medidaController.buscarUltimasMedidasSilo4(req, res);
-// });
+// silo 4
+router.get("/ultimas4/:idSilo/:idEmpresa", function (req, res) {
+    medidaController.buscarUltimasMedidasSilo4(req, res);
+});
 
-// router.get("/ultimas4/:idSilo/:idEmpresa", function (req, res) {
-//     medidaController.buscarUltimasMedidastemp4(req, res);
-// });
+router.get("/ultimas4/:idSilo/:idEmpresa", function (req, res) {
+    medidaController.buscarUltimasMedidastemp4(req, res);
+});
 
 // gerais
 router.get("/ultimaMedicaoTemp1/:idSilo", function (req, res) {

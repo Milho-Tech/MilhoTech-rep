@@ -90,98 +90,98 @@ function buscarMedidasEmTempoReal2(idSilo) {
     return database.executar(instrucaoSql);
 }
 // // silo2
-// function buscarUltimasMedidasSilo2() {
-//     var instrucaoSql = `SELECT umidade * 1.25 as umidade,
-//                                DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
-//                                fkSilo 
-//                         FROM Registro 
-//                         WHERE fkSilo = ?  // Adicionando filtro por silo
-//                         ORDER BY dtRegistro DESC 
-//                         LIMIT 7;`;
+function buscarUltimasMedidasSilo2() {
+    var instrucaoSql = `SELECT umidade * 1.25 as umidade,
+                               DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+                               fkSilo 
+                        FROM Registro 
+                        WHERE fkSilo = ?  // Adicionando filtro por silo
+                        ORDER BY dtRegistro DESC 
+                        LIMIT 7;`;
 
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function buscarUltimasMedidastemp2() {
-//     var instrucaoSql = `SELECT temperatura * 1.25 as temperatura,
-//                                DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
-//                                fkSilo 
-//                         FROM Registro 
-//                         WHERE fkSilo = ?  // Adicionando filtro por silo
-//                         ORDER BY dtRegistro DESC 
-//                         LIMIT 7;`;
+function buscarUltimasMedidastemp2() {
+    var instrucaoSql = `SELECT temperatura * 1.25 as temperatura,
+                               DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+                               fkSilo 
+                        FROM Registro 
+                        WHERE fkSilo = ?  // Adicionando filtro por silo
+                        ORDER BY dtRegistro DESC 
+                        LIMIT 7;`;
 
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// // silo3
-// function buscarUltimasMedidasSilo3() {
+// silo3
+function buscarUltimasMedidasSilo3() {
 
-//     var instrucaoSql = ` SELECT  
-//     umidade,
-//         temperatura,
-//                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
-//                         fkSilo 
-//                         FROM Registro 
-//                     ORDER BY fkSilo ASC
-//                     LIMIT 7;`
+    var instrucaoSql = ` SELECT  
+    umidade,
+        temperatura,
+                        DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+                        fkSilo 
+                        FROM Registro 
+                    ORDER BY fkSilo ASC
+                    LIMIT 7;`
 
-//     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução  SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function buscarUltimasMedidastemp3() {
+function buscarUltimasMedidastemp3() {
 
-//     var instrucaoSql = `
-//  SELECT  
-//  temperatura,
-//        umidade ,
-//                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
-//                         fkSilo 
-//                         FROM Registro 
-//                     ORDER BY fkSilo
-//                     LIMIT 7;
-//     `;
+    var instrucaoSql = `
+ SELECT  
+ temperatura,
+       umidade ,
+                        DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+                        fkSilo 
+                        FROM Registro 
+                    ORDER BY fkSilo
+                    LIMIT 7;
+    `;
 
-//     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução  SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// // silo4
-// function buscarUltimasMedidasSilo4() {
+// silo4
+function buscarUltimasMedidasSilo4() {
 
-//     var instrucaoSql = ` SELECT  
-//     umidade,
-//         temperatura,
-//                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
-//                         fkSilo 
-//                         FROM Registro 
-//                     ORDER BY fkSilo 
-//                     LIMIT 7;`
+    var instrucaoSql = ` SELECT  
+    umidade,
+        temperatura,
+                        DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+                        fkSilo 
+                        FROM Registro 
+                    ORDER BY fkSilo 
+                    LIMIT 7;`
 
-//     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução  SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function buscarUltimasMedidastemp4() {
+function buscarUltimasMedidastemp4() {
 
-//     var instrucaoSql = `
-//  SELECT  
-//  temperatura * 2,
-//        umidade * 2 ,
-//                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
-//                         fkSilo 
-//                         FROM Registro 
-//                     ORDER BY fkSilo
-//                     LIMIT 7
+    var instrucaoSql = `
+ SELECT  
+ temperatura * 2,
+       umidade * 2 ,
+                        DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+                        fkSilo 
+                        FROM Registro 
+                    ORDER BY fkSilo
+                    LIMIT 7
 
-//     `;
+    `;
 
-//     console.log("Executando a instrução  SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução  SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 function ultimaMedicaoTemp1(idSilo) {
     var instrucaoSql = `
