@@ -268,6 +268,7 @@
             console.log(data);
             var temperaturaAtual = data.temperatura_atual;
             document.getElementById('temperatura_silo1').innerHTML = temperaturaAtual;
+            setTimeout(() => ultimaMedicaoTemp1(idSilo), 2000);
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 
@@ -286,6 +287,8 @@ function ultimaMedicaoUmid1(idSilo) {
             console.log(data);
             var umidadeAtual = data.umidade_atual;
             document.getElementById('umidade_silo1').innerHTML = umidadeAtual;
+            setTimeout(() => ultimaMedicaoUmid1(idSilo), 2000);
+
         })
         .catch(error => console.error('Falha na captura de rodada', error));
 }
