@@ -183,158 +183,158 @@ function buscarMedidasEmTempoReal2(idSilo) {
 //     return database.executar(instrucaoSql);
 // }
 
-// function ultimaMedicaoTemp1(idSilo) {
-//     var instrucaoSql = `
-//         SELECT temperatura as temperatura_atual
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoTemp1(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoUmid1(idSilo) {
-//     var instrucaoSql = `
-//         SELECT umidade as umidade_atual
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoUmid1(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoTemp2(idSilo) {
-//     var instrucaoSql = `
-//         SELECT temperatura as temperatura_atual2 * 1.2
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoTemp2(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual2 * 1.2
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoUmid2(idSilo) {
-//     var instrucaoSql = `
-//         SELECT umidade as umidade_atual2 * 1.2
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoUmid2(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual2 * 1.2
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoTemp3(idSilo) {
-//     var instrucaoSql = `
-//         SELECT temperatura as temperatura_atual3 * 0.75
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoTemp3(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual3 * 0.75
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoUmid3(idSilo) {
-//     var instrucaoSql = `
-//         SELECT umidade as umidade_atual3 * 0.75
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoUmid3(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual3 * 0.75
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoTemp4(idSilo) {
-//     var instrucaoSql = `
-//         SELECT temperatura as temperatura_atual4 * 2
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoTemp4(idSilo) {
+    var instrucaoSql = `
+        SELECT temperatura as temperatura_atual4 * 2
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicaoUmid4(idSilo) {
-//     var instrucaoSql = `
-//         SELECT umidade as umidade_atual4 * 2
-//         FROM Registro
-//         WHERE fkSilo = 1
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicaoUmid4(idSilo) {
+    var instrucaoSql = `
+        SELECT umidade as umidade_atual4 * 2
+        FROM Registro
+        WHERE fkSilo = 1
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function maiorTemp(idSilo) {
-//     var instrucaoSql = `
-//         SELECT fkSilo as silo_maiortemp
-// FROM Registro
-// ORDER BY temperatura DESC
-// LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function maiorTemp(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_maiortemp
+FROM Registro
+ORDER BY temperatura DESC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function menorTemp(idSilo) {
-//     var instrucaoSql = `
-//         SELECT fkSilo as silo_menortemp
-// FROM Registro
-// ORDER BY temperatura ASC
-// LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function menorTemp(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_menortemp
+FROM Registro
+ORDER BY temperatura ASC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function menorUmid(idSilo) {
-//     var instrucaoSql = `
-//         SELECT fkSilo as silo_menorumid, MIN(umidade) as menor_umidade
-// FROM Registro
-// GROUP BY fkSilo
-// ORDER BY menor_umidade ASC
-// LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function menorUmid(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_menorumid, MIN(umidade) as menor_umidade
+FROM Registro
+GROUP BY fkSilo
+ORDER BY menor_umidade ASC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function maiorUmid(idSilo) {
-//     var instrucaoSql = `
-//         SELECT fkSilo as silo_maiorumid, MAX(umidade) as maior_umidade
-// FROM Registro
-// GROUP BY fkSilo
-// ORDER BY maior_umidade DESC
-// LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function maiorUmid(idSilo) {
+    var instrucaoSql = `
+        SELECT fkSilo as silo_maiorumid, MAX(umidade) as maior_umidade
+FROM Registro
+GROUP BY fkSilo
+ORDER BY maior_umidade DESC
+LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-// function ultimaMedicao(idSilo) {
-//     var instrucaoSql = `
-//         SELECT DATE_FORMAT(dtRegistro, '%d/%m/%y') as data_formatada
-//         FROM Registro
-//         ORDER BY dtRegistro DESC
-//         LIMIT 1;
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function ultimaMedicao(idSilo) {
+    var instrucaoSql = `
+        SELECT DATE_FORMAT(dtRegistro, '%d/%m/%y') as data_formatada
+        FROM Registro
+        ORDER BY dtRegistro DESC
+        LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     buscarUltimasMedidas,
     buscarUltimasMedidastemp,
