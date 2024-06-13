@@ -51,7 +51,7 @@ function buscarUltimasMedidasSilo2() {
 
     var instrucaoSql = ` SELECT  
     umidade,
-    temperatura
+    temperatura,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro 
@@ -67,7 +67,7 @@ function buscarUltimasMedidastemp2() {
     var instrucaoSql = `
  SELECT  
  temperatura,
- umidade
+ umidade,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro 
