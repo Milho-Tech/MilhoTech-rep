@@ -8,7 +8,7 @@ function buscarUltimasMedidas(idSilo, idEmpresa) {
         temperatura,
                         dtRegistro,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as dtRegistro
-                    FROM registro join silos on idsilos = fkSilo where fkSilo = ${idSilo} and fkEmpresa = ${idEmpresa};`;
+                    FROM Registro join silos on idsilos = fkSilo where fkSilo = ${idSilo} and fkEmpresa = ${idEmpresa};`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
