@@ -50,9 +50,9 @@ function buscarMedidasEmTempoReal(idSilo) {
 function buscarUltimasMedidasSilo2() {
 
     var instrucaoSql = ` SELECT  
-    umidade,
-    temperatura,
-                        DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
+    umidade * 1.25,
+    temperatura * 1.25,
+                    DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro 
                     ORDER BY fkSilo ASC 
@@ -66,8 +66,8 @@ function buscarUltimasMedidastemp2() {
 
     var instrucaoSql = `
  SELECT  
- temperatura,
- umidade,
+ temperatura * 1.25,
+ umidade * 1.25,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as momento_grafico, 
                         fkSilo 
                         FROM Registro 
