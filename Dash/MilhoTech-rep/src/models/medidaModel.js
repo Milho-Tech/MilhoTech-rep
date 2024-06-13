@@ -148,7 +148,7 @@ function buscarUltimasMedidastemp4() {
 function ultimaMedicaoTemp1(idSilo) {
     var instrucaoSql = `
         SELECT temperatura as temperatura_atual
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -160,7 +160,7 @@ function ultimaMedicaoTemp1(idSilo) {
 function ultimaMedicaoUmid1(idSilo) {
     var instrucaoSql = `
         SELECT umidade as umidade_atual
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 1
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -172,7 +172,7 @@ function ultimaMedicaoUmid1(idSilo) {
 function ultimaMedicaoTemp2(idSilo) {
     var instrucaoSql = `
         SELECT temperatura as temperatura_atual2
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 2
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -184,7 +184,7 @@ function ultimaMedicaoTemp2(idSilo) {
 function ultimaMedicaoUmid2(idSilo) {
     var instrucaoSql = `
         SELECT umidade as umidade_atual2
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 2
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -196,7 +196,7 @@ function ultimaMedicaoUmid2(idSilo) {
 function ultimaMedicaoTemp3(idSilo) {
     var instrucaoSql = `
         SELECT temperatura as temperatura_atual3
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 3
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -208,7 +208,7 @@ function ultimaMedicaoTemp3(idSilo) {
 function ultimaMedicaoUmid3(idSilo) {
     var instrucaoSql = `
         SELECT umidade as umidade_atual3
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 3
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -220,7 +220,7 @@ function ultimaMedicaoUmid3(idSilo) {
 function ultimaMedicaoTemp4(idSilo) {
     var instrucaoSql = `
         SELECT temperatura as temperatura_atual4
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 4
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -232,7 +232,7 @@ function ultimaMedicaoTemp4(idSilo) {
 function ultimaMedicaoUmid4(idSilo) {
     var instrucaoSql = `
         SELECT umidade as umidade_atual4
-        FROM registro
+        FROM Registro
         WHERE fkSilo = 4
         ORDER BY dtRegistro DESC
         LIMIT 1;
@@ -244,7 +244,7 @@ function ultimaMedicaoUmid4(idSilo) {
 function maiorTemp(idSilo) {
     var instrucaoSql = `
         SELECT fkSilo as silo_maiortemp
-FROM registro
+FROM Registro
 ORDER BY temperatura DESC
 LIMIT 1;
     `;
@@ -255,7 +255,7 @@ LIMIT 1;
 function menorTemp(idSilo) {
     var instrucaoSql = `
         SELECT fkSilo as silo_menortemp
-FROM registro
+FROM Registro
 ORDER BY temperatura ASC
 LIMIT 1;
     `;
@@ -266,7 +266,7 @@ LIMIT 1;
 function menorUmid(idSilo) {
     var instrucaoSql = `
         SELECT fkSilo as silo_menorumid, MIN(umidade) as menor_umidade
-FROM registro
+FROM Registro
 GROUP BY fkSilo
 ORDER BY menor_umidade ASC
 LIMIT 1;
@@ -278,7 +278,7 @@ LIMIT 1;
 function maiorUmid(idSilo) {
     var instrucaoSql = `
         SELECT fkSilo as silo_maiorumid, MAX(umidade) as maior_umidade
-FROM registro
+FROM Registro
 GROUP BY fkSilo
 ORDER BY maior_umidade DESC
 LIMIT 1;
@@ -290,7 +290,7 @@ LIMIT 1;
 function ultimaMedicao(idSilo) {
     var instrucaoSql = `
         SELECT DATE_FORMAT(dtRegistro, '%d/%m/%y') as data_formatada
-        FROM registro
+        FROM Registro
         ORDER BY dtRegistro DESC
         LIMIT 1;
     `;
