@@ -57,7 +57,7 @@
                             <a>
                                 <h3>Silo 1:</h3>
                                 <img src="img/temp.png" alt="">
-                                <span style="color: #000000;" id="temperatura_silo1">Sem medição</span>
+                                <h4>20°</h4>
                                 <img src="img/umid.png" alt="">
                                 <span style="color: #000000;" id="umidade_silo1">Sem medição</span>
                             </a>
@@ -108,12 +108,15 @@
             <div class="box_inicio" id="box_inicio">
 
                 <div id="dashintrod" class="introducaodash"><br>
-                    <h3>Ultima medição: <span style="color: #2C3E50;" id="data_medicao"> Ainda Não Fez</span></h3>
-                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho">Silo </span> </h3>
-                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho">Silo </span> </h3>
-                    <h3>Silo com menor umidade:<span style="color: #2C3E50;" id="menorumi_milho">Silo </span>
+                    <h3>Olá,<span id="b_usuario2">usuário</span>!</h3><br>
+                    <h3>Ultima medição: <span style="color: #2C3E50;" id="rodada"> Ainda Não Fez</span></h3>
+                    <h3>Silo com maior temperatura:<span style="color: #2C3E50;" id="maiortemp_milho"> Ainda Não
+                            Fez</span> </h3>
+                    <h3>Silo com menor temperatura:<span style="color: #2C3E50;" id="menortemp_milho"> Ainda Não
+                            Fez</span> </h3>
+                    <h3>Silo com menor umidade:<span style="color: #2C3E50;" id="maiorumi_milho"> Ainda Não Fez</span>
                     </h3>
-                    <h3>Silo com maior umidade: <span style="color: #2C3E50;" id="maiorumi_milho">Silo </span>
+                    <h3>Silo com maior umidade: <span style="color: #2C3E50;" id="menorumi_milho"> Ainda Não Fez</span>
                     </h3><br>
                 </div>
 
@@ -249,6 +252,8 @@
 
 <script>
     nome_user.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     var idUsuario = sessionStorage.ID_USUARIO;
     var idSilo = 1;
     var idEmpresa = sessionStorage.ID_EMPRESA;
@@ -1164,213 +1169,4 @@ function obterDadosGraficotemp4(idSilo, idEmpresa) {
         });
     }
 
-    function ultimaMedicaoTemp1(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtual = data.temperatura_atual;
-            document.getElementById('temperatura_silo1').innerHTML = temperaturaAtual;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-
-
-}
-
-function ultimaMedicaoUmid1(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid1/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtual = data.umidade_atual;
-            document.getElementById('umidade_silo1').innerHTML = umidadeAtual;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function ultimaMedicaoTemp2(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp2/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtualSilo2 = data.temperatura_atual2;
-            document.getElementById('temperatura_silo2').innerHTML = temperaturaAtualSilo2;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function ultimaMedicaoUmid2(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid2/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtualSilo2 = data.umidade_atual2;
-            document.getElementById('umidade_silo2').innerHTML = umidadeAtualSilo2;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function ultimaMedicaoTemp3(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp3/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtualSilo3 = data.temperatura_atual3;
-            document.getElementById('temperatura_silo3').innerHTML = temperaturaAtualSilo3;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function ultimaMedicaoUmid3(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid3/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtualSilo3 = data.umidade_atual3;
-            document.getElementById('umidade_silo3').innerHTML = umidadeAtualSilo3;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function ultimaMedicaoTemp4(idSilo) {
-    fetch(`/medidas/ultimaMedicaoTemp4/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var temperaturaAtualSilo4 = data.temperatura_atual4;
-            document.getElementById('temperatura_silo4').innerHTML = temperaturaAtualSilo4;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function ultimaMedicaoUmid4(idSilo) {
-    fetch(`/medidas/ultimaMedicaoUmid4/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var umidadeAtualSilo4 = data.umidade_atual4;
-            document.getElementById('umidade_silo4').innerHTML = umidadeAtualSilo4;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function maiorTemp(idSilo) {
-    fetch(`/medidas/maiorTemp/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var maiorTemperatura = data.silo_maiortemp;
-            document.getElementById('maiortemp_milho').innerHTML += maiorTemperatura;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function menorTemp(idSilo) {
-    fetch(`/medidas/menorTemp/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var menorTemperatura = data.silo_menortemp;
-            document.getElementById('menortemp_milho').innerHTML += menorTemperatura;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function menorUmid(idSilo) {
-    fetch(`/medidas/menorUmid/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var menorUmidade = data.silo_menorumid;
-            document.getElementById('menorumi_milho').innerHTML += menorUmidade;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function maiorUmid(idSilo) {
-    fetch(`/medidas/maiorUmid/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var maiorUmidade = data.silo_maiorumid;
-            document.getElementById('maiorumi_milho').innerHTML += maiorUmidade;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
-
-function obterUltimaMedicao(idSilo) {
-    fetch(`/medidas/ultimaMedicao/${idSilo}`, { cache: 'no-store' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na requisição.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            var dataMedicao = data.data_formatada;
-            document.getElementById('data_medicao').innerHTML = dataMedicao;
-        })
-        .catch(error => console.error('Falha na captura de rodada', error));
-}
 </script>

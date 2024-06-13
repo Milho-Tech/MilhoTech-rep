@@ -196,6 +196,7 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+<<<<<<< HEAD
 // gerais
 function ultimaMedicaoUmid1(req, res) {
     var idSilo = req.params.idSilo;
@@ -451,6 +452,31 @@ function ultimaMedicao(req, res) {
             });
     
     }
+=======
+function maiortemp(req, res) {
+
+
+    var idSilo = req.params.idSilo;
+    var idEmpresa = req.params.idEmpresa;
+    console.log("id silo:" + idSilo);
+    console.log("id empresa:" + idEmpresa);
+
+    console.log(`Recuperando as ultimas medidas`);
+
+    medidaModel.maiortemp(idSilo, idEmpresa).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+>>>>>>> d4be01abb084276aa7e168e00a0f0e79deeb9f85
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
@@ -461,6 +487,7 @@ module.exports = {
     buscarUltimasMedidastemp3,
     buscarUltimasMedidasSilo4,
     buscarUltimasMedidastemp4,
+<<<<<<< HEAD
     ultimaMedicaoUmid1,
     ultimaMedicaoTemp1,
     ultimaMedicaoUmid2,
@@ -475,4 +502,7 @@ module.exports = {
     maiorUmid,
     ultimaMedicao,
     obterdados
+=======
+    maiortemp
+>>>>>>> d4be01abb084276aa7e168e00a0f0e79deeb9f85
 }
