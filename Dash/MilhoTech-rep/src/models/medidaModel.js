@@ -9,7 +9,7 @@ function buscarUltimasMedidas(idSilo, idEmpresa) {
                         dtRegistro,
                         DATE_FORMAT(dtRegistro,'%H:%i:%s') as dtRegistro
                     FROM Registro join silos on idsilos = fkSilo where fkSilo = 1 and fkEmpresa = 1
-                    limit 7;`;
+                    ;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -24,7 +24,7 @@ function buscarUltimasMedidastemp(idSilo) {
                         fkSilo 
                         FROM Registro 
                     ORDER BY fkSilo ASC 
-                    LIMIT 7`;
+                    LIMIT 1`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
