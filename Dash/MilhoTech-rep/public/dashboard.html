@@ -65,7 +65,7 @@
                             </a>
                         </div>
 
-                        <div onclick="silo2()" class="numeros" id="div_numeros"
+                        <div onclick="silo2(), cliquei()" class="numeros" id="div_numeros"
                             style="background-color: rgb(255, 187, 187);">
                             <a>
                                 <h3>Silo 2:</h3>
@@ -261,6 +261,8 @@
     var idUsuario = sessionStorage.ID_USUARIO;
     var idSilo = 1;
     var idEmpresa = sessionStorage.ID_EMPRESA;
+
+    var cliquei = false;
 
     function ultimaMedicaoTemp1(idSilo) {
         fetch(`/medidas/ultimaMedicaoTemp1/${idSilo}`, { cache: 'no-store' })
@@ -683,6 +685,9 @@
             });
     }
 
+    function cliquei() {
+        cliquei = true;
+    };
 
     function plotarGraficotemp(resposta, idSilo) {
         setTimeout(() => atualizarGrafico(idSilo, dados, myChart), 2000);
@@ -711,8 +716,28 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
+            var temperatura = Number(registro.temperatura)
+
+            if (cliquei == true) {
+                var minT = 1;
+                var maxT = 5;
+                var minU = 1;
+                var maxU = 12;
+                var intervaloT = maxT - minT;
+                var intervaloU = maxU - minU;
+
+                var aleatorioT = Math.random() * intervalo + minT;
+                var aleatorioU = Math.random() * intervalo + minU;
+
+                var aleatorioIntT = aleatorioT.toFixed(0);
+                var aleatorioIntU = aleatorioU.toFixed(0);
+
+                temperatura += aleatorioIntT;
+
+            }
+
             labels.push(registro.dtRegistro);
-            dados.datasets[0].data.push(registro.temperatura);
+            dados.datasets[0].data.push(temperatura);
         }
 
         console.log('----------------------------------------------')
